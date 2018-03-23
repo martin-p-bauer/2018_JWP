@@ -7,20 +7,26 @@
 - Bring researchers,standardization engineers and developers closer together
 - Do not champion specific underlying projects, but abstract from them, try to achieve a general level,showing examples is okay
 
-# Proposal 1
+# Part 0
+
+Overview: what is where?
++ Executive Summary for Managers
+
+# Part 1
 
 Target Audience: Standardization Engineers/ Bodies
 
 Goal: Towards best practice in semantic interoperability
 
 - State of the art evaluation
-- Select Relevant examples
-  - Criteria: coverage of design space and importance of approach (e.g. international standard may have more weight than small individual research project)
+(Select Relevant examples
+  - Criteria: coverage of design space and importance of approach (e.g. international standard may have more weight than small individual research project))
+
 - Derive recommendations for semantic interoperability
 
-# Proposal 2
+# Part 2
 
-Target Audience: Developers and System Architects
+Target Audience: Developers, System Architects
 
 Goal: Show how to implement semantic solutions and to achieve semantic interoperability
 
