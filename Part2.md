@@ -56,7 +56,7 @@ of an IoT application, who are typically non-ontology experts.
 
 ### Ontology Html Renderers
 #### General overview of their usage and functions
-1. Ontoology
+1. [Ontoology](http://ontoology.linkeddata.es/) with [detailed instructions](http://ontoology.linkeddata.es/stepbystep) on how to use it.
 2. [LODE](https://github.com/essepuntato/LODE)
 
 ### Visual Modeling Tools
