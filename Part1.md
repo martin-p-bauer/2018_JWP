@@ -39,7 +39,11 @@ The Web of Things (WoT) is an extension of the Internet of Things (IoT) to ease 
   ## Add Appendix section - with technical details for developers?
   an annexe/appendix section with all technical details would satisfy the developers? and the other audience won't be lost within the document
   
-  ## Add "Lessons Learned, Recommendations and Best Practices" section?
+  ## Derive recommendations for semantic interoperability - "Lessons Learned, Recommendations and Best Practices" 
   we can add one section "Lessons Learned, Recommendations and Best Practices" at the end of the document
   - focus on semantic models (e.g., ontologies)
   - other ideas
+  - best practices checklist summary 
+   Check section Ontology Best Practices - Checklist Summary (page 11)
+   http://perfectsemanticweb.appspot.com/documentation/SemanticWebBestPracticesForDummies.pdf 
+  
