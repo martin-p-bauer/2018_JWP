@@ -39,6 +39,8 @@ The Web of Things (WoT) is an extension of the Internet of Things (IoT) to ease 
   ## Add Appendix section - with technical details for developers?
   an annexe/appendix section with all technical details would satisfy the developers? and the other audience won't be lost within the document
   
+  Part 2 is now referencing a set of concrete tools for ontologies.
+  
   ## Derive recommendations for semantic interoperability - "Lessons Learned, Recommendations and Best Practices" 
   we can add one section "Lessons Learned, Recommendations and Best Practices" at the end of the document
   - focus on semantic models (e.g., ontologies)
