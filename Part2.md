@@ -58,6 +58,7 @@ of an IoT application, who are typically non-ontology experts.
 #### General overview of their usage and functions
 1. [Ontoology](http://ontoology.linkeddata.es/) with [detailed instructions](http://ontoology.linkeddata.es/stepbystep) on how to use it.
 2. [LODE](https://github.com/essepuntato/LODE)
+   LODE Web Service example: http://www.essepuntato.it/lode/http://purl.org/iot/ontology/fiesta-iot#
 
 ### Visual Modeling Tools
 #### General overview of their usage and functions
@@ -65,7 +66,11 @@ of an IoT application, who are typically non-ontology experts.
 #### List Some
 1. Protégé
 2. TopBraid Composer
-3. Others?
+3. Ontology Visualization with WebVOWL
+   WebVOWL Web Service example:
+   http://visualdataweb.de/webvowl/#iri=http://purl.org/iot/ontology/fiesta-iot#
+
+4. Others?
 
 ### Serializers APIs
 
@@ -95,9 +100,11 @@ of an IoT application, who are typically non-ontology experts.
 
 ### Ontology Alignment APIs?
 
+1. LogMap
 
 
 
 ## What is missing ? (need to find a better title here)
 
-## 
+PerfectO project - Ontology Documentation Improvement:
+Example: http://perfectsemanticweb.appspot.com/?p=ontologyValidation
