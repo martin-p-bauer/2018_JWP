@@ -44,6 +44,8 @@ The Web of Things (WoT) is an extension of the Internet of Things (IoT) to ease 
   - focus on semantic models (e.g., ontologies)
   - other ideas
   - best practices checklist summary 
+  
    Check section Ontology Best Practices - Checklist Summary (page 11)
+   
    http://perfectsemanticweb.appspot.com/documentation/SemanticWebBestPracticesForDummies.pdf 
   
