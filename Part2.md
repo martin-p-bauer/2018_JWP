@@ -70,7 +70,7 @@ of an IoT application, who are typically non-ontology experts.
 3. Ontology Visualization with WebVOWL
 
    WebVOWL Web Service example:
-   
+  
    http://visualdataweb.de/webvowl/#iri=http://purl.org/iot/ontology/fiesta-iot#
 
 4. Others?
@@ -105,10 +105,10 @@ of an IoT application, who are typically non-ontology experts.
 
 1. LogMap
 
-
+  LogMap Web Service: http://krrwebtools.cs.ox.ac.uk/logmap/
 
 ## What is missing ? (need to find a better title here)
 
-PerfectO project - Ontology Documentation Improvement:
+PerfectO project - Ontology Improvement Tool integrating a set of tools mentionned previously (WebVOWL, LODE, LogMap, etc.):
 
-Example: http://perfectsemanticweb.appspot.com/?p=ontologyValidation
+Demo: http://perfectsemanticweb.appspot.com/?p=ontologyValidation
