@@ -31,11 +31,11 @@ the exchanged data among those connected things. Semantic technology,
 is one of the most promising fields in the knowledge representation
 domain, expected to enable interoperability in the IoT.
 TheWorld WideWeb Consortium (W3C) defines a set of standards ,
-such as RDF, OWL and SPARQL, to represent semantics
+such as RDF, OWL, JSON and SPARQL, to represent semantics
 and query linked data, offering an ideal ecosystem and opportunity
 to tackle the heterogeneity challenge in the IoT. In industrial environments
 and automation domains, semantic technology has been
-used to solve data interoperability issues and to provide
+used to solve data/Device interoperability issues and to provide
 context aware applications and services.
 
 Despite its potential and promises, semantic technology and
@@ -76,13 +76,25 @@ of an IoT application, who are typically non-ontology experts.
 4. Others?
 
 ### Serializers APIs
-
 #### General overview of their usage and functions
 #### List Some
 1. OWL API (Java)
 2. RDF4J (Java)
 3. DotNetRDF (C#)
 4. RDF Charm (Python)
+5. json module (Python)
+6. RDFLib (Python)
+
+#### Semantic Web and Linked Data application building open source
+#### General overview of their usage and functions
+#### List Some
+1. Apache Jena (Java)
+
+#### Semantic repository/database/store
+#### General overview of their usage and functions
+#### List Some
+1. Sesame (Java)
+2. MongoDB (C++, Java and Python drivers)
 
 ### Object Relational Mappers
 #### General overview of their usage and functions
