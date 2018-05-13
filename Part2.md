@@ -47,10 +47,30 @@ tools involving several major actors participating in the design life cycle
 of an IoT application, who are typically non-ontology experts.
 
 ## Problem
+The W3C defined a semantic layer cake (citation) based on a set of standards to develop the semantic web. The aim of these standards is to focus mainly the knowledge representation to solve the data interchange problem in addition to several non functional requirements such as, data validation, proof and trust.
 
-### Developer experience
-- Most tools assume users are ontology experts
-- When a developer need to instantiate an ontology model, what available tools and frameworks they have available
+**Insert senantic layer cake image here**
+
+According to the Semantic Web standards, data representation can be expressed in the following standards RDF, RDF-S, and OWL. More precisly, such descriptive languages allow to represent a model and its instantiation. Several ontologies exist publically to represent a domain model, for example: the Semantic Sensor Network Ontology (citation) proposes a model to represent a sensor network, SAREF (citation) proposes a model to represent smart appliances functionalities, expected behavior and how they interact with their environment and their locations. Other ontologies such as Brick (citation) focus on the Building Management System domain detailing a vocabulary of equipment types, their expected behviour in addition to their interactions with other equipments.
+
+Once an ontology model has been defined, the next step is to instantiate it. Instantiating an ontology implies producing data which is conform to the model. For example, an instantiation of a Brick ontology implies for a given site, the data produced by a Building Management System is conform to the Brick Model. **(need to give a simple example here based on a public ontology, maybe Brick is not so generic, to be discussed on the call)**
+
+Ontology instantiation process requires:
+1. An ontology model.
+2. A software enabler to produce or transform data according to the provided ontology model.
+3. A software developer implementing the software enabler
+
+Acceptance criteria:
+1. Data produced is conform to the ontology model
+2. Data produced is expressed in one of the W3C standards formats such as rdf/xml, json-ld, citations.
+
+**Should we give an overview of the Software Developer persona?**
+A Software Developer persona is a non ontology expert, non familiar with the Semantic Layer cake. She is given an ontology model expressed in OWL and is asked to develop an enabler which can be embedded in a system or on the cloud to produce (or transform) data conform to the model. The data produced need to be expressed in one of the W3C standard.
+
+In the following, we depict the list of tools available to a software developer to achieve her goal and meet the acceptance criteria 
+
+
+** Focus on Developer Experience: NON Ontology Expert **
 
 ## Existing Methods and Tools
 
