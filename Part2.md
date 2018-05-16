@@ -47,7 +47,7 @@ tools involving several major actors participating in the design life cycle
 of an IoT application, who are typically non-ontology experts.
 
 ## Problem
-The W3C defined a semantic layer cake (citation) based on a set of standards to develop the semantic web. The aim of these standards is to focus mainly on the knowledge representation to solve the data interchange problem in addition to several non functional requirements such as data validation, proof and trust.
+The W3C defined a semantic layer cake (citation https://www.w3.org/2000/Talks/1206-xml2k-tbl/slide10-0.html) based on a set of standards to develop the semantic web. The aim of these standards is to focus mainly on the knowledge representation to solve the data interchange problem in addition to several non functional requirements such as data validation, proof and trust.
 
 **Insert semantic layer cake image here**
 
