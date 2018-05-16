@@ -117,6 +117,10 @@ In the following, we depict the list of tools available to a software developer 
 #### List Some
 1. Sesame (Java)
 2. MongoDB (C++, Java and Python drivers)
+3. Jena TDB
+4. OpenLink Virtuoso
+5. OWLIM
+6. Oracle Spatial and Graph RDF Semantic Graph
 
 ### Retrieving Semantic Information
 1. SPARQL (expressive query language on general RDF data, but requires (logically) centralized information)
