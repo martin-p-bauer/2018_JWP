@@ -47,13 +47,15 @@ tools involving several major actors participating in the design life cycle
 of an IoT application, who are typically non-ontology experts.
 
 ## Problem
-The W3C defined a semantic layer cake (citation) based on a set of standards to develop the semantic web. The aim of these standards is to focus mainly the knowledge representation to solve the data interchange problem in addition to several non functional requirements such as, data validation, proof and trust.
+The W3C defined a semantic layer cake (citation) based on a set of standards to develop the semantic web. The aim of these standards is to focus mainly on the knowledge representation to solve the data interchange problem in addition to several non functional requirements such as data validation, proof and trust.
 
-**Insert senantic layer cake image here**
+**Insert semantic layer cake image here**
 
 According to the Semantic Web standards, data representation can be expressed in the following standards RDF, RDF-S, and OWL. More precisly, such descriptive languages allow to represent a model and its instantiation. Several ontologies exist publically to represent a domain model, for example: the Semantic Sensor Network Ontology (citation) proposes a model to represent a sensor network, SAREF (citation) proposes a model to represent smart appliances functionalities, expected behavior and how they interact with their environment and their locations. Other ontologies such as Brick (citation) focus on the Building Management System domain detailing a vocabulary of equipment types, their expected behviour in addition to their interactions with other equipments.
 
-Once an ontology model has been defined, the next step is to instantiate it. Instantiating an ontology implies producing data which is conform to the model. For example, an instantiation of a Brick ontology implies for a given site, the data produced by a Building Management System is conform to the Brick Model. **(need to give a simple example here based on a public ontology, maybe Brick is not so generic, to be discussed on the call)**
+Once an ontology model has been defined, the next step is to instantiate it. Instantiating an ontology implies producing data which conforms to the model. For example, an instantiation of a Brick ontology implies for a given site, the data produced by a Building Management System conforms to the Brick Model. **(need to give a simple example here based on a public ontology, maybe Brick is not so generic, to be discussed on the call)**
+* http://www.cs.virginia.edu/~dh5gm/pdf/brick-journal.pdf
+* https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=8&cad=rja&uact=8&ved=0ahUKEwjG4_j-3onbAhUxb5oKHbj_BjUQFghCMAc&url=https%3A%2F%2Fbrickschema.org%2Fpapers%2FBrick_BuildSys_Presentation.pdf&usg=AOvVaw1igBB2grS0-9uMXD2_9kPW
 
 Ontology instantiation process requires:
 1. An ontology model.
@@ -61,7 +63,7 @@ Ontology instantiation process requires:
 3. A software developer implementing the software enabler
 
 Acceptance criteria:
-1. Data produced is conform to the ontology model
+1. Data produced conforms to the ontology model
 2. Data produced is expressed in one of the W3C standards formats such as rdf/xml, json-ld, citations.
 
 **Should we give an overview of the Software Developer persona?**
@@ -109,6 +111,12 @@ In the following, we depict the list of tools available to a software developer 
 #### General overview of their usage and functions
 #### List Some
 1. Apache Jena (Java)
+
+#### Retrieving Semantic Information
+1. SPARQL (expressive query language on general RDF data, but requires (logically) centralized information)
+2. NGSI-LD (retrieve scopded and filtered information, entity meta model, also works in highly distributed and federated settings)
+   * Overview presentation: https://docbox.etsi.org/ISG/CIM/Open/Introduction_NGSI-LD_20180413.pdf
+   * ETSI Group Specification: http://www.etsi.org/deliver/etsi_gs/CIM/001_099/004/01.01.01_60/gs_CIM004v010101p.pdf 
 
 #### Semantic repository/database/store
 #### General overview of their usage and functions
