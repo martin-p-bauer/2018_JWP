@@ -112,17 +112,17 @@ In the following, we depict the list of tools available to a software developer 
 #### List Some
 1. Apache Jena (Java)
 
-#### Retrieving Semantic Information
-1. SPARQL (expressive query language on general RDF data, but requires (logically) centralized information)
-2. NGSI-LD (retrieve scopded and filtered information, entity meta model, also works in highly distributed and federated settings)
-   * Overview presentation: https://docbox.etsi.org/ISG/CIM/Open/Introduction_NGSI-LD_20180413.pdf
-   * ETSI Group Specification: http://www.etsi.org/deliver/etsi_gs/CIM/001_099/004/01.01.01_60/gs_CIM004v010101p.pdf 
-
 #### Semantic repository/database/store
 #### General overview of their usage and functions
 #### List Some
 1. Sesame (Java)
 2. MongoDB (C++, Java and Python drivers)
+
+### Retrieving Semantic Information
+1. SPARQL (expressive query language on general RDF data, but requires (logically) centralized information)
+2. NGSI-LD (retrieve scopded and filtered information, entity meta model, also works in highly distributed and federated settings)
+   * Overview presentation: https://docbox.etsi.org/ISG/CIM/Open/Introduction_NGSI-LD_20180413.pdf
+   * ETSI Group Specification: http://www.etsi.org/deliver/etsi_gs/CIM/001_099/004/01.01.01_60/gs_CIM004v010101p.pdf 
 
 ### Object Relational Mappers
 #### General overview of their usage and functions
