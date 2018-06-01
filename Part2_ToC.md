@@ -44,7 +44,7 @@ There are numerous ontology catalogs to find existing ontologies. The most popul
   
   Ready4SmartCities tool: http://smartcity.linkeddata.es/
 
-We recommend to look first at ontologies (e.g., W3C SOSA, SAREF, W3C WoT, ONeM2M, etc.) because they are supported by standardizations.
+We recommend to look first at ontologies supported by standardizations (e.g., W3C SOSA, SAREF, W3C WoT, ONeM2M, etc.).
 
 Limitations: Indeed, we would need some ontology ranking algorithms to help better developers find suitable ontologies for their needs.
 
@@ -62,11 +62,11 @@ Reuse ontology namespace
 show concrete code example?
 
 ## How to create ontologies?
-Protege is one of the most popular tool to learn how to create an ontologies. Protégé is a software having a Graphical User Interface (GUI) to design and develop ontologies.
+Protege is one of the most popular software to learn how to create ontologies. Protégé provides a Graphical User Interface (GUI) to design and develop ontologies. You can either set up Protege on your computer or use the web collabative Protege tool.
 
 Protege tool: https://protege.stanford.edu/
 
-Here a set of pointers to develop your first ontology:
+A set of pointers to develop your first ontology:
 - Protégé Tutorial [Horridge et al. 2011] – Design the Pizza ontology. Check if there is a more recent documentation.
   
   Documentation: http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf
@@ -76,7 +76,7 @@ Here a set of pointers to develop your first ontology:
   Documentation: https://protege.stanford.edu/publications/ontology_development/ontology101.pdf
 
 
-Check and merge with ontology development section (Part2.md)?
+TO DO: Check and merge with ontology development section (Part2.md)?
 
 
 # Ontology Instantiation [Charbel Kaed]
