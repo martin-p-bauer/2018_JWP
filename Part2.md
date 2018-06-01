@@ -33,9 +33,10 @@ based on a set of standards to develop the semantic web. The aim of these standa
 
 ![](img/semLayer.png)
 
-According to the Semantic Web standards, data representation can be expressed in the following standards RDF, RDF-S, and OWL. More precisly, such descriptive languages allow to represent a model and its instantiation. Several ontologies exist publically to represent a domain model, for example: the Semantic Sensor Network Ontology (https://www.w3.org/TR/vocab-ssn/) proposes a model to represent a sensor network, SAREF (Documentation:http://ontology.tno.nl/saref; URL:http://ontology.tno.nl/saref.ttl) proposes a model to represent smart appliances functionalities, expected behavior and how they interact with their environment and their locations. Other ontologies such as Brick (citation) focus on the Building Management System domain detailing a vocabulary of equipment types, their expected behviour in addition to their interactions with other equipments.
+According to the Semantic Web standards, data representation can be expressed in the following standards RDF, RDF-S, and OWL. More precisly, such descriptive languages allow to represent a model and its instantiation. Several ontologies exist publically to represent a domain model, for example: the Semantic Sensor Network Ontology/SOSA (https://www.w3.org/TR/vocab-ssn/) proposes a model to represent a sensor network, Fiesta-IoT/m3 ontology (http://ontology.fiesta-iot.eu/ontologyDocs/fiesta-iot/doc) establishes a methodology for linking IoT services and testbeds, Web of Things vocabulary (https://www.w3.org/TR/wot-thing-description/) to integrate and make interoperable diverse applications and Things and SAREF (Documentation:http://ontology.tno.nl/saref; URL:http://ontology.tno.nl/saref.ttl) proposes a model to represent smart appliances functionalities, expected behavior and how they interact with their environment and their locations. Other ontologies such as Brick (http://brickschema.org/structure/) focus on the Building Management System domain detailing a vocabulary of equipment types, their expected behviour in addition to their interactions with other equipments. 
 
 Once an ontology model has been defined, the next step is to instantiate it. Instantiating an ontology implies producing data which conforms to the model. For example, an instantiation of a Brick ontology implies for a given site, the data produced by a Building Management System conforms to the Brick Model. **(need to give a simple example here based on a public ontology, maybe Brick is not so generic, to be discussed on the call)**
+
 * http://www.cs.virginia.edu/~dh5gm/pdf/brick-journal.pdf
 * https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=8&cad=rja&uact=8&ved=0ahUKEwjG4_j-3onbAhUxb5oKHbj_BjUQFghCMAc&url=https%3A%2F%2Fbrickschema.org%2Fpapers%2FBrick_BuildSys_Presentation.pdf&usg=AOvVaw1igBB2grS0-9uMXD2_9kPW
 
@@ -58,80 +59,95 @@ In the following, we depict the list of tools available to a software developer 
 
 ## Existing Methods and Tools
 
-### Ontology Html Renderers
-#### General overview of their usage and functions
+### Ontology HTML Renderers
+#### Ontology Documentation Tools
 1. [Ontoology](http://ontoology.linkeddata.es/) with [detailed instructions](http://ontoology.linkeddata.es/stepbystep) on how to use it.
+
 2. [LODE](https://github.com/essepuntato/LODE)
 
    LODE Web Service example: http://www.essepuntato.it/lode/http://purl.org/iot/ontology/fiesta-iot#
 
-### Visual Modeling Tools
-#### General overview of their usage and functions
+#### Ontology HTML data exploration tools
 
-#### List Some
+1. Exhibit 3.0: http://simile-widgets.org/exhibit3/
+2. Rizhomik: http://rhizomik.net/html/rhizomer/
+3. Other?
+
+### Ontolgy Development Tools
 1. Protégé
+
 2. TopBraid Composer
+
 3. Ontology Visualization with WebVOWL
 
    WebVOWL Web Service example:
-  
+
    http://visualdataweb.de/webvowl/#iri=http://purl.org/iot/ontology/fiesta-iot#
 
-4. Others?
+4. NeOn Toolkit (http://neon-toolkit.org)
 
-### Serializers APIs
-#### General overview of their usage and functions
-#### List Some
+5. Other?
+
+### Ontology Manipulation Libraries
 1. OWL API (Java)
-2. RDF4J (Java)
-3. DotNetRDF (C#)
-4. RDF Charm (Python)
-5. json module (Python)
-6. RDFLib (Python)
+2. Apache Jena (Java) as a library
+3. RDF4J (Java)
+4. DotNetRDF (C#)
+5. RDF Charm (Python)
+6. json module (Python)
+7. RDFLib (Python)
+8. pySesame (Python)
+9. RDFLib.js (Javascript)
+10. SPARQL.js (Javascript)
+11. jsonld.js (Javascript)
+12. rdfstore-js (Javascript)
 
-#### Semantic Web and Linked Data application building open source
-#### General overview of their usage and functions
-#### List Some
+### Semantic Web Architectures & Semantic Stores
+
+#### Semantic Web Architectures
+
 1. Apache Jena (Java)
+2. NGSI-LD (retrieve scopded and filtered information, entity meta model, also works in highly distributed and federated settings)
+   - Overview presentation: https://docbox.etsi.org/ISG/CIM/Open/Introduction_NGSI-LD_20180413.pdf
+   - ETSI Group Specification: http://www.etsi.org/deliver/etsi_gs/CIM/001_099/004/01.01.01_60/gs_CIM004v010101p.pdf 
 
-#### Semantic repository/database/store
-#### General overview of their usage and functions
-#### List Some
+#### Semantic/Graph stores (Triple/Quad stores)
 1. Sesame (Java)
 2. MongoDB (C++, Java and Python drivers)
 3. Jena TDB
 4. OpenLink Virtuoso
-5. OWLIM
+5. GraphDB (new OWLIM): https://ontotext.com/products/graphdb/
 6. Oracle Spatial and Graph RDF Semantic Graph
+7. Stardog: https://www.stardog.com
+8. Mulgara: http://mulgara.org
+9. Sesame RDF: https://bitbucket.org/account/user/openrdf/projects/PROJ
 
 ### Retrieving Semantic Information
 1. SPARQL (expressive query language on general RDF data, but requires (logically) centralized information)
-2. NGSI-LD (retrieve scopded and filtered information, entity meta model, also works in highly distributed and federated settings)
-   * Overview presentation: https://docbox.etsi.org/ISG/CIM/Open/Introduction_NGSI-LD_20180413.pdf
-   * ETSI Group Specification: http://www.etsi.org/deliver/etsi_gs/CIM/001_099/004/01.01.01_60/gs_CIM004v010101p.pdf 
 
 ### Object Relational Mappers
-#### General overview of their usage and functions
-#### List Some
 1. RomanticWeb (C#)
 2. TrinityRDF (C#)
 3. Empire (Java)
 4. [Pinto](https://github.com/stardog-union/pinto)
 5. [Komma](https://github.com/komma/komma)
-6. Others?
+6. Ultrasrap^TM^-Capsenta: https://capsenta.com
+7. Morph RDB: https://github.com/oeg-upm/morph-rdb
+8. D2R: http://d2rq.org/d2r-server
+9. Others?
 
 ### Code Generators
-#### General overview of their usage and functions
-#### List Some
 1. Protégé Plugin
 2. Eclipse EMF
 3. [OLGA](https://www.researchgate.net/publication/319650390_A_Model_Driven_Approach_Accelerating_Ontology-based_IoT_Applications_Development): Ontology Library Generator 
 
 ### Ontology Alignment APIs?
 
-1. LogMap
+1. Alignment API: http://alignapi.gforge.inria.fr
 
-  LogMap Web Service: http://krrwebtools.cs.ox.ac.uk/logmap/
+2. LogMap
+
+   LogMap Web Service: http://krrwebtools.cs.ox.ac.uk/logmap/
 
 ## What is missing ? (need to find a better title here)
 
