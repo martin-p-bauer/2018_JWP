@@ -25,9 +25,13 @@ The World WideWeb Consortium (W3C) defines a set of standards , such as RDF/OWL,
 Despite its potential and promises, semantic technology and ontology-based IoT applications still remain in the hands of a minority, the ontology experts, being too difficult to be adopted and applied by industrial practitioners. We attribute such retention among other factors to the absence of adequate methodology and tools involving several major actors participating in the design life cycle of an IoT application, who are typically non-ontology experts.
 
 ## Problem
-The W3C defined a semantic layer cake (citation https://www.w3.org/2000/Talks/1206-xml2k-tbl/slide10-0.html) based on a set of standards to develop the semantic web. The aim of these standards is to focus mainly on the knowledge representation to solve the data interchange problem in addition to several non functional requirements such as data validation, proof and trust.
+The W3C defined a semantic layer cake
 
-**Insert semantic layer cake image here**
+[^1]: https://www.w3.org/2000/Talks/1206-xml2k-tbl/slide10-0.htm
+
+based on a set of standards to develop the semantic web. The aim of these standards is to focus mainly on the knowledge representation to solve the data interchange problem in addition to several non functional requirements such as data validation, proof and trust.
+
+![](img/semLayer.png)
 
 According to the Semantic Web standards, data representation can be expressed in the following standards RDF, RDF-S, and OWL. More precisly, such descriptive languages allow to represent a model and its instantiation. Several ontologies exist publically to represent a domain model, for example: the Semantic Sensor Network Ontology (https://www.w3.org/TR/vocab-ssn/) proposes a model to represent a sensor network, SAREF (Documentation:http://ontology.tno.nl/saref; URL:http://ontology.tno.nl/saref.ttl) proposes a model to represent smart appliances functionalities, expected behavior and how they interact with their environment and their locations. Other ontologies such as Brick (citation) focus on the Building Management System domain detailing a vocabulary of equipment types, their expected behviour in addition to their interactions with other equipments.
 
