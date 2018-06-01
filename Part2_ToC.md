@@ -30,7 +30,7 @@ How to find suitable ontologies and if necessary extend or create ontologies.
 There are numerous ontology catalogs to find existing ontologies. The most popular are:
 - Linked Open Vocabularies (LOV) designed by the Semantic Web community. This catalog is highly maintained and references ontology fitting their best practices criteria (e.g., ontology metadata).
  
- LOV tool: http://lov.okfn.org/dataset/lov/
+  LOV tool: http://lov.okfn.org/dataset/lov/
 
 - Linked Open Vocabularies for Internet of Things (LOV4IoT) references more than 440 ontology-based projects relevant for IoT. It covers more than 20 domains: IoT, Wireless Sensor Networks (WSNs), Web of Things (WoT), smart home, smart energy, healthcare, smart city, robotics, etc. LOV4IoT is highly maintained and references more and more ontology-based projects and new domains are covered.
   
