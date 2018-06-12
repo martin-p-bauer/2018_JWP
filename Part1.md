@@ -22,13 +22,15 @@ The Web of Things (WoT) is an extension of the Internet of Things (IoT) to ease 
 
 * W3C Web of Things (WoT) Interest Group is designing a vocabulary to describe interactions between objects through the Web, a potential implementation is the WoT ontology [4]. At the current date of writing, WoT ontology is not aligned with W3C SSN ontologies. A healthcare scenario has been designed "Remote health monitoring system" [5] among several use cases.
 
-* OneM2M, an international standard for Machine-to-Machine (M2M) with the development of the OneM2M ontology [6]. It extends the European ETSI M2M standard. At the current date of writing, OneM2M is not aligned with W3C SSN. The MyOntoSens ontology, based on SSN V1 is being standardized as a Technical Specification (TS) within the SmartBAN (Body Area Networks) Technical Committee of the ETSI standardization body [Nachabe et al. 2015]. This ontology is relevant to build health applications based on smart devices.
+* OneM2M, an international standard for Machine-to-Machine (M2M) with the development of the OneM2M ontology [6]. It extends the European ETSI M2M standard. At the current date of writing, OneM2M is not aligned with W3C SSN.
 
-* Smart Appliances REFerence (SAREF) [7], is a European standard supported by ETSI M2M and SmartM2M. It mainly covers the smart building applicative domain. The SAREF ontology has been designed re-using SSN and oneM2M according to [Moreira et al. 2017].
+* MyOntoSens modular ontology, mainly based on SSN V1 and OGC standards, has been proposed in [Nachabe et al. 2015] as an improvement of existing WSNs ontologies. It has been standardized in 2015 for medical devices and BANs (Body Area Networks) as a Technical Specification (TS) within the SmartBAN Technical Committee of the ETSI standardization body [7]. This ontology is in particular relevant to build health, wellbeing/wellness and personal safety applications based on smart devices.
 
-* Schema.org is a well-known schema catalog to structure data on Web pages to describe the location, person, etc. The IoT Schema.org extension [8] is planned; nothing concrete has been developed yet, but discussions are ongoing.
+* Smart Appliances REFerence (SAREF) [8], is a European standard supported by ETSI M2M and SmartM2M. It mainly covers the smart building applicative domain. The SAREF ontology has been designed re-using SSN and oneM2M according to [Moreira et al. 2017].
 
-* Haystack [9] is a project aiming at standardizing semantic data models and web services. For instance, the Haystack Tagging Ontology which employs SSN V1 ontology has been developed [10] [Charpenay et al. 2015].
+* Schema.org is a well-known schema catalog to structure data on Web pages to describe the location, person, etc. The IoT Schema.org extension [9] is planned; nothing concrete has been developed yet, but discussions are ongoing.
+
+* Haystack [10] is a project aiming at standardizing semantic data models and web services. For instance, the Haystack Tagging Ontology which employs SSN V1 ontology has been developed [11] [Charpenay et al. 2015].
 
  ## Cross-domain use case suggestion
  
