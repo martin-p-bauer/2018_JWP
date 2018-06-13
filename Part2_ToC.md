@@ -85,6 +85,114 @@ Given an ontology, how can this ontology be instantiated for a concrete use case
 # Software Implementation [Sonia Bilbao, Charbel Kaed]
 Give an overview of different aspects that are needed when writing software for processing semantic information.
 
+
+## Available frameworks in Java:
+Jena (https://jena.apache.org/) is a free and open source Java framework for building Semantic Web and Linked Data applications. It provides several Jena sub-systems and APIs:
+-	RDF API to create and read RDF graphs
+-	ARQ: a query engine for Jena that supports the SPARQL RDF Query language. 
+-	Fuseki (https://jena.apache.org/documentation/fuseki2/): a SPARQL server to expose your triples as a SPARQL end-point accessible over HTTP. It can run as an operating system service, as a Java web application (WAR file), and as a standalone server. 
+-	Ontology API to work with models, RDFS and Web Ontology Language (OWL)
+-	Inference API to reason over the data
+
+## Code implementation
+In order to write software for processing semantic information, the first thing we need to do is to set up a semantic repository where the models will be added. We will use Apache Jena Fuseki (https://jena.apache.org/documentation/fuseki2/) that provides a robust, transactional persistent storage layer and a SPARQL server.
+-	Download the software from https://jena.apache.org/download/
+-	Install and run Fuseki: https://jena.apache.org/documentation/fuseki2/fuseki-run.html 
+From now on we will assume that the name of the dataset is “exampleds” and the dataset URI is http://localhost:3030/exampleds.
+
+Next, we provide code to manage CRUD operations on semantic models and to query and update the datasets.
+
+Code to add a model to the default graph of the dataset  and to replace the default model 
+```
+import org.apache.jena.query.*;
+import org.apache.jena.rdf.model.*;
+import java.io.*;
+import java.util.*;
+import org.apache.jena.update.*;
+
+public void addModel(File rdf) throws IOException {
+    // parse the ontology file
+    Model newModel = ModelFactory.createDefaultModel();
+    try (FileInputStream in = new FileInputStream(rdf)) {
+        newModel.read(in, null, "RDF/XML");
+    }
+    
+    DatasetAccessor accessor = DatasetAccessorFactory.createHTTP(“http://localhost:3030/exampleds”);
+    // Add statements to the default model of a Dataset
+    accessor.add(newModel);      
+}
+
+public void replaceModel(File rdf) throws IOException {
+    // parse the ontology file
+    Model m = ModelFactory.createDefaultModel();
+    try (FileInputStream in = new FileInputStream(rdf)) {
+        m.read(in, null, "RDF/XML");
+    }
+    
+    DatasetAccessor accessor = DatasetAccessorFactory.createHTTP(“http://localhost:3030/exampleds”);
+    // Replace the default model of a Dataset
+    accessor.putModel(m);
+}
+```
+
+Code to delete the default model of the dataset
+```
+public void deleteModel() throws IOException {
+    DatasetAccessor accessor = DatasetAccessorFactory.createHTTP(“http://localhost:3030/exampleds”);
+    accessor.deleteDefault();
+}
+```
+
+Code to retrieve the default model of the dataset
+```
+public Model getModel() throws IOException {
+    DatasetAccessor accessor = DatasetAccessorFactory.createHTTP(“http://localhost:3030/exampleds”);
+    return accessor.getModel();
+}
+```
+
+Code to query the dataset providing as input a string with a query in SPARQL syntax
+```
+public List<Map<String, Object>> queryModel(String sparqlQuery) {
+    List<Map<String, Object>> mapResult = new ArrayList<>();
+
+    try (QueryExecution qexec = QueryExecutionFactory.sparqlService(“http://localhost:3030/exampleds”, sparqlQuery)) {
+        org.apache.jena.query.ResultSet results;
+        results = qexec.execSelect();
+
+        while (results.hasNext()) {
+            QuerySolution soln = results.nextSolution();
+            mapResult.add(DataAccessManager.createMap(soln));
+        }
+    }
+
+    return mapResult;
+}
+
+private Map<String, Object> createMap(QuerySolution querySolution) {
+    Map<String, Object> result = new HashMap<>();
+    Iterator<String> it = querySolution.varNames();
+    while (it.hasNext()) {
+        String varName = it.next();
+        if (querySolution.get(varName) instanceof Literal) {
+            result.put(varName, querySolution.getLiteral(varName));
+        } else {
+            result.put(varName, querySolution.getResource(varName));
+        }
+     }
+     return result;
+}
+```
+
+Code to update (INSERT, DELETE) the dataset providing as input a string with a query in SPARQL Update language
+```
+public void updateModel(String sparqlQuery) {
+    UpdateRequest update = UpdateFactory.create(sparqlQuery);
+    UpdateProcessor processor = UpdateExecutionFactory.createRemote(update, “http://localhost:3030/exampleds”);
+    processor.execute();
+}
+```
+
 ## Semantic Information / Semantic Annotation [???]
 How to get to semantic information, e.g. based on original raw sensor data.
 
