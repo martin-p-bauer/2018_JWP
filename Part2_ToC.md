@@ -19,6 +19,14 @@ High-level introduction regarding semantics and purpose of this paper (also see:
 # Problem Description [Michelle Wetterwald]
 Describe the problem space in which semantics can be applied in more detail.
 
+Several studies have demonstrated the fragmentation of the IoT eco-system in terms of standardization, available technologies and M2M service platforms. Accordingly, measurements and data available in one system or implementation is often not accessible to a different system. Furthermore, these systems are often still strongly dependent of the vertical domain in which they are implemented. 
+
+Interoperability has been considered at various levels: technical (connectivity, network, syntactic), informational (semantic or business context) or even organizational. Technical levels cannot be easily achieved when addressing integrated platforms. The semantic or data level is thus the next level where interoperability can be envisioned. Furthermore, the different systems must share the same vocabulary and understand in an identical manner the information they exchange, while facilitating the design of service compositions. 
+
+At this level, semantics can bring a valuable solution, since it defines a common and abstracted sub-layer above the services and platforms definition. Semantics interoperability thus enable the sharing of data across systems, avoiding the definition of a new common data model every time that two different systems need to exchange information.
+
+
+
 # Example Use Case [Laura Daniele]
 Describe an example use case that instantiates the problem space, is as simple as possible, but shows the advantages of semantics and can be used in the following subsections.
 
