@@ -12,7 +12,7 @@ Never start from scratch. It is a big no-no in the ontology engineering. A good 
 
 According to [2], ontology reuse can be understood as a three step process: (i) ontology discovery, (ii) ontology selection, and (iii) ontology integration.
 
-(i) Ontology discovery consists in finding appropriate ontologies for the desired topic. This task can be nowadays facilitated due to the existing semantic web search engines like Watson. There are numerous ontology catalogs to find existing ontologies. The most popular are:
+(i) Ontology discovery consists in finding appropriate ontologies for the desired topic. This task can nowadays be facilitated due to the existing semantic web search engines like Watson. There are numerous ontology catalogs to find existing ontologies. The most popular are:
 - Linked Open Vocabularies (LOV) designed by the Semantic Web community. This catalog is highly maintained and references ontology fitting their best practices criteria (e.g., ontology metadata).
  
   LOV tool: http://lov.okfn.org/dataset/lov/
@@ -31,7 +31,7 @@ According to [2], ontology reuse can be understood as a three step process: (i) 
 
 (ii) The ontology selection task deals with assessing the usability of an ontology with respect to the use case requirements. This may end up being an arduous task due to the different criteria that may make ontologies suitable for a certain use case [3]. Furthermore, the scarce documentation of ontologies may difficult even more this process.
 
-We recommend to look first at ontologies supported by standardizations (e.g., W3C SOSA, SAREF, W3C WoT, ONeM2M, etc.).
+We recommend to look first at ontologies supported by standardization activities (e.g., W3C SOSA, SAREF, W3C WoT, oneM2M, etc.).
 
 Limitations: Indeed, we would need some ontology ranking algorithms to help better developers find suitable ontologies for their needs.
 
@@ -41,7 +41,7 @@ In case the developer needs to reuse only a subset of classes and properties of 
 
 - Locality Module Extractor tool: https://www.cs.ox.ac.uk/isg/tools/ModuleExtractor/ 
 
-Furthermore, if the existing ontologies does not meet all the requirements explicated in the OSRD, they need to be extended. For that purpose, it is advisable to separate the required knowledge in well-decoupled ontology modules which has in benefits: scalability for querying data and reasoning on ontologies; scalability for evolution and maintenance; complexity management; understandability; context-awareness and personalization; and reuse [4]. For example, when some of the ontology modules is updated, thus minimizing this way the impact of these changes in other modules and the global ontology.
+Furthermore, if the existing ontologies does not meet all the requirements explicated in the OSRD, they need to be extended. For that purpose, it is advisable to separate the required knowledge in well-decoupled ontology modules which has its benefits: scalability for querying data and reasoning on ontologies; scalability for evolution and maintenance; complexity management; understandability; context-awareness and personalization; and reuse [4]. For example, when some of the ontology modules are updated, thus minimizing this way the impact of these changes in other modules and the global ontology.
 
 It is also recommendable to use Ontology Design Patterns (ODP) as building blocks to create new ontology modules. An ODP is a modelling solution to solve a recurrent ontology design problem. The ODP repository collects and makes ODPs available on the web. It may contain a solution created by somebody else who already faced the same modelling challenge 
 
