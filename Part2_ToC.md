@@ -26,7 +26,7 @@ Describe an example use case that instantiates the problem space, is as simple a
 
 [Example_Use_Case.md](part2/Example_Use_Case.md)
 
-# Ontology Selection / Creation [Amelie Gyrard]
+# Ontology Selection / Creation [Amelie Gyrard, Iker Esnaola, Izaskun Fernandez]
 How to find suitable ontologies and if necessary extend or create ontologies.
 
 [Ontology_Selection+Creation.md](part2/Ontology_Selection+Creation.md)
