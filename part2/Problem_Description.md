@@ -8,7 +8,7 @@ At this level, semantics can bring a valuable solution, since it defines a commo
 
 As already aforementioned, one of the first interoperability level to take care of is at informational level, i.e. at data and semantic level. It is mandatory to address since it allows data heterogeneity management, both within a single platform and even across platform (provided that the data model become a unified / standardized one). One good example of that is the Bluetooth LE GATT (Generic Attributes) profile that has been standardized by the Bluetooth SIG and enables Bluetooth devices interoperability [https://www.bluetooth.com/specifications/gatt].
 
- ![](img/RoomExample.png)
+![](img/RoomExample.png)
 
 Figure 1: Simple example of a house room
 
