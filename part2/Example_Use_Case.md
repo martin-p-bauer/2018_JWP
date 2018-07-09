@@ -24,9 +24,12 @@ In a such environment and use case, it is first mandatory to address security an
 For addressing all the aforementioned requirements, interoperability will have thus to be handled at multiple levels for our elderly at home additional use case:
 
 •	Device level for in particular handling point 3 and to some extend point 2,
+
 •	Informational level, i.e. data and semantic, for in particular
+
     o	handling point 1, point 2, point 3,
     o	data/information sharing across systems, i.e. Smart BAN and Smart Home systems,
     o	enabling semantic-based embedded data analytics. This will be used here for alarm management, monitoring/control and habitant/elderly/caregivers assistance purposes,
     o	for facilitating cross-domain interactions, in particular between healthcare, wearables and Smart Home.
+
 •	Network level for mainly handling point 2 and intra/inter systems interoperability.
