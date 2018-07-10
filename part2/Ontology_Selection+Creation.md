@@ -41,8 +41,7 @@ This task deals with assessing the usability of an ontology with respect to the 
 
 In order to ease this selection phase, we recommend to look first at ontologies supported by standardization activities (e.g., W3C SOSA, SAREF, W3C WoT, oneM2M, etc.).
 
-In case the developer needs to reuse only a subset of classes and properties of the ontology, instead of the whole ontology, an extractor tool can be used:
-- Locality Module Extractor tool: https://www.cs.ox.ac.uk/isg/tools/ModuleExtractor/ 
+In case the developer needs to reuse only a subset of classes and properties of the ontology, instead of the whole ontology, an extractor tool (see Appendix section) can be used.
 
 Limitations: Indeed, we would need some ontology ranking algorithms to help better developers find suitable ontologies for their needs.
 
@@ -67,9 +66,7 @@ Protégé [6] is one of the most popular software to learn how to create ontolog
 
 When creating or extending an ontology, it is advisable to follow the modularisation principle by separating the required knowledge in well-decoupled ontology modules. The main benefits of this principle are: 1) scalability for querying data and reasoning on ontologies, 2) scalability for evolution and maintenance, 3) complexity management, 4) understandability, 5) context-awareness and personalization, and 5) reuse [4]. For example, when some of the ontology modules are updated, thanks to the modularization, the impact of these changes in other modules and the global ontology is minimized. IoT-O [7] and [8] FIESTA-IoT ontologies are good examples of ontology modules.
 
-It is also recommendable to use Ontology Design Patterns (ODP) (see Annexe Section) as building blocks to create new ontology modules. An ODP is a modeling solution to solve a recurrent ontology design problem. The ODP repository collects and makes ODPs available on the web. It may contain a solution created by somebody else who already faced the same modeling challenge.
-
-- ODP Repository: http://www.ontologydesignpatterns.org 
+It is also recommendable to use Ontology Design Patterns (ODP) (see Appendix Section) as building blocks to create new ontology modules. An ODP is a modeling solution to solve a recurrent ontology design problem. The ODP repository collects and makes ODPs available on the web. It may contain a solution created by somebody else who already faced the same modeling challenge.
 
 Once the ontology is created, it is advisable to align it with related ontologies and upper-level ontologies (i.e. DUL) to make the ontology applicable to similar problems in different domains and scenarios.
 
@@ -113,5 +110,8 @@ Ontology discovery:
 - OpenSensingCity tool: http://ci.emse.fr/opensensingcity/ns/ontologies/
 - Ready4SmartCities tool: http://smartcity.linkeddata.es/
  
-ODP Repository:
+Ontology Design Patterns (ODP) repository:
 - http://www.ontologydesignpatterns.org 
+
+Locality Module Extractor tool: 
+- https://www.cs.ox.ac.uk/isg/tools/ModuleExtractor/ 
