@@ -34,6 +34,9 @@ It consists in finding appropriate ontologiesthat meet our requirements. This ta
   
 - Ready4SmartCities, an ontology catalog for smart cities. It seems it is not maintained anymore. 
 
+TO DO?:
+We can reuse well-written paragraphs about ontology catalogs from this paper (third revision ongoing) if needed: Building IoT based applications for Smart Cities: How can ontology catalogs help? [Gyrard et al. IEEE IoT Journal 2017] (Impact Factor 7.5)
+
 ### (ii) Selection of suitable (parts of) ontologies
 
 This task deals with assessing the usability of an ontology with respect to the use case requirements. This may end up being an arduous task due to the different criteria that may make ontologies suitable for a certain use case [3]. Furthermore, the scarce documentation of ontologies may difficult even more this process.
@@ -69,19 +72,14 @@ It is also recommendable to use Ontology Design Patterns (ODP) as building block
 
 Once the ontology is created, it is advisable to align it with related ontologies and upper-level ontologies (i.e. DUL) to make the ontology applicable to similar problems in different domains and scenarios.
 
-Comments:
-We can reuse well-written paragraphs about ontology catalogs from this paper (third revision ongoing) if needed: Building IoT based applications for Smart Cities: How can ontology catalogs help? [Gyrard et al. IEEE IoT Journal 2017] (Impact Factor 7.5)
-
-## How to select ontologies?
-Most of the time you already have some keywords and keyphrases in mind to build the system or application. For the smart domain, key phrases are
-
-## How to create ontologies?
-Protege is one of the most popular software to learn how to create ontologies. Protégé provides a Graphical User Interface (GUI) to design and develop ontologies. You can either set up Protege on your computer or use the web collabative Protege tool.
-
-
 TO DO? should we provide more examples protege with smart home ontology? How to create a concept, and property relevant for smart home (show protege interface, and code)?
 
 TO DO? Check and merge with ontology development section (Part2.md)?
+
+## Ontology Selection
+Most of the time you already have some keywords and key phrases in mind to build the system or application. For the smart domain, keywords are “room temperature” “actuators”, “humidity”, those keywords can be mapped to concepts within ontologies.
+Ontology catalogs can provide such browsing functionalities with specific keywords.
+
 
 ## References
 
