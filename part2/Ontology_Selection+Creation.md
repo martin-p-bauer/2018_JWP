@@ -57,17 +57,17 @@ When more than one ontology (or parts) are integrated, ontology matching tool ca
 
 ## Create new ontology / Extend existing ontologies
 
-If the existing ontologies do not meet all the requirements explicated in the OSRD, they need to be extended. 
+If the existing ontologies do not meet all the requirements captured in the OSRD, ontologies need to be extended. 
 
 In case no existing ontologies have been found for our specific requirements captured in the OSRD, there might be a need to develop your own ontology. 
 
-For a more exhaustive ontology creation guide, we advice excellent documentations and methodologies: the NeOn methodology for ontology engineering[1], and the ontology development 101 [5]).
+For a more exhaustive ontology creation guide, we advice excellent documentation and methodologies: the NeOn methodology for ontology engineering[1], and the ontology development 101 [5]).
 
-Protégé [6] is one of the most popular software to learn how to create ontologies. Protégé provides a Graphical User Interface (GUI) to design and develop ontologies. You can either set up Protege on your computer or use the web collaborative Protege tool. We provide a set of excellent tutorials to develop your first ontology with Protégé (see Appendix Section)
+Protégé [6] is one of the most popular software to learn how to create ontologies. Protégé provides a Graphical User Interface (GUI) to design and develop ontologies. You can either set up Protege on your computer or use the web collaborative Protege tool. We provide a set of excellent tutorials to develop your first ontology with Protégé (see Appendix Section.
 
-When creating or extending an ontology, it is advisable to follow the modularisation principle by separating the required knowledge in well-decoupled ontology modules. The main benefits of this principle are: scalability for querying data and reasoning on ontologies; scalability for evolution and maintenance; complexity management; understandability; context-awareness and personalization; and reuse [4]. For example, when some of the ontology modules are updated, thus minimizing this way the impact of these changes in other modules and the global ontology.
+When creating or extending an ontology, it is advisable to follow the modularisation principle by separating the required knowledge in well-decoupled ontology modules. The main benefits of this principle are: 1) scalability for querying data and reasoning on ontologies, 2) scalability for evolution and maintenance, 3) complexity management, 4) understandability, 5) context-awareness and personalization, and 5) reuse [4]. For example, when some of the ontology modules are updated, thanks to the modularization, the impact of these changes in other modules and the global ontology is minimized. IoT-O [7] and [8] FIESTA-IoT ontologies are good examples of ontology modules.
 
-It is also recommendable to use Ontology Design Patterns (ODP) as building blocks to create new ontology modules. An ODP is a modelling solution to solve a recurrent ontology design problem. The ODP repository collects and makes ODPs available on the web. It may contain a solution created by somebody else who already faced the same modelling challenge 
+It is also recommendable to use Ontology Design Patterns (ODP) (see Annexe Section) as building blocks to create new ontology modules. An ODP is a modeling solution to solve a recurrent ontology design problem. The ODP repository collects and makes ODPs available on the web. It may contain a solution created by somebody else who already faced the same modeling challenge.
 
 - ODP Repository: http://www.ontologydesignpatterns.org 
 
@@ -96,14 +96,22 @@ Ontology catalogs can provide such browsing functionalities with specific keywor
 
 [6] Protégé tool: https://protege.stanford.edu/
 
+[7] Seydoux et al. IoT-O, a Core-Domain IoT Ontology to Represent Connected Devices Networks (EKAW 2016)
+
+[8] Agarwal et al. Unified IoT ontology to enable interoperability and federation of testbeds (WF-IoT 2016)
+
+
 ## Appendix for this section
 
 A set of pointers to develop your first ontology:
 - Protégé Tutorial [Horridge et al. 2011] – Design the Pizza ontology. Check if there is a more recent documentation. Documentation: http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf
 - 101 Ontology Development methodology [Noy et al. 2001] - Learn with the wine ontology and discover ontology best practices. Documentation: https://protege.stanford.edu/publications/ontology_development/ontology101.pdf
 
- Ontology discovery: 
- - LOV tool: http://lov.okfn.org/dataset/lov/
- - LOV4IoT tool: http://lov4iot.appspot.com/?p=ontologies
- - OpenSensingCity tool: http://ci.emse.fr/opensensingcity/ns/ontologies/
- - Ready4SmartCities tool: http://smartcity.linkeddata.es/
+Ontology discovery: 
+- LOV tool: http://lov.okfn.org/dataset/lov/
+- LOV4IoT tool: http://lov4iot.appspot.com/?p=ontologies
+- OpenSensingCity tool: http://ci.emse.fr/opensensingcity/ns/ontologies/
+- Ready4SmartCities tool: http://smartcity.linkeddata.es/
+ 
+ODP Repository:
+- http://www.ontologydesignpatterns.org 
