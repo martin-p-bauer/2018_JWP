@@ -1,9 +1,6 @@
 # Ontology Selection / Creation [Amelie Gyrard, Iker Esnaola, Izaskun Fernandez]
 
-(For a more exhaustive Ontology creation guide, go to [1] [5]).
-
 Ontology Selection/Creation diagram:
-
 
 ![Ontology selection/creation diagram flow](https://image.ibb.co/d4iAxT/Diagram.png)
 
@@ -17,22 +14,23 @@ First of all, it is necessary to think about the objectives of the ontology. For
 
 Once the objectives of the ontology are clear, it is necessary to actually have an ontology that fulfills those objectives. Instead of creating an ontology from scratch, it is a good practice to reuse existing ontologies when possible due to the following reasons [2]:
 
-- The sharing and reuse of ontologies increases the quality of the applications using them, as these applications become interoperable and are provided with a deeper, machine-processable and commonly agreed-upon understanding of the underlying domain of interest.
+- The sharing and reuse of ontologies increase the quality of the applications using them, as these applications become interoperable and are provided with a deeper, machine-processable and commonly agreed-upon understanding of the underlying domain of interest.
 - It reduces the costs related to ontology development because it avoids the reimplementation of ontological components, which are already available on the Web and can be directly – or after some additional customization – integrated into a target ontology.
-- It potentially improves the quality of the reused ontologies, as these are continuously revised and evaluated by various parties through reuse
+- It potentially improves the quality of the reused ontologies, as these are continuously revised and evaluated by various parties through reuse.
 
-According to [2], ontology reuse can be understood as a three step process: (i) ontology discovery, (ii) ontology selection, and (iii) ontology integration.
+According to [2], ontology reuse can be understood as a three-step process: (i) ontology discovery, (ii) ontology selection, and (iii) ontology integration.
 
 ### (i) Ontology discovery 
 
-It consists in finding appropriate ontologiesthat meet our requirements. This task can nowadays be facilitated due to the numerous ontology catalogs to find existing ontologies. The most popular are:
-- Linked Open Vocabularies (LOV) designed by the Semantic Web community. This catalog is highly maintained and references ontology fitting their best practices criteria (e.g., ontology metadata).
+It consists in finding appropriate ontologies that meet our requirements. This task can nowadays be facilitated due to the numerous ontology catalogs to find existing ontologies. The most popular are:
  
 - Linked Open Vocabularies for Internet of Things (LOV4IoT) references more than 440 ontology-based projects relevant for IoT. It covers more than 20 domains: IoT, Wireless Sensor Networks (WSNs), Web of Things (WoT), smart home, smart energy, healthcare, smart city, robotics, etc. LOV4IoT is highly maintained and references more and more ontology-based projects and new domains are covered.
    
 - OpenSensingCity, an ontology catalog for smart cities. This catalog might be not maintained anymore after the end of the project (ANR french project).
   
 - Ready4SmartCities, an ontology catalog for smart cities. It seems it is not maintained anymore. 
+
+- Linked Open Vocabularies (LOV) designed by the Semantic Web community. This catalog is highly maintained and references ontology fitting their best practices criteria (e.g., ontology metadata).
 
 TO DO?:
 We can reuse well-written paragraphs about ontology catalogs from this paper (third revision ongoing) if needed: Building IoT based applications for Smart Cities: How can ontology catalogs help? [Gyrard et al. IEEE IoT Journal 2017] (Impact Factor 7.5)
@@ -51,16 +49,19 @@ Limitations: Indeed, we would need some ontology ranking algorithms to help bett
 ### (iii) Ontology integration 
 Finally, the selected ontology or ontologies may need to be customized in order to adapt them and satisfy the use case’s requirements. This customization may involve additional modification and integration operations such as extraction of ontology parts or even content and structural modification or extension.
 
-When more than one ontology (parts) are integrated, the Ontology Matching (Alignment??) is a recurrent operation that needs to be performed. Some basic ontology matching tasks consist in setting relationships such as:
-- Equivalences between entities (with the owl:sameAs property)
+When more than one ontology (or parts) are integrated, ontology matching tool can be performed to return a potential alignment between two ontologies. Some basic ontology matching tasks consist in setting relationships such as:
+- Equivalences between concepts (with the owl:equivalentClass property)
 - Subsumptions (with the rdfs:subClassOf or rdfs:subPropertyOf properties)
 - Disjointness between entities (with the owl:DisjointOf property)
+- Labels an comments to deduce similarities (with rdfs:label and rdfs:comment properties)
 
 ## Create new ontology / Extend existing ontologies
 
 If the existing ontologies do not meet all the requirements explicated in the OSRD, they need to be extended. 
 
 In case no existing ontologies have been found for our specific requirements captured in the OSRD, there might be a need to develop your own ontology. 
+
+For a more exhaustive ontology creation guide, we advice excellent documentations and methodologies: the NeOn methodology for ontology engineering[1], and the ontology development 101 [5]).
 
 Protégé [6] is one of the most popular software to learn how to create ontologies. Protégé provides a Graphical User Interface (GUI) to design and develop ontologies. You can either set up Protege on your computer or use the web collaborative Protege tool. We provide a set of excellent tutorials to develop your first ontology with Protégé (see Appendix Section)
 
