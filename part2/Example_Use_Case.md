@@ -1,4 +1,4 @@
-# Example Use Case [Laura Daniele]
+# Example Use Case [Laura Daniele, Marc Girod-Genet]
 Describe an example use case that instantiates the problem space, is as simple as possible, but shows the advantages of semantics and can be used in the following subsections.
 
 Smart Home and Energy Efficiency Domain
