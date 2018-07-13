@@ -18,3 +18,18 @@ Commonly, semantic information is stored in triple or quad stores. The first ste
 | Kowari | RDF | Open Source | N/A | 160 Million | N/A|
 
 As depicted in the previous table, there is no common benchmark to evaluate all the triple-stores. However, the selection of a triple store will be fundamentally based on the type of inferencing you need in the project (RDF, RDFS, OWL), the type of the project (commercial or open source) and the initial information capacity expected for your application. Other key aspects to have in mind at time of selecting a semantic store is the performance capacity. That means, how the semantic store perform the inferences and where the information is stored. A big lack of the semantic stores is that they needs huge resources to perform the corresponding inferencing, process and load the information. This main lack is derived mainly by the mix of storing the information in different files and in-memory. 
+
+Once the semantic repository is selected, the next step is to download and install it. Nowadays, a common practice is to use Docker as a tool to create a development environment to isolate application in form of containers[^https://www.docker.com]. 
+
+Even the method selected, we are able to run the semantic repository. All shown semantic repositories corresponds to a server with a frontend. So, they usually provide common commands and front-end to load and query the information. Moreover, it also provide an API to connect the semantic store to our programs even directly using libraries (Jena, RDF4J, RDFLib, etc) or through Rest services (HTTP Requests and responses). A common recommendation is to use the commands to load and update the information when large data-sets are present. We recommend to use the user-interface when static data are only present or for testing purposes. 
+
+When the semantic store is filled, the exploration and accessibility to the information is performed through SPARQL endpoints commonly. This SPARQL endpoints are accessible via HTTP in a from-end where the SPARQL queries could be directly defined to explore and access the stored information. The queried information could be serialised in different formats such as JSON-LD, Turtle, RDF/XML, TSV, CSV, N3, etc. When the end-points serves the information to the applitions, it is common to use the API fr the SPARQL query. This API commonly is available through the commented semantic libraries or via HTTP request/responses. One method used to know the HTTP operations that an endpoint offers is through Apiary site or similar API documentation tools [^https://stardog.docs.apiary.io/#introduction/rdf].
+
+![](../img/apiaryStardog.png)
+
+Once we have a common overview on how works the semantic stores,   the next paragraphs will be devoted to practice with the presented example. 
+
+- [ ] TODO: Select one semantic store (Fuseki?)
+- [ ] TODO: Load some triples based on the example (JAVA, PYTHON?). 
+- [ ] TODO: Explore the inforamtion using SPARQL queries and some small program (JAVA, PYTHON?)
+
