@@ -14,7 +14,7 @@ Let us now consider the additional case where the habitant of the house is an el
 
 The additional use case (i.e. elderly at home monitoring and support) high level architecture is depicted in Figure 1.
 
-![](img/SemInteropElderlyHomeUseCase.png)
+![](../img/SemInteropElderlyHomeUseCase.png)
 
 In a such environment and use case, it is first mandatory to address security and privacy by design since we are dealing with eHealth and personal safety highly critical data and applications (even if actuations within BANs are not yet considered for quite all the existing use cases). It is also mandatory to address interoperability, in particular since:
 1.	At least heterogeneity of medical devices and measures has to be masked at application level,
