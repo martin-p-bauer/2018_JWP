@@ -1,4 +1,4 @@
-# Problem Description [Michelle Wetterwald]
+# Problem Description [Michelle Wetterwald, Marc Girod-Genet]
 
 Several studies have demonstrated the fragmentation of the IoT eco-system in terms of standardization, available technologies and M2M service platforms. Accordingly, measurements and data available in one system or implementation is often not accessible to a different system. Furthermore, these systems are often still strongly dependent of the vertical domain in which they are implemented. 
 
