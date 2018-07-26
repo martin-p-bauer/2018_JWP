@@ -80,7 +80,8 @@ Ontology catalogs can provide such browsing functionalities with specific keywor
 
 ## Application of Ontology Selection to Use Case
 
-The use case needs integration and control of smart devices at home and the connection to the smart grid which happens to be supported by the standardized onotlogy SAREF and its smart energy extension SAREF4ENER. The selection of these ontologies - ideally as opposed to some other non-standard options - should be described in this section. The following paragraph was originally part of the use case section, but the selection of ontologies should not already be discussed there.
+*The use case needs integration and control of smart devices at home and the connection to the smart grid which happens to be supported by the standardized onotlogy SAREF and its smart energy extension SAREF4ENER. The selection of these ontologies - ideally as opposed to some other non-standard options - should be described in this section. The following paragraph was originally part of the use case section, but the selection of ontologies should not already be discussed there.*
+
 *The demonstrator produced during the recent DSF study for interoperability for the European Commission (SMART 2016/0082) in close collaboration with industrial stakeholders and appliance manufactures implements an energy gateway that uses SAREF and SAREF4ENER as overarching ontologies to combine data represented by oneM2M resources on the smart grid side (based on e.g., the IEC 61970 CIM standard), with data represented by SPINE resources on the Smart Home side (based on the CENELEC EN 50631-1 standard), and data represented by COSEM objects/ OBIS codes on the smart meter side (based on the IEC/CENELEC 62056 COSEM standard).*
 
 
