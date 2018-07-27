@@ -74,7 +74,7 @@ When more than one ontology (or parts) are integrated, ontology matching tool ca
 
 ## Create new ontology / Extend existing ontologies
 
-If the existing ontologies do not meet all the requirements captured in the OSRD, ontologies need to be extended. 
+If the existing ontologies do not meet all the requirements captured in the OSRD, ontologies need to be extended and maintained. 
 
 In case no existing ontologies have been found for our specific requirements captured in the OSRD, there might be a need to develop your own ontology. 
 
@@ -83,6 +83,8 @@ For a more exhaustive ontology creation guide, we advice excellent documentation
 Protégé [6] is one of the most popular software to learn how to create ontologies. Protégé provides a Graphical User Interface (GUI) to design and develop ontologies. You can either set up Protege on your computer or use the web collaborative Protege tool. We provide a set of excellent tutorials to develop your first ontology with Protégé (see Appendix Section.
 
 When creating or extending an ontology, it is advisable to follow the modularisation principle by separating the required knowledge in well-decoupled ontology modules. The main benefits of this principle are: 1) scalability for querying data and reasoning on ontologies, 2) scalability for evolution and maintenance, 3) complexity management, 4) understandability, 5) context-awareness and personalization, and 5) reuse [4]. For example, when some of the ontology modules are updated, thanks to the modularization, the impact of these changes in other modules and the global ontology is minimized. IoT-O [7] and [8] FIESTA-IoT ontologies are good examples of ontology modules.
+
+Note that the extension and maintenance of ontologies require proper understanding on the resulting business impact. For instance a smart appliance using an extended ontology might no longer be interoperable with another smart appliance using the initial version. A maintenance strategy might have therefore to be defined prior to the implementation of an extension.
 
 It is also recommendable to use Ontology Design Patterns (ODP) (see Appendix Section) as building blocks to create new ontology modules. An ODP is a modeling solution to solve a recurrent ontology design problem. The ODP repository collects and makes ODPs available on the web. It may contain a solution created by somebody else who already faced the same modeling challenge.
 
