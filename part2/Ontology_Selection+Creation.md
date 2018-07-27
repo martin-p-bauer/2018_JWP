@@ -10,6 +10,11 @@ First of all, it is necessary to think about the objectives of the ontology. For
 
 - ORSD guide: http://oa.upm.es/5474/1/INVE_MEM_2009_64393.pdf
 
+#### Use case ontology requirements
+This is an excerpt of the OSRD created for the use case:
+
+![OSRD example for the use case](https://image.ibb.co/iO3gOo/OSRD_example.png)
+
 ## Reuse existing ontologies
 
 Once the objectives of the ontology are clear, it is necessary to actually have an ontology that fulfills those objectives. Instead of creating an ontology from scratch, it is a good practice to reuse existing ontologies when possible due to the following reasons [2]:
@@ -22,7 +27,7 @@ According to [2], ontology reuse can be understood as a three-step process: (i) 
 
 ### (i) Ontology discovery 
 
-It consists in finding appropriate ontologies that meet our requirements. This task can nowadays be facilitated due to the numerous ontology catalogs to find existing ontologies. The most popular are:
+It consists in finding appropriate ontologies that meet our requirements. This task can nowadays be facilitated due to the numerous ontology catalogs to find existing ontologies. Some of them, extensive analysis of ontology catalogs for smart cities can be found in [9]:
  
 - Linked Open Vocabularies for Internet of Things (LOV4IoT) references more than 440 ontology-based projects relevant for IoT. It covers more than 20 domains: IoT, Wireless Sensor Networks (WSNs), Web of Things (WoT), smart home, smart energy, healthcare, smart city, robotics, etc. LOV4IoT is highly maintained and references more and more ontology-based projects and new domains are covered.
    
@@ -34,6 +39,19 @@ It consists in finding appropriate ontologies that meet our requirements. This t
 
 TO DO?:
 We can reuse well-written paragraphs about ontology catalogs from this paper (third revision ongoing) if needed: Building IoT based applications for Smart Cities: How can ontology catalogs help? [Gyrard et al. IEEE IoT Journal 2017] (Impact Factor 7.5)
+
+#### Use case ontology discovery
+
+Since the use case presented in this report is more oriented to smart homes rather than smart cities, two of the aforementioned repositories (namely OpenSensingCity and Ready4SmartCities) have been dismissed for this task.
+
+In the following Figure, a screenshot of LOV4IoT is shown. With regards to the “Smart Home, Smart office, Building Automation, Activities of Daily Living Catalog” to which the presented use case belongs to, SAREF is the onlyone of the top recommended ontology:  that is shared online, referenced by the LOV community since it follows a set of best practices requested by the community, and highly maintained.
+
+![LOV4IoT screenshot](https://image.ibb.co/g7Gzb8/lov4iot.png)
+
+As for the LOV, the following Figure shows ontologies related to the term “electric consumption” which is relevant for the use case at hand as it has been shown in the OSRD.
+
+![LOV screenshot](https://image.ibb.co/gH0mOo/lov.png)
+
 
 ### (ii) Selection of suitable (parts of) ontologies
 
@@ -80,7 +98,7 @@ Ontology catalogs can provide such browsing functionalities with specific keywor
 
 ## Application of Ontology Selection to Use Case
 
-*The use case needs integration and control of smart devices at home and the connection to the smart grid which happens to be supported by the standardized onotlogy SAREF and its smart energy extension SAREF4ENER. The selection of these ontologies - ideally as opposed to some other non-standard options - should be described in this section. The following paragraph was originally part of the use case section, but the selection of ontologies should not already be discussed there.*
+*The use case needs integration and control of smart devices at home and the connection to the smart grid which happens to be supported by the standardized ontology SAREF and its smart energy extension SAREF4ENER. The selection of these ontologies - ideally as opposed to some other non-standard options - should be described in this section. The following paragraph was originally part of the use case section, but the selection of ontologies should not already be discussed there.*
 
 *The demonstrator produced during the recent DSF study for interoperability for the European Commission (SMART 2016/0082) in close collaboration with industrial stakeholders and appliance manufactures implements an energy gateway that uses SAREF and SAREF4ENER as overarching ontologies to combine data represented by oneM2M resources on the smart grid side (based on e.g., the IEC 61970 CIM standard), with data represented by SPINE resources on the Smart Home side (based on the CENELEC EN 50631-1 standard), and data represented by COSEM objects/ OBIS codes on the smart meter side (based on the IEC/CENELEC 62056 COSEM standard).*
 
@@ -102,6 +120,8 @@ Ontology catalogs can provide such browsing functionalities with specific keywor
 [7] Seydoux et al. IoT-O, a Core-Domain IoT Ontology to Represent Connected Devices Networks (EKAW 2016)
 
 [8] Agarwal et al. Unified IoT ontology to enable interoperability and federation of testbeds (WF-IoT 2016)
+
+[9] Gyrard et al. Building IoT based applications for Smart Cities: How can ontology catalogs help? (IEEE IoT Journal 2017) 
 
 
 ## Appendix for this section
