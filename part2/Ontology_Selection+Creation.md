@@ -44,7 +44,8 @@ We can reuse well-written paragraphs about ontology catalogs from this paper (th
 
 Since the use case presented in this report is more oriented to smart homes rather than smart cities, two of the aforementioned repositories (namely OpenSensingCity and Ready4SmartCities) have been dismissed for this task.
 
-In the following Figure, a screenshot of LOV4IoT is shown. With regards to the “Smart Home, Smart office, Building Automation, Activities of Daily Living Catalog” to which the presented use case belongs to, SAREF is the onlyone of the top recommended ontology:  that is shared online, referenced by the LOV community since it follows a set of best practices requested by the community, and highly maintained.
+In the following Figure, a screenshot of LOV4IoT is shown. With regards to the “Smart Home, Smart office, Building Automation, Activities of Daily Living Catalog” to which the presented use case belongs to, SAREF is one of the top recommended ontology: shared online, referenced by the LOV community since it follows a set of best practices requested by the community, and highly maintained.
+
 
 ![LOV4IoT screenshot](https://image.ibb.co/g7Gzb8/lov4iot.png)
 
