@@ -1,3 +1,4 @@
+
 # Example Use Case [Laura Daniele, Marc Girod-Genet, Martin Bauer]
 *Describe an example use case that instantiates the problem space, is as simple as possible, but shows the advantages of semantics and can be used in the following subsections.*
 
@@ -22,7 +23,19 @@ Examples of what needs to be modelled:
  * Estimated energy cost timeline
  * Energy consumption limit
 
-The logical component that controls and optimizes the energy consumption in a smart home is called Customer Energy Manager (CEM). The component that collects and analyzes energy consumption is a smart meter.
+Customers can offer flexibility to the Smart Grid to manage their smart home devices by means of a Customer Energy Manager (CEM), a logical component that controls and optimizes the energy consumption in a smart home. The CEM is a logical function for optimizing energy consumption and/or production that can reside either in the home gateway or in the cloud. The component that collects and analyzes energy consumption is a smart meter. Example use cases that require interoperability and involve devices in the smart home, the CEM, smart meters and the smart grid are the following:
+- configuration of devices that want to connect to each other in the home network, for example, to register a new dishwasher to the list of devices managed by the CEM;
+- (re-)scheduling of appliances in certain modes and preferred times using power profiles to optimize energy efficiency and accommodate the customer's preferences;
+- monitoring and control of the start and status of the appliances; 
+- reaction to special requests from the Smart Grid, e.g. incentives to consume more or less depending on current energy availability, or emergency situations that require temporary reduction of power consumption. 
+
+These use cases are associated with the user stories described in IEC TR 62746-2 [i.6], which include, among others, the following examples:
+•	User wants to do basic settings of his/her devices.
+•	User wants to know when the washing machine has finished working.
+•	User wants their washing done by 5:00 p.m. with the lowest electrical power cost.
+•	User likes to limit his own energy consumption up to a defined limit.
+•	User allows the CEM to reduce the energy consumption of the freezer in a defined range for a specific time, if the grid recognizes (severe) stability issues.
+•	Grid related emergency situations (e.g. blackout prevention).
 
 Let us now consider the additional case where the resident of the house is an elderly that needs support at home, as well as to be continuously monitored (i.e. wellbeing for aging well). In order to implement such use case:
   1.	the resident/elderly needs to be provided with a smart BAN (Body Area Network) for the monitoring and control of its vital    signs, status and activities. This smart BAN mainly comprises, in respect of its resident/elderly embedded device part (smart BAN Cluster), medical/wellbeing sensors, wearables, a BAN coordinator or hub (e.g. a smart-phone, a smart-watch) with in particular data concentrator and network gateway roles. The data concentrator is used for data collection and has also to be provided with embedded data analytics functionalities for local alarm management, local monitoring/control and resident/elderly assistance purposes. The network Gateway is mainly used for data sending to the remote monitoring/control servers and applications located within caregivers or relatives premises. Let us note that, for security/safety reasons, actuations on resident/elderly BAN devices have not been actually considered. 
