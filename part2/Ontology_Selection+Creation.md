@@ -71,6 +71,8 @@ When more than one ontology (or parts) are integrated, ontology matching tool ca
 - Equivalences between concepts (with the owl:equivalentClass property)
 - Subsumptions (with the rdfs:subClassOf or rdfs:subPropertyOf properties)
 - Disjointness between entities (with the owl:DisjointOf property)
+
+
 - Labels an comments to deduce similarities (with rdfs:label and rdfs:comment properties)
 
 ## Create new ontology / Extend existing ontologies
@@ -103,7 +105,14 @@ Ontology catalogs can provide such browsing functionalities with specific keywor
 
 *The use case needs integration and control of smart devices at home and the connection to the smart grid which happens to be supported by the standardized ontology SAREF and its smart energy extension SAREF4ENER. The selection of these ontologies - ideally as opposed to some other non-standard options - should be described in this section. The following paragraph was originally part of the use case section, but the selection of ontologies should not already be discussed there.*
 
-*The demonstrator produced during the recent DSF study for interoperability for the European Commission (SMART 2016/0082) in close collaboration with industrial stakeholders and appliance manufactures implements an energy gateway that uses SAREF and SAREF4ENER as overarching ontologies to combine data represented by oneM2M resources on the smart grid side (based on e.g., the IEC 61970 CIM standard), with data represented by SPINE resources on the Smart Home side (based on the CENELEC EN 50631-1 standard), and data represented by COSEM objects/ OBIS codes on the smart meter side (based on the IEC/CENELEC 62056 COSEM standard).*
+*The demonstrator produced during the recent DSF study for interoperability for the European Commission (SMART 2016/0082) in close collaboration with industrial stakeholders and appliance manufactures implements an energy gateway that uses SAREF and SAREF4ENER as overarching ontologies to combine data represented by oneM2M resources on the smart grid side (based on e.g., the IEC 61970 CIM standard), with data represented by SPINE resources on the Smart Home side (based on the CENELEC EN 50631-1 standard), and data represented by COSEM objects/ OBIS codes on the smart meter side (based on the IEC/CENELEC 62056 COSEM standard).* 
+
+Requirements and competency questions for the energy efficiency use case:
+The main requirement is to establish a common terminology to be shared by devices from different manufacturers and using different protocols to express the concept of power profile and its related concepts. The main competency questions are: What is a power profile? What is an alternatives group? What is a power sequence? What is a slot? These questions are supported by the following statements:
+- A power profile is a way to model curves of power and energy over time, which also provides definitions for the modelling of power scheduling including alternative plans. With a power profile, a device (or power sequences server) exposes the power sequences that are potentially relevant for the CEM (or power sequences client).
+- An alternatives group is a collection of power sequences for a certain power profile.
+- A power sequence is the specification of a task, such as wash or tumble dry, according to user preferences and/or manufacturer's settings for a certain device. It is the most 'coarse' view; a power sequence can represent all single steps of a whole task, where the single steps are represented by slots.
+- A slot is a single step of a power sequence. A slot is associated with a slot number (while a power sequence is associated with a power sequence identifier). The slot numbers of two power sequences should be considered independent from each other, i.e. slot number 7 of sequence 1 describes a different slot than slot number 7 of sequence 2. Therefore, a slot is only uniquely identified in combination with a sequence ID. 
 
 
 ## References
