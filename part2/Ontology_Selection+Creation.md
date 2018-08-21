@@ -69,11 +69,11 @@ After having identified the ontologies that may be suitable for the use case at 
 
 If ontologies covering the same domains are imported altogether, they may overlap to a greater or lesser extent in some of their parts. Therefore, in these cases parts of ontologies can be reused to avoid redundancy issues. The m3-lite ontology contains covers terms related to “properties” that are not exhaustively captured in SAREF. However, the coverage of the m3-lite is wider than needed, so we only need the subclasses of ssn:QuantityKind. For that purpose, the Module Extractor Tool (see Appendix).
 
-![M3-lite screenshot](https://image.ibb.co/g7Gzb8/lov4iot.png)
+![M3-lite screenshot](https://github.com/martin-p-bauer/2018_JWP/blob/master/img/QuantitiyKindExample.png)
 
 After executing it, we get an ontology module named “m3-lite_QuantityKindModule” that contains all the subclasses of class m3-lite:QuantityKind plus the other necessary axioms for the given concepts. Comparing this module with the original m3-lite ontology, we can see how the size has been reduced, including only the terms that are related to our use case (in this case, the properties). The number of axioms have been reduced from 2035 to 360, and the number of classes from 451 to 178.
 
-![equivalence example screenshot](https://image.ibb.co/g7Gzb8/lov4iot.png)
+![equivalence example screenshot](https://github.com/martin-p-bauer/2018_JWP/blob/master/img/equivalentExample.png)
 
 ### (iii) Ontology integration 
 Finally, the selected ontology or ontologies may need to be customized in order to adapt them and satisfy the use case’s requirements. This customization may involve additional modification and integration operations such as extraction of ontology parts or even content and structural modification or extension.
