@@ -51,7 +51,7 @@ In the following Figure, a screenshot of LOV4IoT is shown. With regards to the �
 
 As for the LOV, the following Figure shows ontologies related to the term “electric consumption” which is relevant for the use case at hand as it has been shown in the OSRD.
 
-![LOV screenshot](https://image.ibb.co/gH0mOo/lov.png)
+![LOV screenshot](https://github.com/martin-p-bauer/2018_JWP/blob/master/img/lovExample.png)
 
 
 ### (ii) Selection of suitable (parts of) ontologies
