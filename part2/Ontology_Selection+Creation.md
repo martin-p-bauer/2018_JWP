@@ -67,7 +67,7 @@ Limitations: Indeed, we would need some ontology ranking algorithms to help bett
 #### Use case ontology selection
 After having identified the ontologies that may be suitable for the use case at hand, it has to be decided which ontologies to reuse as they are. For the use case at hand, the reuse of SAREF as it is may be a good decision, due to its support by a standardization body. However, SAREF does not cover all the use case requirements, so other ontologies need to be reused.
 
-If ontologies covering the same domains are imported altogether, they may overlap to a greater or lesser extent in some of their parts. Therefore, in these cases parts of ontologies can be reused to avoid redundancy issues. The m3-lite ontology contains covers terms related to “properties” that are not exhaustively captured in SAREF. However, the coverage of the m3-lite is wider than needed, so we only need the subclasses of ssn:QuantityKind. For that purpose, the Module Extractor Tool (see Appendix).
+If ontologies covering the same domains are imported altogether, they may overlap to a greater or lesser extent in some of their parts. Therefore, in these cases parts of ontologies can be reused to avoid redundancy issues. The m3-lite ontology contains covers terms related to “properties” that are not exhaustively captured in SAREF. However, the coverage of the m3-lite is wider than needed, so we only need the subclasses of qu:QuantityKind. For that purpose, the Module Extractor Tool (see Appendix).
 
 ![M3-lite screenshot](https://github.com/martin-p-bauer/2018_JWP/blob/master/img/QuantitiyKindExample.png)
 
