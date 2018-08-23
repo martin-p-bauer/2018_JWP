@@ -86,9 +86,9 @@ When more than one ontology (or parts) are integrated, ontology matching tool ca
 
 #### Use case ontology integration
 
-After having both the SAREF ontology and the “m3-lite_QuantityKindModule” module, we need to integrate them. The process to be followed towards this goal will depend on the ontology design tool used. Once integrated, it needs to make explicit that the class saref:Property and ssn:QuantityKind have the same adjacent semantics. That is, the equivalence between the two concepts needs to be set. This equivalence can be set with the following axiom:
+After having both the SAREF ontology and the “m3-lite_QuantityKindModule” module, we need to integrate them. The process to be followed towards this goal will depend on the ontology design tool used. Once integrated, it needs to make explicit that the class saref:Property and qu:QuantityKind have the same adjacent semantics. That is, the equivalence between the two concepts needs to be set. This equivalence can be set with the following axiom:
 
-saref:Property owl:equivalentClass ssn:QuantityKind
+saref:Property owl:equivalentClass qu:QuantityKind
 
 Likewise, the equivalence can be set in the ontology design tool.
 
