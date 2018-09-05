@@ -10,6 +10,19 @@ Goal: Towards best practice in semantic interoperability
 
 - Derive recommendations for semantic interoperability
 
+# Requirements for semantic interoperability standards development
+In order to get successful standards on semantic interoperability specifications, a number of requirements must be taken in account by organisations that wish to build a standard:
+
+## Separation of concern
+It is important to achieve a clear separation of concern between domain experts and semantic interoperability experts. Without this separation of concern, we can get into the trap that a domain expert has to rely on a semantic interoperability expert to propose a specification, and end up with decisions that are taken by the wrong expert. From a method and tools viewpoint we believe that recommendations must be provided in approaches to create separation of concen. An example of good separation of concern was achieved by the SAREF team when they organized a session for the European Large Scale Pilots during the IoT week in Bilbao in June 2018 to get input from domain experts that theycould use in the specification of an ontology.
+We believe that we still lack good practices, recommendations and tools on how  this separation of concern takes place. For instance, domain experts should be able to inspect and update a specification using a domain viewpoint, while the semantic interoperability experts should be able to focus on the semantic interoperability mechanics soundness.
+## Evaluation of a specification
+It is important to be able to evaluate the “usefulness” of a specification. One typical indicator is the level of consensus. A specification that has not reached consensus is likely not to be adopted. Semantic interoperability standards can fall into this trap if the domain experts get lost in the specification process. The goal should be that domain experts can constantly follow the specification process and agree on the content while semantic interoperability experts guarantee that the specification is sound.
+## Business concerns
+It is important to be able to take into account business concerns in a specification of a semantic interoperability standard. At least two concerns should be taken into account:
+*	Provision for profiles and discovery. Some specifications might concern a market segment of a domainc. For instance high-end device manufacturers might want to add specific semantic specification concerning high end features. Some specifications might even be proprietary. This can happen when device manufacturers agree that they will agree on co-existing solutions. This is often solved by service discovery capabilities. The concept of profiles should also be applied to semantic interoperability standards
+*	Support for version management. Semantic interoperability specifications will evolve as a domain evolves to match the needs of different generations of products (e.g. a new generation of smart phone) The rules for compatibility must be anticipated. For instance, we could have a SAREF v1 ontology for a domain that is then replaced by SAREF v2 ontology Rules for allowing this evolution must be agreed upfront
+
 # Some suggestions 
  ## Paragraph "standards and semantic models" suggestion for Part 1 (to improve according to the needs and since standardization experts are here)
 TO DO: add table (standards and semantic models) with pros and cons?
