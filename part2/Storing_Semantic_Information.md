@@ -29,7 +29,8 @@ When the semantic store is filled, the exploration and accessibility to the info
 
 Once we have a common overview on how works the semantic stores,   the next paragraphs will be devoted to practice with the presented example. 
 
-- [ ] TODO: Select one semantic store (Fuseki?)
+- [ ] TODO: Select one semantic store (Fuseki?) 
+  Comment from Amelie: Jena Fuseki is a way to provide your own SPARQL endpoint, perhaps you talk about Jena TDB as a triplestore?
 - [ ] TODO: Load some triples based on the example (JAVA, PYTHON?). 
 - [ ] TODO: Explore the inforamtion using SPARQL queries and some small program (JAVA, PYTHON?)
 
