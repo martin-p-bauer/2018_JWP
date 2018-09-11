@@ -58,14 +58,15 @@ Jena (https://jena.apache.org/) is a free and open source Java framework for bui
 -	Inference API to reason over the data
 
 ## Code implementation
-In order to write software for processing semantic information, the first thing we need to do is to set up a semantic repository where the models will be added. We will use Apache Jena Fuseki (https://jena.apache.org/documentation/fuseki2/) that provides a robust, transactional persistent storage layer and a SPARQL server.
+Next we will show how to write software in Java for processing the semantic information from the previous power profile instantiation example.
+
+The power profile uses the SAREF4ENER extension of SAREF ontology. So, the first thing we need to do is to set up a semantic repository where these models will be added. We will use Apache Jena Fuseki (https://jena.apache.org/documentation/fuseki2/) that provides a robust, transactional persistent storage layer and a SPARQL server.
 -	Download the software from https://jena.apache.org/download/
 -	Install and run Fuseki: https://jena.apache.org/documentation/fuseki2/fuseki-run.html 
-From now on we will assume that the name of the dataset is “exampleds” and the dataset URI is http://localhost:3030/exampleds.
+From now on we will assume that the name of the dataset is “energyds” and the dataset URI is http://localhost:3030/energyds.
 
-Next, we provide code to manage CRUD operations on semantic models and to query and update the datasets.
+In order to add a model to the dataset we need to provide the path or url to the file and the RDF I/O technology (RIOT), e.g. Turtle, RDF/XML, etc. as shown below. The loadEnergyExample method shows how to add SAREF4ENER, SAREF and the power profile instantiation to the dataset. The file example.ttl contains the RDF code for the power profile. SAREF4ENER is in Turtle format whereas SAREF is in RDF/XML format.
 
-Code to add a model to the default graph of the dataset  and to replace the default model 
 ```
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.*;
@@ -73,30 +74,45 @@ import java.io.*;
 import java.util.*;
 import org.apache.jena.update.*;
 
-public void addModel(File rdf) throws IOException {
+public void addFileModel(File rdf, String riot) throws IOException {
     // parse the ontology file
     Model newModel = ModelFactory.createDefaultModel();
     try (FileInputStream in = new FileInputStream(rdf)) {
-        newModel.read(in, null, "RDF/XML");
+        newModel.read(in, null, riot);
     }
     
-    DatasetAccessor accessor = DatasetAccessorFactory.createHTTP(“http://localhost:3030/exampleds”);
+    DatasetAccessor accessor = DatasetAccessorFactory.createHTTP(“http://localhost:3030/energyds”);
     // Add statements to the default model of a Dataset
     accessor.add(newModel);      
 }
 
-public void replaceModel(File rdf) throws IOException {
-    // parse the ontology file
-    Model m = ModelFactory.createDefaultModel();
-    try (FileInputStream in = new FileInputStream(rdf)) {
-        m.read(in, null, "RDF/XML");
-    }
-    
-    DatasetAccessor accessor = DatasetAccessorFactory.createHTTP(“http://localhost:3030/exampleds”);
-    // Replace the default model of a Dataset
-    accessor.putModel(m);
+public void addUrlModel (String urlString, String riot) throws Exception {
+     // parse the ontology file
+     Model newModel = ModelFactory.createDefaultModel();
+        
+     // create the url
+     URL url = new URL(urlString);
+     newModel.read(url.openStream(), null, riot);
+     
+     DatasetAccessor accessor = DatasetAccessorFactory.createHTTP(“http://localhost:3030/energyds”);
+     // Add statements to the default model of a Dataset
+     accessor.add(newModel);       
 }
+
+public void loadEnergyExample () {
+    String sarefOntology ="http://ontology.tno.nl/saref.owl";
+    String saref4EnerOntology ="http://ontology.tno.nl/saref4ener.ttl";
+    String example ="example.ttl";
+    try {
+        addUrlModel(sarefOntology, "RDF/XML");
+        addUrlModel(saref4EnerOntology, "TURTLE");
+        addFileModel(new File(example), "TURTLE");
+    } catch (Exception ex) {
+        System.err.println (ex.getMessage());
+    }
+}        
 ```
+
 
 Code to delete the default model of the dataset
 ```
