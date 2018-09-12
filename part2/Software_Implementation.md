@@ -65,7 +65,7 @@ The power profile uses the SAREF4ENER extension of SAREF ontology. So, the first
 -	Install and run Fuseki: https://jena.apache.org/documentation/fuseki2/fuseki-run.html 
 From now on we will assume that the name of the dataset is “energyds” and the dataset URI is http://localhost:3030/energyds.
 
-In order to add a model to the dataset we need to provide the path or url to the file and the RDF I/O technology (RIOT), e.g. Turtle, RDF/XML, etc. as shown below. The loadEnergyExample method shows how to add SAREF4ENER, SAREF and the power profile instantiation to the dataset. The file example.ttl contains the RDF code for the power profile. SAREF4ENER is in Turtle format whereas SAREF is in RDF/XML format.
+In order to add a model to the dataset we need to provide the path or url to the file and the RDF I/O technology (RIOT), e.g. Turtle, RDF/XML, etc. as shown below. The loadEnergyExample method shows how to add [SAREF4ENER] (http://ontology.tno.nl/saref4ener.ttl), [SAREF] (http://ontology.tno.nl/saref.owl) and the power profile instantiation to the dataset. The file example.ttl contains the RDF code for the power profile. SAREF4ENER is in Turtle format whereas SAREF is in RDF/XML format.
 
 ```
 import org.apache.jena.query.*;
