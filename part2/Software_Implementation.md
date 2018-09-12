@@ -113,35 +113,18 @@ public void loadEnergyExample () {
 }        
 ```
 
-
-Code to delete the default model of the dataset
-```
-public void deleteModel() throws IOException {
-    DatasetAccessor accessor = DatasetAccessorFactory.createHTTP(“http://localhost:3030/exampleds”);
-    accessor.deleteDefault();
-}
-```
-
-Code to retrieve the default model of the dataset
-```
-public Model getModel() throws IOException {
-    DatasetAccessor accessor = DatasetAccessorFactory.createHTTP(“http://localhost:3030/exampleds”);
-    return accessor.getModel();
-}
-```
-
-Code to query the dataset providing as input a string with a query in SPARQL syntax
+In order to retrieve the values of the measurements of the heating system from the energy use case we need to make a SPARQL query. The method getMeasurements written below will print the properties, values and units of the measurements from the PowerProfile-1-HS0001 instance. The method queryModel contains the code to query the dataset providing as input a string with a query in SPARQL syntax.
 ```
 public List<Map<String, Object>> queryModel(String sparqlQuery) {
     List<Map<String, Object>> mapResult = new ArrayList<>();
 
-    try (QueryExecution qexec = QueryExecutionFactory.sparqlService(“http://localhost:3030/exampleds”, sparqlQuery)) {
+    try (QueryExecution qexec = QueryExecutionFactory.sparqlService(“http://localhost:3030/energyds”, sparqlQuery)) {
         org.apache.jena.query.ResultSet results;
         results = qexec.execSelect();
 
         while (results.hasNext()) {
             QuerySolution soln = results.nextSolution();
-            mapResult.add(DataAccessManager.createMap(soln));
+            mapResult.add(createMap(soln));
         }
     }
 
@@ -161,15 +144,48 @@ private Map<String, Object> createMap(QuerySolution querySolution) {
      }
      return result;
 }
+
+public void getMeasurements () {
+    List<Map<String, Object>> qryResult;
+    String sparqlQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
+                + "PREFIX s4ener: <https://w3id.org/saref4ener#> "
+                + "PREFIX saref: <https://w3id.org/saref#> "
+                + "SELECT ?x ?y ?m ?a ?b "
+                + "WHERE {"
+                + " ?x rdf:type s4ener:PowerProfile . " 
+                + " ?x s4ener:belongsTo s4ener:HeatingSystem . " 
+                + " ?x saref:isAbout ?y . " 
+                + " ?m saref:relatesToProperty ?y . "
+                + " ?m saref:hasValue ?a . " 
+                + " ?m saref:isMeasuredIn ?b ."
+                + " } ";
+
+    qryResult = queryModel(sparqlQuery);
+
+    int i = 0;
+    while (i < qryResult.size()) {
+        Resource resMeasurement = (Resource) qryResult.get(i).get("x");
+        
+        System.out.println (resMeasurement.getURI());
+        System.out.println ("Property " + ((Resource)qryResult.get(i).get("y")).getLocalName());
+        System.out.println ("Value " + qryResult.get(i).get("a"));
+        System.out.println ("Unit " + ((Resource)qryResult.get(i).get("b")).getLocalName());
+        i++;
+    }
+}
 ```
 
-Code to update (INSERT, DELETE) the dataset providing as input a string with a query in SPARQL Update language
+The output of invoking the method getMeasurements with the instances in the file [example.ttl](https://github.com/martin-p-bauer/2018_JWP/blob/master/part2/example.ttl) are shown below.
+
 ```
-public void updateModel(String sparqlQuery) {
-    UpdateRequest update = UpdateFactory.create(sparqlQuery);
-    UpdateProcessor processor = UpdateExecutionFactory.createRemote(update, “http://localhost:3030/exampleds”);
-    processor.execute();
-}
+https://w3id.org/saref4ener#PowerProfile-1-HS0001
+Property Power_1
+Value 0.2
+Unit kilowatt
+https://w3id.org/saref4ener#PowerProfile-1-HS0001
+Property Energy_1
+Value 0.2
+Unit kilowatt_hour
 ```
 
 ## Code implementation with OLGA 
