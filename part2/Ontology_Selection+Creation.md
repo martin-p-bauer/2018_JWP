@@ -70,6 +70,7 @@ As an illustration, in the context of our room and temperature sensor simple exa
 •	That offers/performs sensing expressed as saref:Function, with saref:SensingFunction (which has a range, a sensing time and the sensor type  ̶  ‘Temperature’ in our example  ̶  as properties) as category, saref:GetCommand as command (i.e. GetTemperature in our example), 
 •	and that is used for sensing a temperature of type saref:Temperature. This ‘Temperature’ property (a saref:Property) has a unit of measure of the type saref:UnitOfMeasure (°C in our example), and has a Value (22 in our example).
 This can finally be modeled through the UML diagram presented in Figure below.
+![](../img/RoomExample_SAREF.jpg)
 
 
 #### Use case ontology selection
