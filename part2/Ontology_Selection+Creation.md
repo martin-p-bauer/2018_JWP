@@ -58,11 +58,19 @@ As for the LOV, the following Figure shows ontologies related to the term “ele
 
 This task deals with assessing the usability of an ontology with respect to the use case requirements. This may end up being an arduous task due to the different criteria that may make ontologies suitable for a certain use case [3]. These criteria encompass the content of the ontology and the organization of their contents, the language in which is implemented, the methodology that has been followed to develop it, the software tools used to build and edit the ontology, and the costs that the ontology will be necessary in a certain project Furthermore, the scarce documentation of ontologies may difficult even more this process.
 
-In order to ease this selection phase, we recommend to look first at ontologies supported by standardization activities (e.g., W3C SOSA, SAREF, W3C WoT, oneM2M, etc.).
+In order to ease this selection phase, we recommend to look first at ontologies supported by standardization activities (e.g., W3C SOSA, SAREF, W3C WoT, oneM2M, SmartBAN, etc.).
 
 In case the developer needs to reuse only a subset of classes and properties of the ontology, instead of the whole ontology, an extractor tool (see Appendix section) can be used.
 
 Limitations: Indeed, we would need some ontology ranking algorithms to help better developers find suitable ontologies for their needs.
+
+As an illustration, in the context of our room and temperature sensor simple example already introduced in Figure 1 (see problem description section), we are in a Smart Home application domain. In such vertical, the reference ontology that meets the use case description is SAREF. Therefore, by using SAREF ontology, our temperature sensor can be viewed as a Device (saref:Device):
+•	With saref:Sensor as device category,
+•	That is provided with e.g. a Description (String), a Manufacturer (String), a model (String), a State (e.g. on or off) as properties,
+•	That offers/performs sensing expressed as saref:Function, with saref:SensingFunction (which has a range, a sensing time and the sensor type  ̶  ‘Temperature’ in our example  ̶  as properties) as category, saref:GetCommand as command (i.e. GetTemperature in our example), 
+•	and that is used for sensing a temperature of type saref:Temperature. This ‘Temperature’ property (a saref:Property) has a unit of measure of the type saref:UnitOfMeasure (°C in our example), and has a Value (22 in our example).
+This can finally be modeled through the UML diagram presented in Figure below.
+
 
 #### Use case ontology selection
 After having identified the ontologies that may be suitable for the use case at hand, it has to be decided which ontologies to reuse as they are. For the use case at hand, the reuse of SAREF as it is may be a good decision, due to its support by a standardization body. However, SAREF does not cover all the use case requirements, so other ontologies need to be reused.
