@@ -34,7 +34,7 @@ The table below describes a number of important initiatives on semantic interope
 * Fragmentation [amélie: lack of interoperability? what is fragmentation] caused by incompatible system approaches. 
 A system viewpoint should be taken as proposed by SAREF in Figure 1.
 
-![](../img/Saref%20system%20vision.PNG)
+![](https://github.com/martin-p-bauer/2018_JWP/blob/master/Saref%20system%20vision.PNG)
 
 Figure 1: Example of system vision
 
