@@ -10,11 +10,11 @@ Goal: Towards best practice in semantic interoperability
 
 - Derive recommendations for semantic interoperability
 
-# Standardisation priorities concerning semantic Interoperability
+# 1 Standardisation priorities concerning semantic Interoperability
 This section focuses on two needs that need to be taken into account by standardisation engineers / bodies to support the advent of semantic interoperability practice:
 * the integration of business requirements in semantic interoperability standards development,
 * avoiding the fragmentation created by the many parallel initiatives on semantic interoperability, by providing an overall system vision.
-## Requirements for semantic interoperability standards development
+## 1.1 Requirements for semantic interoperability standards development
 In order to get successful standards on semantic interoperability specifications, a number of requirements must be taken in account by organisations that wish to build a standard:
 * Separation of concern
 * Evaluation of a specification
@@ -27,7 +27,7 @@ It is important to be able to evaluate the “usefulness” of a specification. 
 It is important to be able to take into account deployment concerns in a specification of a semantic interoperability standard. At least two concerns should be taken into account:
 * Provision for profiles and discovery. Some specifications might concern a market segment of a domain. For instance, high-end device manufacturers might want to add specific semantic specification concerning high-end features. Some specifications might even be proprietary. This can happen when device manufacturers agree that they will agree on co-existing solutions. This is often solved by service discovery capabilities. The concept of profiles should also be applied to semantic interoperability standards
 * Support for version management. Semantic interoperability specifications will evolve as a domain evolves to match the needs of different generations of products (e.g., a new generation of smartphone) The rules for compatibility must be anticipated. For instance, we could have a SAREF v1 ontology for a domain that is then replaced by SAREF v2 ontology Rules [Amélie: not clear] for allowing this evolution must be agreed upfront.
-## Avoiding fragmentation of semantic interoperability specifications by promoting a system viewpoint
+## 1.2 Avoiding fragmentation of semantic interoperability specifications by promoting a system viewpoint
 The table below describes a number of important initiatives on semantic interoperability. While it is important to foster such developments, there is a need for convergence in order to avoid the following risks:
 * Risk of lack of interoperability caused by the use of incompatible specification languages. 
 * Babel tower situation [amélie: i know a little bit about this, but not clear here] caused by the specification of incompatible semantics.
@@ -44,10 +44,10 @@ A system viewpoint should be taken as proposed by SAREF in Figure 1.
 | Haystack | Haystack [10] is a project aiming at standardizing semantic data models and web services. For instance, the Haystack Tagging Ontology which employs SSN V1 ontology has been developed [11] [Charpenay et al. 2015].| 
 
 
- ## Example
+ ## 1.3 Example
 This section could provide an example on Ambient Assisted Living (AAL). It would demonstrate a use case combining 2 domains: smart homes and healthcare applications domains. AAL helps elderly people to stay independent at home.
 
- ## Roadmap proposal
+ ## 1.4 Roadmap proposal
 Drawing from the recommendations, this section could provide a proposed roadmap.
 
 # Additional text from previous contributors
