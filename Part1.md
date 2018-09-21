@@ -34,7 +34,7 @@ The table below describes a number of important initiatives on semantic interope
 * Fragmentation [amélie: lack of interoperability? what is fragmentation] caused by incompatible system approaches. 
 A system viewpoint should be taken as proposed by SAREF in Figure 1.
 
-
+![alt text](../img/RoomExample.png)
 Figure 1: Example of system vision
 
 | Initiative | Description |
