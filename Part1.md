@@ -40,7 +40,7 @@ A system viewpoint should be taken as proposed by SAREF in Figure 1.
 **_Figure 1_: Example of system vision**
 
 </p>
-  
+**_Figure 1_: Example of system vision**  
 
 | Initiative | Description |
 |----|----|
