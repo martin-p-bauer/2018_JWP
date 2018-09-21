@@ -37,10 +37,10 @@ A system viewpoint should be taken as proposed by SAREF in Figure 1.
 ![](https://github.com/martin-p-bauer/2018_JWP/blob/master/Saref%20system%20vision.PNG)
 
 <p align="center">
-**_Figure 1_: Example of system vision**
-
+Figure 1_: Example of system vision
 </p>
-**_Figure 1_: Example of system vision**  
+
+
 
 | Initiative | Description |
 |----|----|
