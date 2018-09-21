@@ -34,6 +34,9 @@ The table below describes a number of important initiatives on semantic interope
 * Fragmentation [amélie: lack of interoperability? what is fragmentation] caused by incompatible system approaches. 
 A system viewpoint should be taken as proposed by SAREF in Figure 1.
 
+![](../img/SemInteropElderlyHomeUseCase.png)
+Figure 1: Example of system vision
+
 | Initiative | Description |
 |----|----|
 | W3C Semantic Sensor Networks | As depicted in the previous table, there is no common benchmark to evaluate all the triple-stores. However, the selection of a triple store will be fundamentally based on the type of inferencing you need in the project (RDF, RDFS, OWL), the type of the project (commercial or open source) and the initial information capacity expected for your application. Other key aspects to have in mind at time of selecting a semantic store is the performance capacity. That means, how the semantic store perform the inferences and where the information is stored. A big lack of the semantic stores is that they needs huge resources to perform the corresponding inferencing, process and load the information. This main lack is derived mainly by the mix of storing the information in different files and in-memory. | 
