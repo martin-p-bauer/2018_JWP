@@ -4,9 +4,6 @@ How to do analytics and reasoning using semantic information.
 
 Example of rule complaint with the Jena framework
 
-
-# According to Wikipedia Air Quality Index (AQI): https://en.wikipedia.org/wiki/Air_quality_index
-# Rule: IF AirQualityIndex greaterThan 101 and LowerThan 150 THEN UnhealthyOutdoorAirQualityIndexUS
 [UnhealthyOutdoorAirQualityIndexUS: 
               (?measurement rdf:type kao:OutdoorAirQualityIndex)
               (?measurement sosa:hasSimpleResult ?v)
@@ -15,15 +12,8 @@ Example of rule complaint with the Jena framework
 			  ->
 				(?measurement rdf:type kao:UnhealthyOutdoorAirQualityIndexUS)
 ]
-
-
-
-
-
-
-
-
-
+According to Wikipedia Air Quality Index (AQI): https://en.wikipedia.org/wiki/Air_quality_index
+Rule: IF AirQualityIndex greaterThan 101 and LowerThan 150 THEN UnhealthyOutdoorAirQualityIndexUS
 
 References:
 - Sensor-based Linked Open Rules (S-LOR): http://linkedopenreasoning.appspot.com/
