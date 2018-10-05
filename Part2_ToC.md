@@ -36,11 +36,6 @@ Given an ontology, how can this ontology be instantiated for a concrete use case
 
 [Ontology_Instantation.md](part2/Ontology_Instantiation.md)
 
-# Software Implementation [Sonia Bilbao, Charbel Kaed]
-Give an overview of different aspects that are needed when writing software for processing semantic information.
-
-[Software_Implementation.md](part2/Software_Implementation.md)
-
 # Semantic Information / Semantic Annotation [Wenbin Li]
 How to get to semantic information, e.g. based on original raw sensor data.
 
@@ -60,6 +55,11 @@ How to enable retrieving semantic information.
 How to do analytics and reasoning using semantic information.
 
 [Analytics+Reasoning.md](part2/Analytics+Reasoning.md)
+
+# Software Implementation [Sonia Bilbao, Charbel Kaed]
+Give an overview of different aspects that are needed when writing software for processing semantic information.
+
+[Software_Implementation.md](part2/Software_Implementation.md)
 
 # Semantic Interoperability Across Systems [Antonio Jara]
 How to achieve semantic interoperability across systems.
