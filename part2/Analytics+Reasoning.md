@@ -1,4 +1,4 @@
-# Analytics and Reasoning using Semantic Information [Amelie Gyrard, Laura Daniele, Martin Serrano]
+# Analytics and Reasoning using Semantic Information [Amelie Gyrard, Laura Daniele]
 How to do analytics and reasoning using semantic information.
 
 
