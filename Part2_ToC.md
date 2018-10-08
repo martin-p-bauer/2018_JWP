@@ -51,7 +51,7 @@ How to enable retrieving semantic information.
 
 [Retrieving_Semantic_Information.md](part2/Retrieving_Semantic_Information.md)
 
-# Analytics and Reasoning using Semantic Information [Martin Serrano]
+# Analytics and Reasoning using Semantic Information [Amelie Gyrard, Laura Daniele]
 How to do analytics and reasoning using semantic information.
 
 [Analytics+Reasoning.md](part2/Analytics+Reasoning.md)
