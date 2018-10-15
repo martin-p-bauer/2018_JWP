@@ -1,4 +1,4 @@
-# Semantic Information & Semantic Annotation [Wenbin Li]
+# Semantic Information & Semantic Annotation [Wenbin Li, Hamza Baqa]
 
 To fully use semantic technologies, systems and platforms are expected to serve information with ontologies so that one can look up data content and get information from ontology definitions including the relationships between the terms in the ontology. Semantic information is regarded as any form of information containing explicit semantic descriptions and using ontologies to drive the information lifecycle. Comparing to classical syntax data, semantic information is human&machine understandable and unambiguous to support advanced data functions such as complex query, intelligent human-machine interaction, contextual data analytics and data interoperability. 
 
@@ -111,7 +111,7 @@ Room1001	saref4ener:hasEnergy 	"/Limit",
 … …
 ```
 
-Other examples: 
+** 3. Other examples** 
 - Markus Stocker provides an example in his post of representing metadata about the LI-7500 sensing device used for monitoring of CO2 and H2O fluxes. http://markusstocker.com/sensing-devices-and-their-metadata/
 - An example of the SSN-XG sensor ontology used to describe the Vaisala WM30 sensing device which measures wind speed and wind direction. https://www.w3.org/2005/Incubator/ssn/ssnx/meteo/WM30
 - A typical design of semantic annotation framework can be found in, https://www.researchgate.net/publication/319036946_Towards_a_Semantics_Extractor_for_Interoperability_of_IoT_Platforms
