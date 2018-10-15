@@ -21,26 +21,26 @@ The semantic information creation builds the corresponding information from scra
 
 In our example, we start to describe the room1001 resource is a type of Room defined in schema ontology, (since the Room type is not defined in SAREF or SAREF4ENER), and the Room1001 has an energy profile which points to another resource “/Limit”.  We use the standard N-Triples as the serialization format and the output of the above descriptions are three triples as. 
 ```
-Room1001 	rdf:type 		schema:Room,
-Room1001	saref4ener:hasEnergy 	/Limit,
-"/Limit"		rdf:type			saref4ener:energyMax
+	Room1001 	rdf:type 		schema:Room,
+	Room1001	saref4ener:hasEnergy 	/Limit,
+	"/Limit"	rdf:type		saref4ener:energyMax
 ```
 By doing so, we indicate that the Room1001 is an instance of the schema:Room class. The relation between the Room1001 and the resource “/Limit” is further detailed in the saref4ener:hasEnergy property, and the resource “/Limit” is actually an instance of the saref4ener:energyMax class which specifies the maximum energy profile. 
 Secondly, we describe that the Room1001 has two devices with ids ts001 and wm002, which are respectively instances of saref:TemperatureSensor and saref:WashingMachine classes. 
 ```
-Room1001 	saref4ener:hasDevice	ts001,
-Room1001	saref4ener:hasDevice	wm002,
-ts001		rdf:type 		saref:TemperatureSensor,
-wm002		rdf:type 		saref:WashingMachine"
+	Room1001 	saref4ener:hasDevice	ts001,
+	Room1001	saref4ener:hasDevice	wm002,
+	ts001		rdf:type 		saref:TemperatureSensor,
+	wm002		rdf:type 		saref:WashingMachine"
 ```
 In the above information, the relations between Room1001 and two devices are further specified by saref4ener:hasDevice. 
 As the last step, we further add the descriptions of the two devices we just added. 
 ```
-ts001		saref:hasValue		"25", 
-wm002		saref:hasState		wm002/state
-wm002/state	 rdf:type 		saref:State
-wm002		saref:offers		wm002/switch
-wm002/switch	rdf:type			saref:Service
+	ts001		saref:hasValue		"25", 
+	wm002		saref:hasState		wm002/state
+	wm002/state	 rdf:type 		saref:State
+	wm002		saref:offers		wm002/switch
+	wm002/switch	rdf:type		saref:Service
 ```
 In the above information, we actually describe that the temperature sensor ts001 has a sensed value 25; the washing machine wm002 has a state defined in wm002/state (an instance of saref:State class) and offers a switch service defined in wm002/switch (an instance of saref:Servuce class).
 By combining all the triples above, we get the complete description of our example following semantic information creation process. Thorough the whole process, we also link different information together by use of the properties defined in different ontologies, which further facilitates the data search and analytics.  
@@ -75,20 +75,20 @@ Starting from the general terms, we need to map the general terms “id” and �
 so that all ids in the JSON descriptions are defined as an object node with an URI as identifier, while all thing types are further linked as a type of an ontology class. 
 In the following, all type targets in the JSON are mapped to different SAREF4ENER, except that we use the schema ontology to annotate the type of Room which is not defined in SAREF or SAREF4ENER. 
 ```
-  "TemperatureSensor": "saref:TemperatureSensor",
+ 	"TemperatureSensor": "saref:TemperatureSensor",
 	"WashingMachine": "saref:WashingMachine",
 	"Room": "schema:Room"
 ```
 At last, we link the energyProfie, sensingValue, state and services with SAREF and SAREF4ENER concepts, 
 ```
-"energyProfile":"saref4ener:hasEnergy",
-"/Limit":"saref4ener:energyMax",
-"value":"saref:hasValue",
-"service": "saref:offers",
-"devices":"saref4ener:hasDevice",
-"wm002/switch": "saref:Service",
-"state ": "saref:hasState",
-"wm002/state": "saref:State"
+	"energyProfile":"saref4ener:hasEnergy",
+	"/Limit":"saref4ener:energyMax",
+	"value":"saref:hasValue",
+	"service": "saref:offers",
+	"devices":"saref4ener:hasDevice",
+	"wm002/switch": "saref:Service",
+	"state ": "saref:hasState",
+	"wm002/state": "saref:State"
 ```
 At the of the annotation, all terms used in JSON are linked to semantic concepts, for example now we know that the resource "wm002/switch" is a device service defined by SAREF, and the "/Limit" is a resource describing the maximum energy consumption as specified in SAREF4ENER. 
 The final serialization formats of the semantic annotation are rather flexible and can be formatted as with all semantic formats such as triples, JSON-LD, RDF/XML, etc. One convenient way for JSON document is to use JSON-LD to serialize the semantic annotation result, as we only need to add an extra field of “@conext” at the top of existing JSON which contains all previously defined mappings. 
@@ -105,9 +105,9 @@ The final serialization formats of the semantic annotation are rather flexible a
 ```
 Here follows a sample of semantic annotation result based on triples format, 
 ```
-Room1001 	rdf:type 		"schema:Room",
-Room1001	saref4ener:hasEnergy 	"/Limit",
-"/Limit" 	rdf:type 		"saref4ener:energyMax",
+	Room1001 	rdf:type 		"schema:Room",
+	Room1001	saref4ener:hasEnergy 	"/Limit",
+	"/Limit" 	rdf:type 		"saref4ener:energyMax",
 … …
 ```
 
