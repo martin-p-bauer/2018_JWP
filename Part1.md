@@ -28,6 +28,7 @@ It is important to clearly define the scope of a specification. An ontology coul
 | Example of practice for scope of specification | An interoperability specification is defined to allow for cross domain interoperability between an energy management system and electric vehicle charging system. The resulting ontology covers a common subset of the energy and mobility domain. |
 ### Evaluation of a specification
 It is important to be able to evaluate the “usefulness” of a specification. One typical indicator is the level of consensus. A specification that has not reached consensus is likely not to be adopted. Semantic interoperability standards can fall into this trap if the domain experts get lost in the specification process. The goal should be that domain experts can constantly follow the specification process and agree on the content while semantic interoperability experts guarantee that the specification is sound.
+
 |Example|Description|
 |----|----|
 | Example of practice for specification evaluation | Periodic evaluation of a specification is needed. It could rely on an indicator consisting of two TRL, a domain specification TRL which focuses on whether all domain needs are covered and an otology specification TRL, which focuses on whether the specification is well-formed. A specification is deemed mature of both TRL are high. Example of tools for assisting organisation could consist of associating TRL will parts of the specification. For instance this part is mature. This other part is the one that we are trying to improve. |
