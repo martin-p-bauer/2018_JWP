@@ -1,26 +1,24 @@
 # Part 1
 
-Target Audience: Standardization Engineers/ Bodies
-
-Goal: Towards best practice in semantic interoperability
-
-- State of the art evaluation
-(Select Relevant examples
-  - Criteria: coverage of design space and importance of approach (e.g. international standard may have more weight than small individual research project))
-
-- Derive recommendations for semantic interoperability
-
-# 1 Standardisation priorities concerning semantic Interoperability
-This section focuses on two needs that need to be taken into account by standardisation engineers / bodies to support the advent of semantic interoperability practice:
-* the integration of business requirements in semantic interoperability standards development,
-* avoiding the fragmentation created by the many parallel initiatives on semantic interoperability, by providing an overall system vision.
-## 1.1 Requirements for semantic interoperability standards development
+# 1 Towards a business practice of semantic Interoperability
+Part 1 provides a rationale for a business practice of semantic interoperability, identifies conditions under which it can take place, and describes a semantic interoperability process, i.e. an interoperability-by-design practice.
+## 1.1 Rationale for a business practice
+The benefit of applying semantic interoperability processes to business will be the following:
+* A systematic process is applied, which improves the quality of a specification
+* The resulting specification can be used as a reference when interpretation problems have to be solved
+* Most importantly, the maintenance and extension of an interoperability specification will be straightforward with a better guarantee that no regression is created.
+## 1.2 Business requirements for semantic interoperability specification development
 In order to get successful standards on semantic interoperability specifications, a number of requirements must be taken in account by organisations that wish to build a standard:
-* Separation of concern
+* Co-creation and separation of concern
+* Scope of a specification
 * Evaluation of a specification
-* Business concerns
-### Separation of concern
-It is important to achieve a clear separation of concern between domain experts and semantic interoperability experts. Without this separation of concern, we can get into the trap that a domain expert has to rely on a semantic interoperability expert to propose a specification, and end up with decisions that are taken by the wrong expert. From a method and tools viewpoint, we believe that recommendations must be provided in approaches to create separation of concern. An example of good separation of concern was achieved by the SAREF team when they organized a session for the European Large Scale Pilots during the IoT week in Bilbao in June 2018 to get input from domain experts that they could use in the specification of an ontology. We believe that we still lack good practices, recommendations and tools on how this separation of concern takes place. For instance, domain experts should be able to inspect and update a specification using a domain viewpoint, while the semantic interoperability experts should be able to focus on the semantic interoperability mechanics soundness.
+* Support of business deployment concerns
+### Co-creation and separation of concern
+The practice of semantic interoperability requires multiple expertise: domain experts bring knowledge on domain engineering, semantic interoperability experts bring knowledge on ontology engineering. Depending on the business, other categories of experts might also be needed such as security and privacy exerts, or user-centric design experts.
+It is however important to achieve a clear separation of concern between domain experts and semantic interoperability experts. Without this separation of concern, we can get into the trap that a domain expert has to rely on a semantic interoperability expert to propose a specification, and end up with decisions that are taken by the wrong expert. From a method and tools viewpoint, we believe that recommendations must be provided in approaches to create separation of concern. An example of good separation of concern was achieved by the SAREF team when they organized a session for the European Large Scale Pilots during the IoT week in Bilbao in June 2018 to get input from domain experts that they could use in the specification of an ontology. We believe that we still lack good practices, recommendations and tools on how this separation of concern takes place. For instance, domain experts should be able to inspect and update a specification using a domain viewpoint, while the semantic interoperability experts should be able to focus on the semantic interoperability mechanics soundness.
+|----|----|
+| Example of practice integrating separation of concern | An example of good separation of concern is to have specific co-creation sessions when both categories are present to make design decision.
+This was achieved by the SAREF team when they organized a session for the European Large Scale Pilots during the IoT week in Bilbao in June 2018 to get input from domain experts that they could use in the specification of an ontology. |
 ### Evaluation of a specification
 It is important to be able to evaluate the “usefulness” of a specification. One typical indicator is the level of consensus. A specification that has not reached consensus is likely not to be adopted. Semantic interoperability standards can fall into this trap if the domain experts get lost in the specification process. The goal should be that domain experts can constantly follow the specification process and agree on the content while semantic interoperability experts guarantee that the specification is sound.
 ### Deployment concerns
