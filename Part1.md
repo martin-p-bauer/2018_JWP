@@ -1,7 +1,7 @@
 # Part 1
 
 # 1 Towards semantic interoperability standards that can be used in practice
-Part 1 provides a rationale for the need to develop semantic interoperability standards according to a process into account industry needs. It identifies conditions under which this process, i.e. an interoperability-by-design best practice can be applied by stakeholders in the industry to develop semantic interoperability standards.
+Part 1 provides a rationale for the need to develop semantic interoperability standards according to a process taking into account industry needs. It identifies conditions under which this process, i.e. an interoperability-by-design best practice, can be applied by stakeholders in the industry to develop semantic interoperability standards.
 ## 1.1 Rationale for industry practice
 The benefit of applying semantic interoperability processes in the industry will be the following:
 * A systematic process is applied, which improves the quality of a specification
@@ -21,7 +21,7 @@ It is however important to achieve a clear separation of concern between domain 
 |----|----|
 | Example of practice integrating separation of concern | An example of good separation of concern is to have specific co-creation sessions when both categories are present to make design decision. This was achieved by the SAREF team when they organized a session for the European Large Scale Pilots during the IoT week in Bilbao in June 2018 to get input from domain experts that they could use in the specification of an ontology. |
 ### Defining the knowledge perimeter needed for a specification
-It is important to clearly define the knowledge perimeter needed for a specification. An ontology could cover an entire domain (e.g. energy). This could be unnecessary and even countereffective if the need is to focus on a more restricted perimeter. This is a particularly important when cross domain ontologies are defined, i.e. one does not habe to access an entire domain ontology, but rather the subset that is useful to build a cross domain ontology.
+It is important to clearly define the knowledge perimeter needed for a specification. An ontology could cover an entire domain (e.g. energy). This could be unnecessary and even counter effective if the need is to focus on a more restricted perimeter. This is particularly important when cross domain ontologies are defined, i.e. one does not habe to access an entire domain ontology, but rather the subset that is useful to build a cross domain ontology.
 
 |Example|Description|
 |----|----|
@@ -78,7 +78,7 @@ The following phases are defined:
 
 (2) Semantic interoperability requirements definition
 
-(3) Semantic interoperability ontology structure co_creation
+(3) Semantic interoperability ontology structure co-creation
 
 (4) Semantic interoperability ontology co-construction
 
@@ -86,7 +86,7 @@ The following phases are defined:
 
 (6) Semantic interoperability ontology commissioning and deployment
 
-(7) Semantic interoperability ontoloby decommissioning 
+(7) Semantic interoperability ontology decommissioning 
 
 ### Example
 To be provided. This section could provide an example on Ambient Assisted Living (AAL). It would demonstrate a use case combining 2 domains: smart homes and healthcare applications domains. AAL helps elderly people to stay independent at home.
