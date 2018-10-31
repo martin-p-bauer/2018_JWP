@@ -6,11 +6,14 @@ How to achieve semantic interoperability across systems.
 **1. Request to report**
 ![Request to report](./../img/JHL-Request2Report.png)
 
+
+** Apache Jena code **
+
 ```java
 
 handleRequest(Request r){	
 	OntClass requestService = currentServiceModel.getServiceByName(r.name());
-	OntIndiv[] homeControlSystems = currentUserModel.getUserHomeService(requestService);
+	Individual[] homeControlSystems = currentUserModel.getUserHomeService(requestService);
 	for(OntIndiv system : homeConstrolSystem){
 		String service = system.getServiceName();
 		String arg = system.getServiceArgument(r.getArgument);
