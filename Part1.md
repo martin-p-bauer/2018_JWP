@@ -21,7 +21,7 @@ It is however important to achieve a clear separation of concern between domain 
 |----|----|
 | Example of practice integrating separation of concern | An example of good separation of concern is to have specific co-creation sessions when both categories are present to make design decision. This was achieved by the SAREF team when they organized a session for the European Large Scale Pilots during the IoT week in Bilbao in June 2018 to get input from domain experts that they could use in the specification of an ontology. |
 ### Defining the knowledge perimeter needed for a specification
-It is important to clearly define the knowledge perimeter needed for a specification. An ontology could cover an entire domain (e.g. energy). This could be unnecessary and even counter effective if the need is to focus on a more restricted perimeter. This is particularly important when cross domain ontologies are defined, i.e. one does not habe to access an entire domain ontology, but rather the subset that is useful to build a cross domain ontology.
+It is important to clearly define the knowledge perimeter needed for a specification. An ontology could cover an entire domain (e.g. energy). This could be unnecessary and even counter effective if the need is to focus on a more restricted perimeter. This is particularly important when cross domain ontologies are defined, i.e. one does not have to access an entire domain ontology, but rather the subset that is useful to build a cross domain ontology.
 
 |Example|Description|
 |----|----|
