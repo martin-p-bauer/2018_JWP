@@ -10,7 +10,7 @@ The benefit of applying semantic interoperability processes in the industry will
 ## 1.2 Industry requirements for semantic interoperability standard development
 In order to get successful standards on semantic interoperability specifications, a number of requirements must be taken in account by organisations that wish to build a standard:
 * Co-creation and separation of concern
-* Scope of a specification
+* Defining the knowledge perimeter needed for a specification
 * Evaluation of a specification
 * Support of industry deployment concerns
 ### Co-creation and separation of concern
@@ -20,8 +20,8 @@ It is however important to achieve a clear separation of concern between domain 
 |Example|Description|
 |----|----|
 | Example of practice integrating separation of concern | An example of good separation of concern is to have specific co-creation sessions when both categories are present to make design decision. This was achieved by the SAREF team when they organized a session for the European Large Scale Pilots during the IoT week in Bilbao in June 2018 to get input from domain experts that they could use in the specification of an ontology. |
-### Scope of a specification
-It is important to clearly define the scope of a specification. An ontology could cover a domain (e.g. energy). While this could be useful for other purposes, this is not needed for semantic interoperability for which only a specialised interoperability ontology is needed. This is a particularly important when cross domain ontologies must be defined.
+### Defining the knowledge perimeter needed for a specification
+It is important to clearly define the knowledge perimeter needed for a specification. An ontology could cover an entire domain (e.g. energy). This could be unnecessary and even countereffective if the need is to focus on a more restricted perimeter. This is a particularly important when cross domain ontologies are defined, i.e. one does not habe to access an entire domain ontology, but rather the subset that is useful to build a cross domain ontology.
 
 |Example|Description|
 |----|----|
