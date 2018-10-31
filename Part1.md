@@ -1,7 +1,7 @@
 # Part 1
 
 # 1 Towards semantic interoperability standards that can be used in practice
-Part 1 provides a rationale for the need to develop semantic interoperability standards that takes into account industry needs. It identifies conditions under which a semantic interoperability process, i.e. an interoperability-by-design best practice can be applied by stakeholders in the industry to develop semantic interoperability standards.
+Part 1 provides a rationale for the need to develop semantic interoperability standards according to a process into account industry needs. It identifies conditions under which this process, i.e. an interoperability-by-design best practice can be applied by stakeholders in the industry to develop semantic interoperability standards.
 ## 1.1 Rationale for industry practice
 The benefit of applying semantic interoperability processes in the industry will be the following:
 * A systematic process is applied, which improves the quality of a specification
