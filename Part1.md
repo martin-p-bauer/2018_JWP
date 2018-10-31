@@ -69,10 +69,11 @@ Figure 1 : Example of system vision
 ## 1.3 Interoperability-by-design: a lifecycle description
 The following phases are defined:
 * Stakeholder needs and requirements. THis includes
-**	the description of the domain and the system;
-** the description of the interoperability point;
-** the description of the needed knowledge and the needed expertise; and
-** the description of industry deployment requirements.
+
+-	the description of the domain and the system;
+- the description of the interoperability point;
+- the description of the needed knowledge and the needed expertise; and
+- the description of industry deployment requirements.
 * Semantic interoperability requirements definition
 * Semantic interoperability ontology structure co_creation
 * Semantic interoperability ontology co-construction
