@@ -1,20 +1,20 @@
 # Part 1
 
-# 1 Towards a business practice of semantic Interoperability
-Part 1 provides a rationale for a business practice of semantic interoperability, identifies conditions under which it can take place, and describes a semantic interoperability process, i.e. an interoperability-by-design practice.
-## 1.1 Rationale for a business practice
-The benefit of applying semantic interoperability processes to business will be the following:
+# 1 Towards semantic interoperability standards that can be used in practice
+Part 1 provides a rationale for the need to develop semantic interoperability standards that takes into account industry needs. It identifies conditions under which a semantic interoperability process, i.e. an interoperability-by-design best practice can be applied by stakeholders in the industry to develop semantic interoperability standards.
+## 1.1 Rationale for industry practice
+The benefit of applying semantic interoperability processes in the industry will be the following:
 * A systematic process is applied, which improves the quality of a specification
 * The resulting specification can be used as a reference when interpretation problems have to be solved
 * Most importantly, the maintenance and extension of an interoperability specification will be straightforward with a better guarantee that no regression is created.
-## 1.2 Business requirements for semantic interoperability specification development
+## 1.2 Industry requirements for semantic interoperability standard development
 In order to get successful standards on semantic interoperability specifications, a number of requirements must be taken in account by organisations that wish to build a standard:
 * Co-creation and separation of concern
 * Scope of a specification
 * Evaluation of a specification
-* Support of business deployment concerns
+* Support of industry deployment concerns
 ### Co-creation and separation of concern
-The practice of semantic interoperability requires multiple expertise: domain experts bring knowledge on domain engineering, semantic interoperability experts bring knowledge on ontology engineering. Depending on the business, other categories of experts might also be needed such as security and privacy exerts, or user-centric design experts.
+The practice of semantic interoperability requires multiple expertise: domain experts bring knowledge on domain engineering, semantic interoperability experts bring knowledge on ontology engineering. Depending on the domain, other categories of experts might also be needed such as security and privacy exerts, or user-centric design experts.
 It is however important to achieve a clear separation of concern between domain experts and semantic interoperability experts. Without this separation of concern, we can get into the trap that a domain expert has to rely on a semantic interoperability expert to propose a specification, and end up with decisions that are taken by the wrong expert. From a method and tools viewpoint, we believe that recommendations must be provided in approaches to create separation of concern. For instance, domain experts should be able to inspect and update a specification using a domain viewpoint, while the semantic interoperability experts should be able to focus on the semantic interoperability mechanics soundness.
 
 |Example|Description|
