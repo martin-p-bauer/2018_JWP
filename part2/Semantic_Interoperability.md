@@ -6,8 +6,7 @@ How to achieve semantic interoperability across systems.
 **1. Request to report**
 ![Request to report](./../img/JHL-Request2Report.png)
 
-
-** Apache Jena code **
+**Apache Jena code**
 
 ```java
 
