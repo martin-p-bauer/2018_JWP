@@ -67,7 +67,18 @@ Figure 1 : Example of system vision
 | Haystack | Haystack [10] is a project aiming at standardizing semantic data models and web services. For instance, the Haystack Tagging Ontology which employs SSN V1 ontology has been developed [11] [Charpenay et al. 2015].| 
 
 ## 1.3 Interoperability-by-design: a lifecycle description
-To be provided
+The following phases are defined:
+* Stakeholder needs and requirements. THis includes
+**	the description of the domain and the system;
+** the description of the interoperability point;
+** the description of the needed knowledge and the needed expertise; and
+** the description of industry deployment requirements.
+* Semantic interoperability requirements definition
+* Semantic interoperability ontology structure co_creation
+* Semantic interoperability ontology co-construction
+* Semantic interoperability ontology test and validation
+* Semantic interoperability ontology commissioning and deployment
+* Semantic interoperability ontoloby decommissioning 
 
 ### Example
 To be provided. This section could provide an example on Ambient Assisted Living (AAL). It would demonstrate a use case combining 2 domains: smart homes and healthcare applications domains. AAL helps elderly people to stay independent at home.
