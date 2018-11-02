@@ -1,6 +1,6 @@
 # Problem Description [Michelle Wetterwald, Marc Girod-Genet]
 
-In this section, we describe the probelm space in which semantics can be applied, in particular why it is needed to provide platform, system or domain interoperability.
+In this section, we describe the problem space in which semantics can be applied, in particular we explain why it is needed to provide platform, system or domain interoperability.
 
 Several studies have demonstrated the fragmentation of the IoT eco-system in terms of standardization, available technologies and M2M service platforms. Accordingly, measurements and data available in one system or implementation are often not accessible by a different system. Furthermore, these systems and the data they handle are often still strongly dependent of the vertical domain in which they are implemented. 
 
