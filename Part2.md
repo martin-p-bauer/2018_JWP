@@ -296,8 +296,10 @@ A s4ener:PowerProfile inherits the properties of the more general saref:Profile,
 Therefore, in the afternoon group (s4ener:AlternativesGroup-2-HS0001) the heating system offers two different power sequences: (a) s4ener:PowerSequence-3-HS0001 that aims to run "as cheap as possible" and permits the CEM to shift the start between 8:45 and 12:00, and (b) s4ener:PowerSequence-2-HS0001 that aims to reduce energy (it can even announce the user's preference for "green energy"). This means for the afternoon the CEM can take a choice for the "cheap" or the "green" plan. The plans may have further options with regards to their flexibility. For example one of the plans may offer that the CEM can pause a sequence (as long as the sequence completes before the latest time set by the user). Finally, a s4ener:PowerSequence consists of one or more slots (s4ener:Slot class) that represent different phases of consumption (or production) and their values. The power sequences of the heating system example have a single slot each. However, for other devices such as washing machines, a power sequence may have various slots for the different phases of washing, such as heating the water, washing and rinsing.
 
 RDF code for SAREF4ENER example
-# baseURI: http://ontology.tno.nl/examples/saref4ener/heatingsystem
-# imports: https://w3id.org/saref4ener
+
+&#35; baseURI: http://ontology.tno.nl/examples/saref4ener/heatingsystem
+
+&#35; imports: https://w3id.org/saref4ener
 
 @prefix heatingsystem: <http://ontology.tno.nl/examples/saref4ener/heatingsystem#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
