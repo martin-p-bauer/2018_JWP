@@ -1,156 +1,101 @@
 # Part 2
 
-## Overall Guidance 
-Target Audience: Developers, System Architects
+## Introduction [Martin Bauer]
+Semantic technologies have recently gained significant support in a number of communities, in particular the IoT community. An important problem to be solved is that on the one hand it is clear that the value of IoT increases significantly with the availability of information from a wide variety of domains, on the other hand existing solutions target specific applications or application domains and there is no easy way of sharing information between the resulting silos. Thus a solution is needed to achieve interoperability between the silos. As there is a huge heterogeneity regarding IoT technologies on the lower levels, the semantic level is seen as a promising approach for achieving interoperability, i.e. semantic interoperability.
+As a basis for this, semantic technologies have reached a good level of maturity and a number of standards and de-facto standards are available to implement semantic-based solutions. 
+However, currently the widespread use is hindered by the fact that developers and system architects are not familiar with semantic technologies. The respective knowledge is still primarily limited to a group of experts. Thus, the purpose of this Whitepaper is to spread this knowledge further and in particular to show the developer community how semantic solutions can be implemented and how semantic interoperability can be achieved. The goal is to show the practical feasibility of the approach.
+The approach of the paper is to take a small, but relevant example, and go through different aspects and activities that are needed when developing semantic solutions. For each of the steps relevant types of useful tools are explained with references to an appendix that provides a list of actual tools with short descriptions and relevant links, so, depending on the respective requirements, an appropriate tool can be chosen.
 
-Goal: Show how to implement semantic solutions and to achieve semantic interoperability
+## Problem Description [Michelle Wetterwald, Marc Girod-Genet]
 
-Give an overview of strengths when using semantic technologies.
+In this section, we describe the problem space in which semantics can be applied, in particular we explain why it is needed to provide platform, system or domain interoperability.
 
-Abstractions, hiding some aspects to make applications easier (but keeping key advantages).
+Several studies have demonstrated the fragmentation of the IoT eco-system in terms of standardization, available technologies and M2M service platforms. Accordingly, measurements and data available in one system or implementation are often not accessible by a different system. Furthermore, these systems and the data they handle are often still strongly dependent of the vertical domain in which they are implemented. 
 
-Introduce existing tools, how they can be applied.
+Interoperability has been considered at various levels: technical (connectivity, network, syntactic), informational (semantic or business context) or even organizational. Technical levels cannot be easily achieved when addressing integrated platforms. The semantic or data level is thus the next level where interoperability can be envisioned. Furthermore, the different systems must share the same vocabulary and understand in an identical manner the information they exchange, while facilitating the design of service compositions. 
 
-Point to relevant standard.
+There is a need for a common model that describes a system and its components and can be understood by different implementations and platforms. It should provide a formalized specification of that system, including its main concepts, the relationship between its main components and their attributes. It should indicate the meaning of the data shared by a device, which can be understood by machines from different origins. Semantic interoperability enables interoperability at data level between platforms and IoT systems, but also between verticals domains. When an ontology is defined for one device from a vertical domain, e.g. agriculture, a generic interworking is made possible, i.e. the data it shares can be understood by machines and devices operating in other domains, for example smart mobility or smart city. It enables the IoT applications to make smarter decisions because they are able to collect, understand the meaning and process data from all sorts of devices. In that context, there is no further need to develop one-to-one interfaces and less risk to make errors when using external data.
 
-Show a small, but relevant example, e.g. cross-domain.
+Semantics and ontology definition can bring a valuable solution, as it defines a common and abstracted sub-layer above the services and platforms definition. Semantics interoperability thus enable the sharing of data across systems, avoiding the definition of a new common data model every time two different systems need to exchange information or the costly misinterpretation of data received from an external system.
 
-## Introduction
-The Internet of Things (IoT) is expected to interconnect, at massive scale, numerous sensors, devices, gateways, and systems to tackle many challenges in the industry. Nowadays, the IoT deployments generates huge amount of information referring transport, environmental or traffic situation. However, an advancement in the generation of newer insights requires to combine information from different domains (fuse information), explore the generated information and derive events as a result of this combination. As a response to that need, one of the current trends is to interconnect those entities ("Things") around the different domains. Such inter-connectivity will play an essential part in designing industrial systems with added value services which are more energy efficient with lower costs while contributing to a better environment. These promises promoted by the emergence of the industrial Internet of Things have surged the importance of interoperability among the things to turn this vision into reality. Despite this importance of interconnecting Things, the industrial environment are living a stagnation in the capacity of making response to industry events (e.g detection of earthquakes, industrial machine errors, etc) due to the silos of knowledge generated by the deployment of those systems in specific domains. 
+As already aforementioned, one of the first interoperability level to take care of is at informational level, i.e. at data and semantic level. It is mandatory to address since it allows data heterogeneity management, both within a single platform and even across platforms (provided that the data model becomes a unified / standardized one). One good example of that is the Bluetooth LE GATT (Low Energy Generic Attributes) profile that has been standardized by the Bluetooth Special Interest Group (SIG) and enables interoperability of Bluetooth devices [https://www.bluetooth.com/specifications/gatt].
 
-Designing IoT applications requires a shared understanding of the exchanged data among those connected things. Moreover, it is also necessary to deal with an hetereogeneus stack of standards and data exchange reference models. In order to minimise the impact of vendor locking caused by custom standards, there exist a movement of promoting open standarization models (e.g ETSI standards, etc). This trend have ensured syntactic interoperability between systems in terms of connecting systems and sharing inforamtion. However, the problem araises when IoT devices with different data exchange formats coexists. In this scenario, a semantic interoperability between system is necesary to link the inforamtion and make it understandable. Thus, semantic technology advances is the key point as one of the most promising fields in the knowledge representation domain. 
+![](img/RoomExample.png)
 
-The World WideWeb Consortium (W3C) defines a set of standards , such as RDF/OWL, JSON-LD and SPARQL, to represent semantics and query linked data, offering an ideal ecosystem and opportunity to tackle the heterogeneity challenge in the IoT. In industrial environments and automation domains, semantic technology has been used to solve data/device interoperability issues and to provide context aware applications and services.
+Figure 1: Simple example of a house room
 
-Despite its potential and promises, semantic technology and ontology-based IoT applications still remain in the hands of a minority, the ontology experts, being too difficult to be adopted and applied by industrial practitioners. We attribute such retention among other factors to the absence of adequate methodology and tools involving several major actors participating in the design life cycle of an IoT application, who are typically non-ontology experts.
+Let us now take the simple problem of a house room with a black box on a wall (see figure 1), e.g. a sensor that is providing the following instant value: 22°. A visitor of the house has as much power of reasoning as humans do and is therefore guessing (due to the position of the black box, the value provided on the black Box screen  ̶  22°  ̶ , his central European location) that the provided value is a temperature expressed in degree Celsius. A machine (e.g. a Device, an automated process, an application…) for its part is not able to do a lot with this instant value (22°) since it does not know how to analyze this raw data, mainly:
 
-## Problem
-The W3C defined a semantic layer cake
+•	the meaning of the data, called metadata, e.g. in our home example a temperature measurement, with “Temperature” as name, ‘t’ as acronym, “°C” as unit of measure, “float” as measurement domain and 22 as value. With this metadata knowledge, few simple data analytics can already be performed, like e.g. in our home example, verifying if a  Temperature ‘t’ is not higher than 26,
 
-[^1]: https://www.w3.org/2000/Talks/1206-xml2k-tbl/slide10-0.htm
+•	and the context of the data, extending the metadata and called ontology, like e.g. in our home example, the information of the sensor that provides the data, the associated positioning and geo-localization, environment, room and home ID, home owner information. With that extended semantic knowledge, more powerful semantic data analytics can now be performed, like e.g. in our home example, which are the collocated houses that have the same Temperature value. 
 
-based on a set of standards to develop the semantic web. The aim of these standards is to focus mainly on the knowledge representation to solve the data interchange problem in addition to several non functional requirements such as data validation, proof and trust.
+Ontology design (i.e. specification, formalization) and implementation are thus mandatory for data heterogeneity management and semantic interoperability. It facilitates data/information sharing across systems and enables semantic-based embedded data analytics (e.g. for automated alarm management or control operations). If the ontology incorporates common upper level semantics, like e.g. service definition, then it enables data sharing at application level and also facilitates cross-domain use cases handling.
 
-![](img/semLayer.png)
+The specification of a semantic data model corresponds to the definition of concepts that characterize the data and its environment, associated with the links between those concepts. This is generally materialized through a diagram/graph where the concepts correspond to classes or tree nodes, and relations correspond to tree edges labelled by the relation type. For the simple example depicted in Figure 1, the black box on the wall is e.g. a device (this is a first concept) that makes a measurement (this is a second concept, linked to the first one by the relation ‘makes’). Concerning the formalization of the data model, this corresponds to the transcription of its corresponding concepts and their relations within a formalized description language. This computing description language insures in particular that the data model is readable and interpretable by both machines (e.g. Devices, automated processes, applications…) and humans in a unique and unambiguous way.
 
-According to the Semantic Web standards, data representation can be expressed in the following standards RDF, RDF-S, and OWL. More precisly, such descriptive languages allow to represent a model and its instantiation. Several ontologies exist publically to represent a domain model, for example: the Semantic Sensor Network Ontology/SOSA (https://www.w3.org/TR/vocab-ssn/) proposes a model to represent a sensor network, Fiesta-IoT/m3 ontology (http://ontology.fiesta-iot.eu/ontologyDocs/fiesta-iot/doc) establishes a methodology for linking IoT services and testbeds, Web of Things vocabulary (https://www.w3.org/TR/wot-thing-description/) to integrate and make interoperable diverse applications and Things and SAREF (Documentation:http://ontology.tno.nl/saref; URL:http://ontology.tno.nl/saref.ttl) proposes a model to represent smart appliances functionalities, expected behavior and how they interact with their environment and their locations. Other ontologies such as Brick (http://brickschema.org/structure/) focus on the Building Management System domain detailing a vocabulary of equipment types, their expected behviour in addition to their interactions with other equipments. 
+Next sections show, using a specific use case, how semantic interoperability can be implemented and deployed.
 
-Once an ontology model has been defined, the next step is to instantiate it. Instantiating an ontology implies producing data which conforms to the model. For example, an instantiation of a Brick ontology implies for a given site, the data produced by a Building Management System conforms to the Brick Model. **(need to give a simple example here based on a public ontology, maybe Brick is not so generic, to be discussed on the call)**
+## Example Use Case [Laura Daniele, Marc Girod-Genet, Martin Bauer]
+*Describe an example use case that instantiates the problem space, is as simple as possible, but shows the advantages of semantics and can be used in the following subsections.*
 
-* http://www.cs.virginia.edu/~dh5gm/pdf/brick-journal.pdf
-* https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=8&cad=rja&uact=8&ved=0ahUKEwjG4_j-3onbAhUxb5oKHbj_BjUQFghCMAc&url=https%3A%2F%2Fbrickschema.org%2Fpapers%2FBrick_BuildSys_Presentation.pdf&usg=AOvVaw1igBB2grS0-9uMXD2_9kPW
+In this use case a smart home with smart devices is to be connected to the smart grid. The smart home resident wants to optimize the energy consumption of the house, but still be in control of key aspects, e.g. when the washing has to be done, when the batteries of the electronic vehicle have to be recharged, and that the temperature in the house is kept within a certain range etc. The smart grid company offers the smart home resident a special tariff with significant discounts during times when a surplus of energy is available in exchange for some control on the energy consumption. Thus the smart grid company gets means to balance the overall energy consumption and the smart home resident lowers the energy bill without a significant loss of convenience.
 
-Ontology instantiation process requires:
-1. An ontology model.
-2. A software enabler to produce or transform data according to the provided ontology model.
-3. A software developer implementing the software enabler
+In order to implement the scenario, different systems have to be integrated allowing the following:
+ * connect controllable user devices in the smart home
+ * connect the smart grid with the smart home
+ * provide the smart home resident with means to define operation policies for the devices
+ * provide the smart grid operator with means to define time-dependent energy costs and request an energy-consumption profile
+ * optimize energy consumption based on the time-dependent energy costs and the energy-consumption profiles in line with the operation policies and a possible consumption limit
 
-Acceptance criteria:
-1. Data produced conforms to the ontology model
-2. Data produced is expressed in one of the W3C standards formats such as rdf/xml, json-ld, citations.
+To achieve interoperability between the systems, agreement on the interfaces and the modelling of information is necessary. In this paper we will show how the relevant information can be modelled on a semantic level to achieve semantic interoperability. 
 
-**Should we give an overview of the Software Developer persona?**
-A Software Developer persona is a non ontology expert, non familiar with the Semantic Layer cake. She is given an ontology model expressed in OWL and is asked to develop an enabler which can be embedded in a system or on the cloud to produce (or transform) data conform to the model. The data produced need to be expressed in one of the W3C standard.
+Examples of what needs to be modelled:
+ * Device 
+   * status
+   * control
+   * monitoring
+   * energy consumption profile
+   * operation policy
+ * Estimated energy cost timeline
+ * Energy consumption limit
 
-In the following, we depict the list of tools available to a software developer to achieve her goal and meet the acceptance criteria 
+Customers can offer flexibility to the Smart Grid to manage their smart home devices by means of a Customer Energy Manager (CEM), a logical component that controls and optimizes the energy consumption in a smart home. The CEM is a logical function for optimizing energy consumption and/or production that can reside either in the home gateway or in the cloud. The component that collects and analyzes energy consumption is a smart meter. Example use cases that require interoperability and involve devices in the smart home, the CEM, smart meters and the smart grid are the following:
+- configuration of devices that want to connect to each other in the home network, for example, to register a new dishwasher to the list of devices managed by the CEM;
+- (re-)scheduling of appliances in certain modes and preferred times using power profiles to optimize energy efficiency and accommodate the customer's preferences;
+- monitoring and control of the start and status of the appliances; 
+- reaction to special requests from the Smart Grid, e.g. incentives to consume more or less depending on current energy availability, or emergency situations that require temporary reduction of power consumption. 
 
+These use cases are associated with the user stories described in IEC TR 62746-2 [i.6], which include, among others, the following examples:
+•	User wants to do basic settings of his/her devices.
+•	User wants to know when the washing machine has finished working.
+•	User wants their washing done by 5:00 p.m. with the lowest electrical power cost.
+•	User likes to limit his own energy consumption up to a defined limit.
+•	User allows the CEM to reduce the energy consumption of the freezer in a defined range for a specific time, if the grid recognizes (severe) stability issues.
+•	Grid related emergency situations (e.g. blackout prevention).
 
-** Focus on Developer Experience: NON Ontology Expert **
+Let us now consider the additional case where the resident of the house is an elderly that needs support at home, as well as to be continuously monitored (i.e. wellbeing for aging well). In order to implement such use case:
+  1.	the resident/elderly needs to be provided with a smart BAN (Body Area Network) for the monitoring and control of its vital    signs, status and activities. This smart BAN mainly comprises, in respect of its resident/elderly embedded device part (smart BAN Cluster), medical/wellbeing sensors, wearables, a BAN coordinator or hub (e.g. a smart-phone, a smart-watch) with in particular data concentrator and network gateway roles. The data concentrator is used for data collection and has also to be provided with embedded data analytics functionalities for local alarm management, local monitoring/control and resident/elderly assistance purposes. The network Gateway is mainly used for data sending to the remote monitoring/control servers and applications located within caregivers or relatives premises. Let us note that, for security/safety reasons, actuations on resident/elderly BAN devices have not been actually considered. 
+  2.	this smart BAN has to interact with the Smart Home and some of its appliances mainly for the following purposes: resident/elderly positioning inside the house (e.g. through beacons on the walls), resident/elderly activity tracking, verification of interactions with key appliances (e.g. with a scale for weight measurement, or for verifying if fridge or cooker was used, or if a medication box was opened), resident/elderly comfort management (e.g. maintaining a given temperature/humidity/luminosity level in accordance with resident/elderly condition requirements, as well as with energy efficiency objectives that could be already parameterized for the Smart Home).
 
-## Existing Methods and Tools
+The additional use case (i.e. elderly at home monitoring and support) high level architecture is depicted in Figure 1.
 
-### Ontology HTML Renderers
-#### Ontology Documentation Tools
-1. [Ontoology](http://ontoology.linkeddata.es/) with [detailed instructions](http://ontoology.linkeddata.es/stepbystep) on how to use it.
+![](../SemInteropElderlyHomeUseCase.png)
 
-2. [LODE](https://github.com/essepuntato/LODE)
+In a such environment and use case, it is first mandatory to address security and privacy by design since we are dealing with eHealth and personal safety highly critical data and applications (even if actuations within BANs are not yet considered for quite all the existing use cases). It is also mandatory to address interoperability, in particular since:
+1.	At least heterogeneity of medical devices and measures has to be masked at application level,
+2.	At the operational level and from the hospital management information system (MIS) point of view, a new patient’ BAN integration into existing monitoring and control systems has to be carried out as far as possible without any redesign of those systems, even partially,
+3.	At smart BAN level and from the end user perspective, any new sensor integration has to be transparent for the elderly, with a minimum number of easy operations.
 
-   LODE Web Service example: http://www.essepuntato.it/lode/http://purl.org/iot/ontology/fiesta-iot#
+For addressing all the aforementioned requirements, interoperability will have thus to be handled at multiple levels for our elderly at home additional use case:
 
-#### Ontology HTML data exploration tools
+•	Device level for in particular handling point 3 and to some extend point 2,
 
-1. Exhibit 3.0: http://simile-widgets.org/exhibit3/
-2. Rizhomik: http://rhizomik.net/html/rhizomer/
-3. Other?
+•	Informational level, i.e. data and semantic, for in particular
 
-### Ontolgy Development Tools
-1. Protégé
+ - handling point 1, point 2, point 3,
+ - data/information sharing across systems, i.e. Smart BAN and Smart Home systems,
+ - enabling semantic-based embedded data analytics. This will be used here for alarm management, monitoring/control and resident/elderly/caregivers assistance purposes,
+ - for facilitating cross-domain interactions, in particular between healthcare, wearables and Smart Home.
 
-2. TopBraid Composer
-
-3. Ontology Visualization with WebVOWL
-
-   WebVOWL Web Service example:
-
-   http://visualdataweb.de/webvowl/#iri=http://purl.org/iot/ontology/fiesta-iot#
-
-4. NeOn Toolkit (http://neon-toolkit.org)
-
-5. Other?
-
-### Ontology Manipulation Libraries
-1. OWL API (Java)
-2. Apache Jena (Java) as a library
-3. RDF4J (Java)
-4. DotNetRDF (C#)
-5. RDF Charm (Python)
-6. json module (Python)
-7. RDFLib (Python)
-8. pySesame (Python)
-9. RDFLib.js (Javascript)
-10. SPARQL.js (Javascript)
-11. jsonld.js (Javascript)
-12. rdfstore-js (Javascript)
-
-### Semantic Web Architectures & Semantic Stores
-
-#### Semantic Web Architectures
-
-1. Apache Jena (Java)
-2. NGSI-LD (retrieve scopded and filtered information, entity meta model, also works in highly distributed and federated settings)
-   - Overview presentation: https://docbox.etsi.org/ISG/CIM/Open/Introduction_NGSI-LD_20180413.pdf
-   - ETSI Group Specification: http://www.etsi.org/deliver/etsi_gs/CIM/001_099/004/01.01.01_60/gs_CIM004v010101p.pdf 
-
-#### Semantic/Graph stores (Triple/Quad stores)
-1. Sesame (Java)
-2. MongoDB (C++, Java and Python drivers)
-3. Jena TDB
-4. OpenLink Virtuoso
-5. GraphDB (new OWLIM): https://ontotext.com/products/graphdb/
-6. Oracle Spatial and Graph RDF Semantic Graph
-7. Stardog: https://www.stardog.com
-8. Mulgara: http://mulgara.org
-9. Sesame RDF: https://bitbucket.org/account/user/openrdf/projects/PROJ
-
-### Retrieving Semantic Information
-1. SPARQL (expressive query language on general RDF data, but requires (logically) centralized information)
-
-### Object Relational Mappers
-1. RomanticWeb (C#)
-2. TrinityRDF (C#)
-3. Empire (Java)
-4. [Pinto](https://github.com/stardog-union/pinto)
-5. [Komma](https://github.com/komma/komma)
-6. Ultrasrap^TM^-Capsenta: https://capsenta.com
-7. Morph RDB: https://github.com/oeg-upm/morph-rdb
-8. D2R: http://d2rq.org/d2r-server
-9. Others?
-
-### Code Generators
-1. Protégé Plugin
-2. Eclipse EMF
-3. [OLGA](https://www.researchgate.net/publication/319650390_A_Model_Driven_Approach_Accelerating_Ontology-based_IoT_Applications_Development): Ontology Library Generator 
-
-### Ontology Alignment APIs?
-
-1. Alignment API: http://alignapi.gforge.inria.fr
-
-2. LogMap
-
-   LogMap Web Service: http://krrwebtools.cs.ox.ac.uk/logmap/
-
-## What is missing ? (need to find a better title here)
-
-PerfectO project - Ontology Improvement Tool integrating a set of tools mentionned previously (WebVOWL, LODE, LogMap, etc.):
-
-Demo: http://perfectsemanticweb.appspot.com/?p=ontologyValidation
+•	Network level for mainly handling point 2 and intra/inter systems interoperability.
