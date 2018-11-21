@@ -67,12 +67,12 @@ Customers can offer flexibility to the Smart Grid to manage their smart home dev
 - reaction to special requests from the Smart Grid, e.g. incentives to consume more or less depending on current energy availability, or emergency situations that require temporary reduction of power consumption. 
 
 These use cases are associated with the user stories described in IEC TR 62746-2 [i.6], which include, among others, the following examples:
-•	User wants to do basic settings of his/her devices.
-•	User wants to know when the washing machine has finished working.
-•	User wants their washing done by 5:00 p.m. with the lowest electrical power cost.
-•	User likes to limit his own energy consumption up to a defined limit.
-•	User allows the CEM to reduce the energy consumption of the freezer in a defined range for a specific time, if the grid recognizes (severe) stability issues.
-•	Grid related emergency situations (e.g. blackout prevention).
+ *	User wants to do basic settings of his/her devices.
+ *	User wants to know when the washing machine has finished working.
+ *	User wants their washing done by 5:00 p.m. with the lowest electrical power cost.
+ *	User likes to limit his own energy consumption up to a defined limit.
+ *	User allows the CEM to reduce the energy consumption of the freezer in a defined range for a specific time, if the grid recognizes (severe) stability issues.
+*	Grid related emergency situations (e.g. blackout prevention).
 
 Let us now consider the additional case where the resident of the house is an elderly that needs support at home, as well as to be continuously monitored (i.e. wellbeing for aging well). In order to implement such use case:
   1.	the resident/elderly needs to be provided with a smart BAN (Body Area Network) for the monitoring and control of its vital    signs, status and activities. This smart BAN mainly comprises, in respect of its resident/elderly embedded device part (smart BAN Cluster), medical/wellbeing sensors, wearables, a BAN coordinator or hub (e.g. a smart-phone, a smart-watch) with in particular data concentrator and network gateway roles. The data concentrator is used for data collection and has also to be provided with embedded data analytics functionalities for local alarm management, local monitoring/control and resident/elderly assistance purposes. The network Gateway is mainly used for data sending to the remote monitoring/control servers and applications located within caregivers or relatives premises. Let us note that, for security/safety reasons, actuations on resident/elderly BAN devices have not been actually considered. 
@@ -80,7 +80,7 @@ Let us now consider the additional case where the resident of the house is an el
 
 The additional use case (i.e. elderly at home monitoring and support) high level architecture is depicted in Figure 1.
 
-![](../SemInteropElderlyHomeUseCase.png)
+![](img/SemInteropElderlyHomeUseCase.png)
 
 In a such environment and use case, it is first mandatory to address security and privacy by design since we are dealing with eHealth and personal safety highly critical data and applications (even if actuations within BANs are not yet considered for quite all the existing use cases). It is also mandatory to address interoperability, in particular since:
 1.	At least heterogeneity of medical devices and measures has to be masked at application level,
@@ -89,13 +89,13 @@ In a such environment and use case, it is first mandatory to address security an
 
 For addressing all the aforementioned requirements, interoperability will have thus to be handled at multiple levels for our elderly at home additional use case:
 
-•	Device level for in particular handling point 3 and to some extend point 2,
+ *	Device level for in particular handling point 3 and to some extend point 2,
 
-•	Informational level, i.e. data and semantic, for in particular
+ *	Informational level, i.e. data and semantic, for in particular
 
  - handling point 1, point 2, point 3,
  - data/information sharing across systems, i.e. Smart BAN and Smart Home systems,
  - enabling semantic-based embedded data analytics. This will be used here for alarm management, monitoring/control and resident/elderly/caregivers assistance purposes,
  - for facilitating cross-domain interactions, in particular between healthcare, wearables and Smart Home.
 
-•	Network level for mainly handling point 2 and intra/inter systems interoperability.
+ * Network level for mainly handling point 2 and intra/inter systems interoperability.
