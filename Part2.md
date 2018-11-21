@@ -283,3 +283,724 @@ Ontology Design Patterns (ODP) repository:
 
 Locality Module Extractor tool: 
 - https://www.cs.ox.ac.uk/isg/tools/ModuleExtractor/ 
+
+## Ontology Instantiation [Charbel Kaed]
+Given an ontology, how can this ontology be instantiated for a concrete use case.
+
+Example of ontology instantiation for the use case on energy efficiency. 
+
+It shows an example of how to instantiate a power profile using the SAREF4ENER extension of SAREF. This power profile is used by an heating system with hot water tank to communicate its energy flexibility to the CEM according to the consumer's preferences and needs. The corresponding Turtle code is provided below. A distinction between SAREF and SAREF4EE is made using the prefixes saref: and s4ener:, respectively.
+
+A s4ener:PowerProfile inherits the properties of the more general saref:Profile, extending it with additional properties that are specific for SAREF4ENER. The s4ener:PowerProfile is used by a s4ener:Device to expose the power sequences that are potentially relevant for the CEM, for example, a heating system with hot water tank that wants to communicate its expected energy consumption for a certain day (s4ener:HeatingSystem instance). The s4ener:HeatingSystem exposes a s4ener:PowerProfile (s4ener:PowerProfile-1-HS0001 instance), which consists of two groups with alternative plans (each group is modelled as a s4ener:AlternativesGroup class). These groups do not overlap in time and allow to model consecutive (and also rather independent) periods of action. For example, the s4ener:PowerProfile-1-HS0001 contains one group of alternatives for a task in the morning, and another group of alternatives for another (additional) task in the afternoon. Within one group, there can be one or more plans represented by s4ener:PowerSequence classes (i.e. s4ener:AlternativesGroup-1-HS0001 and s4ener:AlternativesGroup-2-HS0001) which are alternatives to each other (i.e. at most one of these plans can be finally executed). For example, to charge the hot water tank, the heating system mentioned above can offer within the "afternoon alternative group" two alternative plans, represented as power sequences: (a) a "cheapest" plan in which the CEM should try to minimize the user's energy bill, and (b) a "greenest" plan in which the CEM should try to optimize the configuration towards the maximum availability of renewable energy. 
+
+Therefore, in the afternoon group (s4ener:AlternativesGroup-2-HS0001) the heating system offers two different power sequences: (a) s4ener:PowerSequence-3-HS0001 that aims to run "as cheap as possible" and permits the CEM to shift the start between 8:45 and 12:00, and (b) s4ener:PowerSequence-2-HS0001 that aims to reduce energy (it can even announce the user's preference for "green energy"). This means for the afternoon the CEM can take a choice for the "cheap" or the "green" plan. The plans may have further options with regards to their flexibility. For example one of the plans may offer that the CEM can pause a sequence (as long as the sequence completes before the latest time set by the user). Finally, a s4ener:PowerSequence consists of one or more slots (s4ener:Slot class) that represent different phases of consumption (or production) and their values. The power sequences of the heating system example have a single slot each. However, for other devices such as washing machines, a power sequence may have various slots for the different phases of washing, such as heating the water, washing and rinsing.
+
+RDF code for SAREF4ENER example
+# baseURI: http://ontology.tno.nl/examples/saref4ener/heatingsystem
+# imports: https://w3id.org/saref4ener
+
+@prefix heatingsystem: <http://ontology.tno.nl/examples/saref4ener/heatingsystem#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s4ener: <https://w3id.org/saref4ener#> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ontology.tno.nl/examples/saref4ener/heatingsystem>
+  rdf:type owl:Ontology ;
+  owl:imports <https://w3id.org/saref4ener> ;
+  .
+time:Beginning_PowerProfile-1-HS0001
+  rdf:type time:Instant ;
+  rdfs:label "Beginning Power profile-1-HS0001"^^xsd:string ;
+  time:inXSDDateTime "2016-12-15T00:01:01.01"^^xsd:dateTime ;
+.
+time:Beginning_PowerSequence-HS0001_afternoon
+  rdf:type time:Instant ;
+  rdfs:label "Beginning Power sequence-HS0001 afternoon"^^xsd:string ;
+  time:inXSDDateTime "2016-12-15T15:30:00.00"^^xsd:dateTime ;
+.
+time:Beginning_PowerSequence-HS0001_morning
+  rdf:type time:Instant ;
+  rdfs:label "Beginning Power sequence-HS0001 morning"^^xsd:string ;
+  time:inXSDDateTime "2016-12-15T08:45:00.00"^^xsd:dateTime ;
+.
+time:DateTimeInterval_PowerProfile-1-HS0001
+  rdf:type time:DateTimeInterval ;
+  rdfs:label "Date time interval Power profile-1-HS0001"^^xsd:string ;
+  time:hasBeginning time:Beginning_PowerProfile-1-HS0001 ;
+  time:hasEnd time:End_PowerProfile-1-HS0001 ;
+.
+time:End_PowerProfile-1-HS0001
+  rdf:type time:Instant ;
+  rdfs:label "End Power profile-1-HS0001"^^xsd:string ;
+  time:inXSDDateTime "2016-12-15T00:23:59.59"^^xsd:dateTime ;
+.
+time:End_PowerSequence-HS0001_afternoon
+  rdf:type time:Instant ;
+  rdfs:label "End Power sequence-HS0001 afternoon"^^xsd:string ;
+  time:inXSDDateTime "2016-12-15T00:18:00.00"^^xsd:dateTime ;
+.
+time:End_PowerSequence-HS0001_morning
+  rdf:type time:Instant ;
+  rdfs:label "End Power sequence-HS0001 morning"^^xsd:string ;
+  time:inXSDDateTime "2016-12-15T00:12:00.00"^^xsd:dateTime ;
+.
+time:PowerSequence-HS0001_afternoon
+  rdf:type time:DateTimeInterval ;
+  rdfs:label "Power sequence-HS0001 afternoon"^^xsd:string ;
+  time:hasBeginning time:Beginning_PowerSequence-HS0001_afternoon ;
+  time:hasEnd time:End_PowerSequence-HS0001_afternoon ;
+.
+time:PowerSequence-HS0001_morning
+  rdf:type time:DateTimeInterval ;
+  rdfs:label "Power sequence-HS0001 morning"^^xsd:string ;
+  time:hasBeginning time:Beginning_PowerSequence-HS0001_morning ;
+  time:hasEnd time:End_PowerSequence-HS0001_morning ;
+.
+s4ener:AlternativesGroup-1-HS0001
+  rdf:type s4ener:AlternativesGroup ;
+  rdfs:label "Alternatives group-1-HS0001"^^xsd:string ;
+  saref:consistsOf s4ener:PowerSequence-1-HS0001 ;
+  s4ener:alternativesGroupID 1 ;
+  s4ener:belongsTo s4ener:PowerProfile-1-HS0001 ;
+.
+s4ener:AlternativesGroup-2-HS0001
+  rdf:type s4ener:AlternativesGroup ;
+  rdfs:label "Alternatives group-2-HS0001"^^xsd:string ;
+  saref:consistsOf s4ener:PowerSequence-2-HS0001 ;
+  saref:consistsOf s4ener:PowerSequence-3-HS0001 ;
+  s4ener:alternativesGroupID 2 ;
+  s4ener:belongsTo s4ener:PowerProfile-1-HS0001 ;
+.
+s4ener:EndTimeDurationDescription_PS-1-HS0001
+  rdf:type s4ener:EndTimeDurationDescription ;
+  rdfs:label "End time duration description PS-1-HS0001"^^xsd:string ;
+.
+s4ener:EndTime_PS-1-HS0001
+  rdf:type s4ener:EndTime ;
+  rdfs:label "End time PS-1-HS0001"^^xsd:string ;
+.
+s4ener:Energy_1
+  rdf:type s4ener:Energy ;
+  rdfs:label "Energy 1"^^xsd:string ;
+  saref:isMeasuredByDevice s4ener:HeatingSystem ;
+.
+s4ener:Heating
+  rdf:type saref:Task ;
+  rdfs:label "Heating"^^xsd:string ;
+.
+s4ener:HeatingSystem
+  rdf:type s4ener:Device ;
+  rdfs:label "Heating system"^^xsd:string ;
+  saref:accomplishes saref:EnergyEfficiency ;
+  saref:accomplishes s4ener:Heating ;
+  saref:hasDescription "Heating system HS0001 is an example of how to instantiate a heating system with hot water tank using SAREF4ENER"^^xsd:string ;
+.
+s4ener:Measurement_1
+  rdf:type saref:Measurement ;
+  rdfs:label "Measurement 1"^^xsd:string ;
+  saref:hasValue "0.2"^^xsd:string ;
+  saref:isMeasuredIn <http://www.wurvoc.org/vocabularies/om-1.8/kilowatt_hour> ;
+  saref:relatesToProperty s4ener:Energy_1 ;
+.
+s4ener:Measurement_2
+  rdf:type saref:Measurement ;
+  rdfs:label "Measurement 2"^^xsd:string ;
+  saref:hasValue "0.2"^^xsd:string ;
+  saref:isMeasuredIn <http://www.wurvoc.org/vocabularies/om-1.8/kilowatt> ;
+  saref:relatesToProperty s4ener:Power_1 ;
+.
+s4ener:PowerProfile-1-HS0001
+  rdf:type s4ener:PowerProfile ;
+  rdfs:label "Power profile-1-HS0001"^^xsd:string ;
+  saref:consistsOf s4ener:AlternativesGroup-1-HS0001 ;
+  saref:consistsOf s4ener:AlternativesGroup-2-HS0001 ;
+  saref:hasTime s4ener:Time_PowerProfile-1-HS0001 ;
+  saref:isAbout s4ener:Energy_1 ;
+  saref:isAbout s4ener:Power_1 ;
+  s4ener:alternativesCount 2 ;
+  s4ener:belongsTo s4ener:HeatingSystem ;
+  s4ener:nodeRemoteControllable "true"^^xsd:boolean ;
+  s4ener:supportsReselection "true"^^xsd:boolean ;
+  s4ener:supportsSingleSlotSchedulingOnly "true"^^xsd:boolean ;
+  s4ener:totalSequencesCountMax "1"^^xsd:unsignedInt ;
+.
+s4ener:PowerSequence-1-HS0001
+  rdf:type s4ener:PowerSequence ;
+  rdfs:label "Power sequence-1-HS0001"^^xsd:string ;
+  saref:consistsOf s4ener:Slot-1-HS0001 ;
+  saref:hasTime time:PowerSequence-HS0001_morning ;
+  saref:hasTime s4ener:StartTime_1 ;
+  s4ener:belongsTo s4ener:AlternativesGroup-1-HS0001 ;
+  s4ener:isPausable "false"^^xsd:boolean ;
+  s4ener:isStoppable "false"^^xsd:boolean ;
+.
+s4ener:PowerSequence-2-HS0001
+  rdf:type s4ener:PowerSequence ;
+  rdfs:label "Power sequence-2-HS0001"^^xsd:string ;
+  saref:consistsOf s4ener:Slot-2-HS0001 ;
+  saref:hasTime time:PowerSequence-HS0001_afternoon ;
+  saref:hasTime s4ener:StartTime_1 ;
+  s4ener:belongsTo s4ener:AlternativesGroup-2-HS0001 ;
+  s4ener:greenest "true"^^xsd:boolean ;
+  s4ener:isPausable "false"^^xsd:boolean ;
+  s4ener:isStoppable "false"^^xsd:boolean ;
+.
+s4ener:PowerSequence-3-HS0001
+  rdf:type s4ener:PowerSequence ;
+  rdfs:label "Power sequence-3-HS0001"^^xsd:string ;
+  saref:consistsOf s4ener:Slot-3-HS0001 ;
+  saref:hasTime time:PowerSequence-HS0001_afternoon ;
+  saref:hasTime s4ener:StartTime_1 ;
+  s4ener:belongsTo s4ener:AlternativesGroup-2-HS0001 ;
+  s4ener:cheapest "true"^^xsd:boolean ;
+  s4ener:isPausable "false"^^xsd:boolean ;
+  s4ener:isStoppable "false"^^xsd:boolean ;
+.
+s4ener:Power_1
+  rdf:type s4ener:Power ;
+  rdfs:label "Power 1"^^xsd:string ;
+  saref:isMeasuredByDevice s4ener:HeatingSystem ;
+  saref:relatesToMeasurement s4ener:Measurement_2 ;
+.
+s4ener:Slot-1-HS0001
+  rdf:type s4ener:Slot ;
+  rdfs:label "Slot 1 HS0001"^^xsd:string ;
+  s4ener:belongsTo s4ener:PowerSequence-1-HS0001 ;
+  s4ener:hasEnergyValueType s4ener:Energy_1 ;
+  s4ener:hasPowerValueType s4ener:Power_1 ;
+  s4ener:slotNumber "1"^^xsd:unsignedInt ;
+.
+s4ener:Slot-2-HS0001
+  rdf:type s4ener:Slot ;
+  rdfs:label "Slot 2 HS0001"^^xsd:string ;
+  s4ener:belongsTo s4ener:PowerSequence-2-HS0001 ;
+  s4ener:slotNumber "2"^^xsd:unsignedInt ;
+.
+s4ener:Slot-3-HS0001
+  rdf:type s4ener:Slot ;
+  rdfs:label "Slot 3 HS0001"^^xsd:string ;
+  s4ener:belongsTo s4ener:PowerSequence-3-HS0001 ;
+  s4ener:slotNumber "3"^^xsd:unsignedInt ;
+.
+s4ener:StartTimeDurationDescription_1
+  rdf:type s4ener:StartTimeDurationDescription ;
+  rdfs:label "Start time duration description 1"^^xsd:string ;
+  s4ener:xsdDuration "PT0H5M"^^xsd:duration ;
+.
+s4ener:StartTime_1
+  rdf:type s4ener:StartTime ;
+  rdfs:label "Start time 1"^^xsd:string ;
+  time:hasDurationDescription s4ener:StartTimeDurationDescription_1 ;
+.
+s4ener:Time_PowerProfile-1-HS0001
+  rdf:type saref:Time ;
+  rdfs:label "Time Power profile-1-HS0001"^^xsd:string ;
+  saref:consistsOf time:DateTimeInterval_PowerProfile-1-HS0001 ;
+.
+
+## Semantic Information & Semantic Annotation [Wenbin Li, Hamza Baqa]
+
+To fully use semantic technologies, systems and platforms are expected to serve information with ontologies so that one can look up data content and get information from ontology definitions including the relationships between the terms in the ontology. Semantic information is regarded as any form of information containing explicit semantic descriptions and using ontologies to drive the information lifecycle. Comparing to classical syntax data, semantic information is human&machine understandable and unambiguous to support advanced data functions such as complex query, intelligent human-machine interaction, contextual data analytics and data interoperability. 
+
+In order to have semantic information on hand, we have typically two ways, i.e., Semantic Information Creation and Semantic Annotation, as detailed as follows. Both of the processes bridge the gap between syntax and semantics world with different application cases. 
+
+**Semantic Information Creation** produces semantic information using ontologies from scratch following specific serialization formats. The used ontologies specify the concepts and relations used in the information while the serialization formats define the semantic information structure. 
+
+This is the most convenient way to create new semantic data based on semantic technologies, if no existing constraints apply. The semantic information built from scratch fully inherits the semantic benefits, while the required efforts are similar to the efforts of data creation following predefined schemas. 
+
+**Semantic Annotation** is the process of linking existing syntax information with specific ontologies to provide both machine understandable and human readable descriptions, while the source information can be structured document, services, functions, metadata of image and videos, etc. Ontologies provide semantics to existing data and furthermore link different information together via predefined relations. 
+
+This process is more suitable to the cases where data already exist based on other specifications or the data sources can only provide data following specific formats without semantics. Thus, the objective is to evolve the existing data with semantic technologies while keeping as much as possible the backward compatibility with existing specifications. 
+In order to better illustrate the two process, we present an example following our smart home scenario, in which a room with an id room1001 and an energy limit profile is equipped with a temperature sensor providing temperature measurement and a washing machine providing washing machine with states and remote washing services to turn on/off and switch mode. We respectively introduce how we can build semantic information of the example following semantic information creation and semantic annotation; throughout the process, the main ontologies we use for semantic annotation are SAREF and SAREF4ENER, which are introduced in previous chapters.  
+
+**1. Semantic Information Creation**
+The semantic information creation builds the corresponding information from scratch. The general semantic information creation can be briefly summarized into the two following steps: 
+
+1) Identification or definition of ontologies to be used; 
+2) creation of semantic information by use of ontology concepts; 
+
+In our example, we start to describe the room1001 resource is a type of Room defined in schema ontology, (since the Room type is not defined in SAREF or SAREF4ENER), and the Room1001 has an energy profile which points to another resource “/Limit”.  We use the standard N-Triples as the serialization format and the output of the above descriptions are three triples as. 
+```
+	Room1001 	rdf:type 		schema:Room,
+	Room1001	saref4ener:hasEnergy 	/Limit,
+	"/Limit"	rdf:type		saref4ener:energyMax
+```
+By doing so, we indicate that the Room1001 is an instance of the schema:Room class. The relation between the Room1001 and the resource “/Limit” is further detailed in the saref4ener:hasEnergy property, and the resource “/Limit” is actually an instance of the saref4ener:energyMax class which specifies the maximum energy profile. 
+Secondly, we describe that the Room1001 has two devices with ids ts001 and wm002, which are respectively instances of saref:TemperatureSensor and saref:WashingMachine classes. 
+```
+	Room1001 	saref4ener:hasDevice	ts001,
+	Room1001	saref4ener:hasDevice	wm002,
+	ts001		rdf:type 		saref:TemperatureSensor,
+	wm002		rdf:type 		saref:WashingMachine"
+```
+In the above information, the relations between Room1001 and two devices are further specified by saref4ener:hasDevice. 
+As the last step, we further add the descriptions of the two devices we just added. 
+```
+	ts001		saref:hasValue		"25", 
+	wm002		saref:hasState		wm002/state
+	wm002/state	 rdf:type 		saref:State
+	wm002		saref:offers		wm002/switch
+	wm002/switch	rdf:type		saref:Service
+```
+In the above information, we actually describe that the temperature sensor ts001 has a sensed value 25; the washing machine wm002 has a state defined in wm002/state (an instance of saref:State class) and offers a switch service defined in wm002/switch (an instance of saref:Servuce class).
+By combining all the triples above, we get the complete description of our example following semantic information creation process. Thorough the whole process, we also link different information together by use of the properties defined in different ontologies, which further facilitates the data search and analytics.  
+Moreover, although we use N-triples as the serialization format in our example, the information we created can be easily transformed to other semantic serialization formats such as JSON-LD and RDF/XML. 
+
+**2. Semantic Annotation**
+Existing syntax information can be enriched with semantics and transformed to semantic information via semantic annotation. The general semantic process can be briefly summarized into the three following steps 
+1) Preparation of source information to be annotated; 
+2) Identification or definition of ontologies to be used; 
+3) Manual or automatic link between source information to ontologies; 
+
+Semantic annotations are widely used in various data-centric domains. The description of the rooms is serialized in JSON as presented below. 
+```
+{	"id": "room1001",
+	"type": "Room",
+	"energyProfile": "/Limit",
+	"devices": [{	"id": "ts001",
+			"type": "TemperatureSensor",
+			"value": "25"},
+		       {	"id": "wm002",
+			"type": "WashingMachine",
+			"state": "/state",
+			"service": /switch"    }]
+}
+```
+The JSON description of the Room1001 is the source information to be annotated. 
+Starting from the general terms, we need to map the general terms “id” and “type” to JSON-LD node identifier and RDF type concept.    
+```
+	"id": "@id",
+	"type": "rdf:type"
+```
+so that all ids in the JSON descriptions are defined as an object node with an URI as identifier, while all thing types are further linked as a type of an ontology class. 
+In the following, all type targets in the JSON are mapped to different SAREF4ENER, except that we use the schema ontology to annotate the type of Room which is not defined in SAREF or SAREF4ENER. 
+```
+ 	"TemperatureSensor": "saref:TemperatureSensor",
+	"WashingMachine": "saref:WashingMachine",
+	"Room": "schema:Room"
+```
+At last, we link the energyProfie, sensingValue, state and services with SAREF and SAREF4ENER concepts, 
+```
+	"energyProfile":"saref4ener:hasEnergy",
+	"/Limit":"saref4ener:energyMax",
+	"value":"saref:hasValue",
+	"service": "saref:offers",
+	"devices":"saref4ener:hasDevice",
+	"wm002/switch": "saref:Service",
+	"state ": "saref:hasState",
+	"wm002/state": "saref:State"
+```
+At the of the annotation, all terms used in JSON are linked to semantic concepts, for example now we know that the resource "wm002/switch" is a device service defined by SAREF, and the "/Limit" is a resource describing the maximum energy consumption as specified in SAREF4ENER. 
+The final serialization formats of the semantic annotation are rather flexible and can be formatted as with all semantic formats such as triples, JSON-LD, RDF/XML, etc. One convenient way for JSON document is to use JSON-LD to serialize the semantic annotation result, as we only need to add an extra field of “@conext” at the top of existing JSON which contains all previously defined mappings. 
+```
+	{	"@context": {
+			"id": "@id",
+			"wm002/state": "saref:State",
+			… …
+		},
+		"id": "room1001",
+		"type": "Room", 
+		… …
+	}
+```
+Here follows a sample of semantic annotation result based on triples format, 
+```
+	Room1001 	rdf:type 		"schema:Room",
+	Room1001	saref4ener:hasEnergy 	"/Limit",
+	"/Limit" 	rdf:type 		"saref4ener:energyMax",
+… …
+```
+
+## Retrieving Semantic Information [Martin Bauer]
+
+___
+_Once you have created instances of semantic information or annotated information, you want to make this information available to applications in a suitable and efficient way. For accessing semantic information, query languages and APIs have been defined. In our smart home energy use case, relevant information is about devices, their state, measurements and energy profiles._
+___
+
+As shown in the previous sections, semantic information is typically encoded as RDF triples (subject, predicate, object) in different representations. Objects in one triple can be subjects in other triples, so taking all triples together, we get an information graph. An example is shown below.
+
+![RDF information graph example](https://github.com/martin-p-bauer/2018_JWP/blob/master/img/SarefRoomGraph.jpg)
+ 
+SPARQL (SPARQL Protocol and RDF Query Language) [1] is the most commonly used query language to query such an information graph consisting of RDF triples. It provides a set of query functionalities, i.e. join, sort and aggregate, together with graph traversal syntax, e.g. as shown below:
+
+*	What devices are associated with Room1001?
+```
+	PREFIX saref4ener: <https://w3id.org/saref4ener>
+	PREFIX rooms: <https://myrooms.org>
+	SELECT ?device
+	WHERE
+	  {
+		rooms:Room1001  saref4ener:hasDevice	 ?device
+	  }
+```
+The result is a set of matching assignments, i.e.
+```
+	device
+	<https://mydevices.org/ts001>
+	<https://mydevices.org/wm002>
+```
+
+*	What is the temperature in Room1001?
+```
+	PREFIX saref: <https://w3id.org/saref>
+	PREFIX saref4ener: <https://w3id.org/saref4ener>
+	PREFIX rooms: <https://myrooms.org>
+
+	SELECT ?temperature
+	WHERE
+	  {
+		Rooms:Room1001 saref4ener:hasDevice	 ?device
+		?device   	rdf:type	 saref:TemperatureSensor
+              	?device   	saref:hasValue	 ?temperature
+	  }
+```
+The result is the following match:
+```
+	temperature
+	25
+```
+
+As shown in the second example, SPARQL enables joins across triples. This works well in centralized architectures – i.e. where all information is available locally – and can be extended to distributed architectures, in which distribution is limited or it is known where to find what triples. However, such expressiveness is problematic in highly distributed settings, where relevant triples could be found anywhere. 
+
+An API that targets semantic context information is NGSI-LD [2]. The underlying information model is based on entities, which have a semantic type. Entities have properties used to describe aspects of the respective entity and relationships to other entities. Thus the resulting model represents an entity graph. Properties and relationships can again be further described with another level of properties and relationships. Overall, the NGSI-LD information model is less general, but provides a higher abstraction level.  
+It is based on JSON-LD, which is a representation of RDF – see example representation for Room1001. 
+
+![NGSI-LD information graph example](https://github.com/martin-p-bauer/2018_JWP/blob/master/img/NGSI-LD-RoomGraph.jpg)
+
+```
+{
+ 	"id": "urn:ngsi-ld:Room:1001",
+  	"type": "Room",
+ 	"temperature": {
+   		"type": "Property",
+		"value": "25"
+	},
+ 	"hasDevice": {
+   		"type": "Relationship",
+   		"object": "urn:ngsi-ld:TemperatureSensor:ts001",
+   		"deployedAt": {
+        	"type": "Property",
+        	"value": "2018-10-18T16:40:20"
+     	} 
+ 	},
+	"@context": [
+		"http://uri.etsi.org/ngsi-ld/coreContext.jsonld",
+		"http://example.org/ngsi-ld/commonTerms.jsonld",
+		"http://example.org/ngsi-ld/rooms.jsonld", 
+		"http://example.org/ngsi-ld/devices.jsonld" 
+	]
+}
+```
+
+The NGSI-LD API enables synchronous queries for entities, as well as asynchronous subscribe-notify interactions relating to changes in the information. The requested entities, properties and relationships can be specified and filtering of results can be based on property values and relationship objects.
+With requests based only on the entity type or existing properties/relationships, new entities can be discovered, e.g. the following query for the temperature of all Rooms where the temperature is larger than 20.
+
+```
+GET /ngsi-ld/entities/?type=Room&attrs=temperature&q=temperature>20
+Accept: application/ld+json
+Link: <http://example.org/cim/aggregatedContext.jsonld>; rel="http://www.w3.org/ns/json-ld#context"; type="application/ld+json"
+```
+
+As location is highly relevant in real-world related use cases, NGSI-LD enables the geographic scoping of request – which may also be necessary to make entity type based discovery practical, e.g. request all entities within 2000m of a geographic coordinate:
+
+```
+GET /ngsi ld/entities/?type=Vehicle&georel=near;maxDistance==2000 &geometry=Point&coordinates=[8.684783577919006, 49.406131991436396]
+Accept: application/ld+json
+Link: <http://example.org/cim/aggregatedContext.jsonld>; rel="http://www.w3.org/ns/json-ld#context"; type="application/ld+json"
+```
+
+In order to support distributed and federated cases, information sources can register what kind of information they can provide on request with brokers or associated registries. Applications then only need to query a single Broker, which can find the information based on the registration and retrieve it on behalf of the application.
+The NGSI-LD API is more specific than SPARQL, on a higher abstraction level (entity model) and overall less expressive, but as a result can better handle highly distributed and federated cases. As the NGSI-LD information is based on JSON-LD and thus RDF, it is possible to first retrieve relevant parts of the entity graph with a couple of requests. Then the results can be put together, resulting in an RDF graph, on which SPARQL queries with their full expressiveness can be executed locally.
+
+[1] SPARQL 1.1 Overview, W3C Recommendation 21 March 2013, http://www.w3.org/TR/sparql11-overview/
+
+[2] NGSI-LD Draft, ETSI Group Specification CIM 004, ETSI Industry Specification Group for cross-cutting Context Information Management (ETSI ISG CIM) , https://www.etsi.org/deliver/etsi_gs/CIM/001_099/004/01.01.01_60/gs_CIM004v010101p.pdf
+ 
+## Storing Semantic Information [Aitor Corchero Rodiguez]
+> How to store semantic information, making it accessible for later processing.
+
+Once, you have selected, reused or created your ontology, you will semantic annotate your dataset according to this ontology or a set of ontologies. For a fast prototyping, the semantic dataset could be stored in a file.
+However, the proper solution is storing semantic datasets within triplestore, to store RDF triples.
+
+Commonly, semantic information is stored in triple or quad stores. The first step before storing the information is to select most suitable triple or quad stores depending on the type of inferences, time of performing SPARQL Queries or the expected  information size to be stored. To perform this initial task, it is common to analyse triple/quad stores benchmarks. Several benchmarks are being collected and published by W3C[^https://www.w3.org/wiki/RdfStoreBenchmarking]. This Wiki pages collects W3C performed benchmarks considering different ontologies (BSBM, LUBM, UOBM, SIB, DBpedia Benchmark, etc). Moreover, it also collects third parties benchmarks. The latest benchmarks performed by the W3C corresponds to 2018 (most updated ones). As contrary, the latest third parties benchmarks are dated 2015[^http://www.semantic-web-journal.net/system/files/swj954.pdf]. Considering latest results, a small summary of the different triple stores are: 
+
+| Large Triple(Quad) Stores | Inferences | License | Bechmark |Max. Triples| SPARQL Query Performance |
+|----|----|----|----|----|----|
+| Oracle Database 12c | RDFS | Propietary | LUBM | 1.08 Trillion | 4.18 Billion (2.53h) |
+| Allegro Graph| RDFS | Propietary/Comercial |Custom | 1 Trillion | N/A |
+| Stardog | OWL | Comercial/Community edition | 50 Billion | N/A |
+| Openlink Virtuoso |Comercial/Community edition| RDFS/OWL | Mighty Storage Challenge |36.9 Billion | 15000 operations (95.50ms) |
+|GraphDB| OWL |Comercial/Community edition| DBPedia benchmark |17 Billion | 53000 operation (1h) |
+| Garlik 4 store| RDF| N/A | Custom | 15 Billion | N/A |
+|Blazegraph| RDF | Open Source |Mighty Storage Challenge | 12.7 Billion | Unable to finish|
+| JenaTDB | OWL | Open Source | DBPedia benchmark | 1.7 Billion | 100Million (around 100s) |
+| RDFox | OWL | Open Source | N/A | 1.6 Billion (in-memory-store) | N/A|
+| Mulgara | RDF | Open Source | N/A | 500 Million | N/A|
+| Kowari | RDF | Open Source | N/A | 160 Million | N/A|
+
+As depicted in the previous table, there is no common benchmark to evaluate all the triple-stores. However, the selection of a triple store will be fundamentally based on the type of inferencing you need in the project (RDF, RDFS, OWL), the type of the project (commercial or open source) and the initial information capacity expected for your application. Other key aspects to have in mind at time of selecting a semantic store is the performance capacity. That means, how the semantic store perform the inferences and where the information is stored. A big lack of the semantic stores is that they needs huge resources to perform the corresponding inferencing, process and load the information. This main lack is derived mainly by the mix of storing the information in different files and in-memory. 
+
+Once the semantic repository is selected, the next step is to download and install it. Nowadays, a common practice is to use Docker as a tool to create a development environment to isolate application in form of containers[^https://www.docker.com]. 
+
+Even the method selected, we are able to run the semantic repository. All shown semantic repositories corresponds to a server with a frontend. So, they usually provide common commands and front-end to load and query the information. Moreover, it also provide an API to connect the semantic store to our programs even directly using libraries (Jena, RDF4J, RDFLib, etc) or through Rest services (HTTP Requests and responses). A common recommendation is to use the commands to load and update the information when large data-sets are present. We recommend to use the user-interface when static data are only present or for testing purposes. 
+
+When the semantic store is filled, the exploration and accessibility to the information is performed through SPARQL endpoints commonly. This SPARQL endpoints are accessible via HTTP in a from-end where the SPARQL queries could be directly defined to explore and access the stored information. The queried information could be serialised in different formats such as JSON-LD, Turtle, RDF/XML, TSV, CSV, N3, etc. When the end-points serves the information to the applitions, it is common to use the API fr the SPARQL query. This API commonly is available through the commented semantic libraries or via HTTP request/responses. One method used to know the HTTP operations that an endpoint offers is through Apiary site or similar API documentation tools [^https://stardog.docs.apiary.io/#introduction/rdf].
+
+![](img/apiaryStardog.png)
+
+Once we have a common overview on how works the semantic stores,   the next paragraphs will be devoted to practice with the presented example. 
+
+- [ ] TODO: Select one semantic store (Fuseki?) 
+  Comment from Amelie: Jena Fuseki is a way to provide your own SPARQL endpoint, perhaps you talk about Jena TDB as a triplestore?
+- [ ] TODO: Load some triples based on the example (JAVA, PYTHON?). 
+- [ ] TODO: Explore the inforamtion using SPARQL queries and some small program (JAVA, PYTHON?)
+
+## Software Implementation [Sonia Bilbao, Charbel Kaed]
+
+//this part is taken from the OLGA paper, I need to reformulate later
+We split the available libraries and frameworks in various programming languages for ontology-based development in two categories,
+i.e., serializers and Object Relational Mappers (ORMs).
+
+### Serializers
+
+Serializers provide reading/writing from/to an ontology file, a SPARQL endpoint, or a persistent RDF store. RDF Serializers are implemented in various programming languages, such as [OWL API](https://github.com/owlcs/owlapi/wiki), [RDF4J](http://rdf4j.org), and [Jackson-Jsonld](https://github.com/io-informatics/jackson-jsonld) in Java, [dotNetRDF](http://www.dotnetrdf.org,) in
+.Net, [Redland](librdf.org) in C, and [RDFLib](https://rdflib.readthedocs.io) in Python. The serializers’ APIs provide low level classes and functions to manipulate concepts directly mapped to the Rdf language without any higher level abstractions. Therefore, it is required by any IoT developer to be aware of the technical aspects and theory of the RDF concepts and principles in order to implement ontology-based IoT applications.
+We discuss in the following the serializers offering basic code generation through a plugin which takes an ontology as an input
+and generates some code facilitators or stubs. The [Protégé code generation plugin](https://github.com/protegeproject/code-generation), which can be easily integrated in [Protégé](http://protege.stanford.edu) provides generation of Java code based on the [OWL API](https://github.com/owlcs/owlapi/wiki). However, the code generation is partial where only the class name and interface are provided along with an empty constructor. Then, it is up to the developer to complete the generated code by relying on the OWL API which requires a learning curve since it is directly mapped to the RDF concepts.
+
+The [RDF4J Schema generator](https://github.com/ansell/
+rdf4j-schema-generator,) extends the RDF4J API and provides an automatic generation of an RDF schema from an
+ontology. The generated output of the ontology is contained in one java file which contains only the IRI of each concept of the
+ontology. In other words, the code generation is flat, there are no classes, associations, or constraints between the generated elements. It is up to the developer to implement the association, mapping, and constraints manually.
+[AutoRDF](https://github.com/ariadnext/AutoRDF) extends the Redland library and proposes a generator which takes an ontology and generates C++ object oriented
+code to manipulate RDF concepts. The generated code is an abstraction layer which consists in a set of functions based on the
+ontology classes and relations available to be used by developers to generate ontology instances (A-Box).
+
+### Object Relation Mappers (ORMs)
+ORMs are built on top of serializers and provide an object oriented abstraction layer allowing developers to manipulate objects
+instead of RDF concepts. Several ORMs are available in various programming languages, such as [KOMMA](http://iswc2011.semanticweb.org/fileadmin/iswc/Papers/Workshops/SWESE/6.pdf), [Empire](https://github.com/mhgrove/Empire) and
+[AliBaba](https://bitbucket.org/openrdf/alibaba) in Java, [RomanticWeb](http://romanticweb.net/) and [TrinityRDF](https://bitbucket.org/semiodesk/trinity) in .Net, and [RDFAlchemy](https://github.com/gjhiggins/RDFAlchemy) in Python. ORMs rely on the code decoration
+where a developer annotates her code with tags referencing IRIs from the ontology terminology (T-Box). Most of the Java ORM rely
+on the [Java Persistence API (JPA)](http://www.oracle.com/technetwork/articles/javase/persistenceapi-135534.html) while the .Net ORMs rely on the [Entity Framework](https://github.com/aspnet/EntityFramework6). During the code implementation of
+an application, the developer requests a factory to instantiate the ontology (A-Box) and can formulate SPARQL queries by relying on
+SPARQL query builders or adapters such as the LINQ to SPARQL in the .Net domain.
+We discuss in the following the ORMs providing some code generation features.
+
+[AliBaba](https://bitbucket.org/openrdf/alibaba) offers the three following interesting features for ontology developers. a) The object server exposes the object factory
+through a REST API putting the available objects as resources on the web for manual annotation. b) The aspect behaviors which
+allow each object of the factory to intercept a method call and execute a specific behavior. Annotation such as precedes provides
+the developer with a better control with the behavior execution flow. c) SPARQL queries decoration on the getter/setters of objects which enables dynamic queries execution. In fact, compared to other ORMs, this feature is similar to invoking SPARQL queries in
+the implementation methods. AliBaba highlights a java code generator which seems to handle simple ontologies, it failed to generate
+code when tested with the [SAREF](http://ontology.tno.nl/saref.ttl) ontology. AliBaba provides interesting concepts for ontology based development, however, it
+is clearly targeting ontology and not IoT developers since RDF and SPARQL are part of its APIs and design.
+KOMMA relies on the Eclipse Modeling Framework [EMF](eclipse.org/emf) and is inspired by AliBaba’s design. KOMMA provides a unified
+framework with the following three layers: an object mapping persistence layer, visualization tool, and an ontology editor based on
+the capabilities of the EMF. KOMMA mentions a code generator plugin, however, it is not integrated in visualization and editing
+layers, therefore, the mapping and implementation of the interfaces remain manual. KOMMA’s unified approach clearly targets ontology
+developers with the integration of the three layer in a common framework. A learning curve is expected from an IoT developer for
+both the ontology editing and the object mapping which consists in decorating the code with concepts from the ontology.
+
+In addition, [OLGA](https://ecostruxure.github.io/OLGA/) (an Ontology Library GenerAtor) is a multi-library code generator it takes
+two parameters as input: one or more ontologies since an ontology can depend on other ontologies and a choice of a library dependency.
+In fact, the generated library will depend either on a serializer or a an object relational mapper. Thus, OLGA completes already existing libraries and frameworks, those depicted previously by providing IoT developers with the variety of choice for the development of ontology-based IoT applications. OLGA enables the possibility for an IoT developer to choose and reuse existing open source libraries
+(serializers or ORMs) while offering an abstraction and a simpler library to use which conforms to an ontology model previously
+specified by the experts.
+
+### Available frameworks in Java:
+Jena (https://jena.apache.org/) is a free and open source Java framework for building Semantic Web and Linked Data applications. It provides several Jena sub-systems and APIs:
+-	RDF API to create and read RDF graphs
+-	ARQ: a query engine for Jena that supports the SPARQL RDF Query language. 
+-	Fuseki (https://jena.apache.org/documentation/fuseki2/): a SPARQL server to expose your triples as a SPARQL end-point accessible over HTTP. It can run as an operating system service, as a Java web application (WAR file), and as a standalone server. 
+-	Ontology API to work with models, RDFS and Web Ontology Language (OWL)
+-	Inference API to reason over the data
+
+### Code implementation
+Next we will show how to write software in Java for processing the semantic information from the previous power profile instantiation example.
+
+The power profile uses the SAREF4ENER extension of SAREF ontology. So, the first thing we need to do is to set up a semantic repository where these models will be added. We will use Apache Jena Fuseki (https://jena.apache.org/documentation/fuseki2/) that provides a robust, transactional persistent storage layer and a SPARQL server.
+-	Download the software from https://jena.apache.org/download/
+-	Install and run Fuseki: https://jena.apache.org/documentation/fuseki2/fuseki-run.html 
+From now on we will assume that the name of the dataset is “energyds” and the dataset URI is http://localhost:3030/energyds.
+
+In order to add a model to the dataset we need to provide the path or url to the file and the RDF I/O technology (RIOT), e.g. Turtle, RDF/XML, etc. as shown below. The loadEnergyExample method shows how to add [SAREF4ENER](http://ontology.tno.nl/saref4ener.ttl), [SAREF](http://ontology.tno.nl/saref.owl) and the power profile instantiation to the dataset. The file [example.ttl](https://github.com/martin-p-bauer/2018_JWP/blob/master/part2/example.ttl) contains the RDF code for the power profile. SAREF4ENER is in Turtle format whereas SAREF is in RDF/XML format.
+
+```
+import org.apache.jena.query.*;
+import org.apache.jena.rdf.model.*;
+import java.io.*;
+import java.util.*;
+import org.apache.jena.update.*;
+
+public void addFileModel(File rdf, String riot) throws IOException {
+    // parse the ontology file
+    Model newModel = ModelFactory.createDefaultModel();
+    try (FileInputStream in = new FileInputStream(rdf)) {
+        newModel.read(in, null, riot);
+    }
+    
+    DatasetAccessor accessor = DatasetAccessorFactory.createHTTP(“http://localhost:3030/energyds”);
+    // Add statements to the default model of a Dataset
+    accessor.add(newModel);      
+}
+
+public void addUrlModel (String urlString, String riot) throws Exception {
+     // parse the ontology file
+     Model newModel = ModelFactory.createDefaultModel();
+        
+     // create the url
+     URL url = new URL(urlString);
+     newModel.read(url.openStream(), null, riot);
+     
+     DatasetAccessor accessor = DatasetAccessorFactory.createHTTP(“http://localhost:3030/energyds”);
+     // Add statements to the default model of a Dataset
+     accessor.add(newModel);       
+}
+
+public void loadEnergyExample () {
+    String sarefOntology ="http://ontology.tno.nl/saref.owl";
+    String saref4EnerOntology ="http://ontology.tno.nl/saref4ener.ttl";
+    String example ="example.ttl";
+    try {
+        addUrlModel(sarefOntology, "RDF/XML");
+        addUrlModel(saref4EnerOntology, "TURTLE");
+        addFileModel(new File(example), "TURTLE");
+    } catch (Exception ex) {
+        System.err.println (ex.getMessage());
+    }
+}        
+```
+
+In order to retrieve the values of the measurements of the heating system from the energy use case we need to make a SPARQL query. The method getMeasurements written below will print the properties, values and units of the measurements from the PowerProfile-1-HS0001 instance. The method queryModel contains the code to query the dataset providing as input a string with a query in SPARQL syntax.
+```
+public List<Map<String, Object>> queryModel(String sparqlQuery) {
+    List<Map<String, Object>> mapResult = new ArrayList<>();
+
+    try (QueryExecution qexec = QueryExecutionFactory.sparqlService(“http://localhost:3030/energyds”, sparqlQuery)) {
+        org.apache.jena.query.ResultSet results;
+        results = qexec.execSelect();
+
+        while (results.hasNext()) {
+            QuerySolution soln = results.nextSolution();
+            mapResult.add(createMap(soln));
+        }
+    }
+
+    return mapResult;
+}
+
+private Map<String, Object> createMap(QuerySolution querySolution) {
+    Map<String, Object> result = new HashMap<>();
+    Iterator<String> it = querySolution.varNames();
+    while (it.hasNext()) {
+        String varName = it.next();
+        if (querySolution.get(varName) instanceof Literal) {
+            result.put(varName, querySolution.getLiteral(varName));
+        } else {
+            result.put(varName, querySolution.getResource(varName));
+        }
+     }
+     return result;
+}
+
+public void getMeasurements () {
+    List<Map<String, Object>> qryResult;
+    String sparqlQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
+                + "PREFIX s4ener: <https://w3id.org/saref4ener#> "
+                + "PREFIX saref: <https://w3id.org/saref#> "
+                + "SELECT ?x ?y ?m ?a ?b "
+                + "WHERE {"
+                + " ?x rdf:type s4ener:PowerProfile . " 
+                + " ?x s4ener:belongsTo s4ener:HeatingSystem . " 
+                + " ?x saref:isAbout ?y . " 
+                + " ?m saref:relatesToProperty ?y . "
+                + " ?m saref:hasValue ?a . " 
+                + " ?m saref:isMeasuredIn ?b ."
+                + " } ";
+
+    qryResult = queryModel(sparqlQuery);
+
+    int i = 0;
+    while (i < qryResult.size()) {
+        Resource resMeasurement = (Resource) qryResult.get(i).get("x");
+        
+        System.out.println (resMeasurement.getURI());
+        System.out.println ("Property " + ((Resource)qryResult.get(i).get("y")).getLocalName());
+        System.out.println ("Value " + qryResult.get(i).get("a"));
+        System.out.println ("Unit " + ((Resource)qryResult.get(i).get("b")).getLocalName());
+        i++;
+    }
+}
+```
+
+The output of invoking the method getMeasurements with the instances in the file [example.ttl](https://github.com/martin-p-bauer/2018_JWP/blob/master/part2/example.ttl) are shown below.
+
+```
+https://w3id.org/saref4ener#PowerProfile-1-HS0001
+Property Power_1
+Value 0.2
+Unit kilowatt
+https://w3id.org/saref4ener#PowerProfile-1-HS0001
+Property Energy_1
+Value 0.2
+Unit kilowatt_hour
+```
+
+### Code implementation with OLGA 
+
+OLGA example: https://github.com/EcoStruxure/OLGA/wiki/Hello-World
+
+## Analytics and Reasoning using Semantic Information [Amelie Gyrard, Laura Daniele]
+How to do analytics and reasoning using semantic information.
+
+
+Example of rule complaint with the Jena framework
+
+[UnhealthyOutdoorAirQualityIndexUS: 
+              (?measurement rdf:type kao:OutdoorAirQualityIndex)
+              (?measurement sosa:hasSimpleResult ?v)
+              greaterThan(?v,101)
+              lessThan(?v,150)
+			  ->
+				(?measurement rdf:type kao:UnhealthyOutdoorAirQualityIndexUS)
+]
+According to Wikipedia Air Quality Index (AQI): https://en.wikipedia.org/wiki/Air_quality_index
+Rule: IF AirQualityIndex greaterThan 101 and LowerThan 150 THEN UnhealthyOutdoorAirQualityIndexUS
+
+References:
+- Sensor-based Linked Open Rules (S-LOR): http://linkedopenreasoning.appspot.com/
+ http://linkedopenreasoning.appspot.com/?p=publication
+ - Sensor-based Linked Open Rules (S-LOR): An Automated Rule Discovery Approach for IoT Applications and its use in Smart Cities [Gyrard et al. Smart City Workshop WWW 2017]
+ - Book Chapter: A Review of Tools for IoT Semantics and Data Streaming Analytics [Serrano, Gyrard et al. 2016]
+ - Knowledge Extraction from Sensor Data, Knowledge Acquisition Tooolkit (KAT): http://info.ee.surrey.ac.uk/CCSR/KAT/overview.html
+
+## Semantic Interoperability Across Systems
+How to achieve semantic interoperability across systems.
+
+### Semantic interoperability by ontological models [Jaeho Lee]
+
+**1. Request to report**
+![Request to report](img/JHL-Request2Report.png)
+
+
+**Service Executor (Apache Jena code)**
+
+```java
+
+handleRequest(Request r){	
+	OntClass requestService = currentServiceModel.getServiceByName(r.name());
+	Individual[] homeControlSystems = currentUserModel.getUserHomeService(requestService);
+	for(OntIndiv system : homeConstrolSystem){
+		String service = system.getServiceName();
+		String arg = system.getServiceArgument(r.getArgument);
+		systemConnector.set(service,arg);
+	}
+}
+
+```
+
+**Semantic Mapping (Apache Jena code)**
+
