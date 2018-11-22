@@ -20,7 +20,7 @@ Semantics and ontology definition can bring a valuable solution, as it defines a
 
 As already aforementioned, one of the first interoperability level to take care of is at informational level, i.e. at data and semantic level. It is mandatory to address since it allows data heterogeneity management, both within a single platform and even across platforms (provided that the data model becomes a unified / standardized one). One good example of that is the Bluetooth LE GATT (Low Energy Generic Attributes) profile that has been standardized by the Bluetooth Special Interest Group (SIG) and enables interoperability of Bluetooth devices [https://www.bluetooth.com/specifications/gatt].
 
-![](img/RoomExample.png)
+<img src="img/RoomExample.png" width="600">
 
 Figure 1: Simple example of a house room
 
