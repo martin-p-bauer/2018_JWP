@@ -1,5 +1,7 @@
 # Ontology Selection / Creation [Amelie Gyrard, Iker Esnaola, Izaskun Fernandez]
 
+This section aims to help developers willing to develop, integrate, select, and reuse ontologies. We recommend some guidelines for ontology development by defining a set of competency questions. Then, we strongly encourage to reuse existing ontologies by providing advices how to discover and select the appropriate existing ontologies fitting deverloper's needs. Some use cases are provided to help understanding.
+
 Ontology Selection/Creation diagram:
 
 ![Ontology selection/creation diagram flow](https://image.ibb.co/d4iAxT/Diagram.png)
