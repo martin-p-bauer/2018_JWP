@@ -156,14 +156,13 @@ This section identifies activities/tasks related to interoperability by design t
 
 |Example|Description|
 |----|----|
-| Semantic interoperability ontology requirements definition  | Define the type of knowledge that need to be captured in the ontology (domain, cross domain and transversal, e.g. health, transport and security). Define the operational requirements (e.g. compability)
-Identify a ontology version management scheme. |
-| Semantic interoperability ontology structure co-creation  |   |
-| Semantic interoperability ontology co-construction  |   |
-| Semantic interoperability ontology test and validation  |   |
-| Semantic interoperability ontology commissioning and deployment |   |
-| Semantic interoperability ontology maintenance  |   |
-| Semantic interoperability ontology decommissioning |   |
+| Semantic interoperability ontology requirements definition  | Define the type of knowledge that need to be captured in the ontology (domain, cross domain and transversal, e.g. health, transport and security). Define the operational requirements (e.g. compability). Identify a ontology version management scheme. |
+| Semantic interoperability ontology structure co-creation  | Define the ontologies to be used, the part that is encapsulated, the part that is exposed and adapted. Seek consensus for standardisation   |
+| Semantic interoperability ontology co-construction  | Finalise or build the ontology that describes the interoperability point. Seek consensus for standardisation |
+| Semantic interoperability ontology test and validation  | Validate that the ontology is well formed and semantically consistent. Validate that the exposed ontology is what is expected |
+| Semantic interoperability ontology commissioning and deployment | Acceptance by the ecosystem (e.g. community that will use the ontology) that the ontology is at suitable maturity level. Integrate in the ontology version management
+| Semantic interoperability ontology maintenance  | Update and enhance the exposed ontology. Validate the updated ontology |
+| Semantic interoperability ontology decommissioning | Update the ontology version management  |
 
 ### Example
 To be provided. This section could provide an example on Ambient Assisted Living (AAL). It would demonstrate a use case combining 2 domains: smart homes and healthcare applications domains. AAL helps elderly people to stay independent at home.
