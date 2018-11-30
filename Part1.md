@@ -136,7 +136,21 @@ This section identifies activities/tasks related to interoperability by design t
 
 |Typical lifecycle technical process (e.g. ISO 15288)|Interoperability task and activities|
 |----|----|
-|  |   |
+| Stakeholder needs and requirements definition |Interoperability needs and contraints   |
+| System requirements definition process | Interoperability requirements  |
+| Architecture definition process | Interoperability point definition |
+| Design definition process |   |
+| System analysis process | Interoperability point specification  |
+| Implementation process | Interoperability point implementation  |
+| Integration process |   |
+| Verification process | Interoperability test  |
+| Transition process | Interoperability plug test  |
+| Validation process |   |
+| Operation process |   |
+| Maintenance process | Interoperability maintenance  |
+| Disposal |   |
+
+
 
 ### Resulting extension of ontology lifecycle processes
 
