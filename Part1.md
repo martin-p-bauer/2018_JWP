@@ -66,7 +66,19 @@ Figure 1 : Example of system vision
 | SAREF| Smart Appliances REFerence (SAREF) [8], is a European standard supported by ETSI M2M and SmartM2M. It mainly covers the smart building applicative domain. The SAREF ontology has been designed re-using SSN and oneM2M according to [Moreira et al. 2017]. Schema.org. Schema.org is a well-known schema catalog to structure data on Web pages to describe the location, person, etc. The IoT Schema.org extension [9] is planned; discussions are ongoing. | 
 | Haystack | Haystack [10] is a project aiming at standardizing semantic data models and web services. For instance, the Haystack Tagging Ontology which employs SSN V1 ontology has been developed [11] [Charpenay et al. 2015].| 
 
-## 1.3 Interoperability-by-design: a lifecycle description
+## 1.3 Interoperability viewpoint of ontologies
+Figure 2 shows how ontologies can serve interoperability:
+
+-	ontologies are used for interoperability specifications, thus allowing for commonly shared unambiguous semantic descriptions;
+- in order to preserve independence and flexibility, only exposed ontologies are used. Thies means that domain ontologies can change without impacting on interoperability and exposed ontologies must be careful specified as they must be stable.
+
+![](https://github.com/martin-p-bauer/2018_JWP/blob/master/Structuring%20ontologies.png)
+
+<p align="center">
+Figure 2 : Structuring ontologies for Interoperability
+</p>
+
+## 1.4 Interoperability-by-design: a lifecycle description
 The following phases are defined:
 
 (1) Stakeholder needs and requirements. This includes
