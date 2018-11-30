@@ -79,6 +79,18 @@ Figure 2 : Structuring ontologies for Interoperability
 </p>
 
 ## 1.4 Interoperability-by-design: a lifecycle description
+Supporting interoperability requires a system lifecycle viewpoint to ensure that proper requirements, design, implementation, validation and maintenance of interoperability features are integrated.
+
+### Introduction to system lifecycles
+
+ISO/IEC/IEEE 15288 (Systems and software engineering — System life cycle processes) defines a system lifecycle as “an abstract functional model representing the conceptualization of a need for the system, its realization, utilization, evolution and disposal”. A system lifecycle is described as a set of processes. Processes can take place sequentially or in parallel as showed in figure 3.
+
+![](https://github.com/martin-p-bauer/2018_JWP/blob/master/Exampls%20of%20SLC%20processes.png)
+
+<p align="center">
+Figure 3: Example of System Life Cycle Processes
+</p>
+
 The following phases are defined:
 
 (1) Stakeholder needs and requirements. This includes
