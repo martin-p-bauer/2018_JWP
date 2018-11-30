@@ -131,7 +131,18 @@ Ontology-driven semantic interoperability assumes that interoperability-by-desig
 Figure 6: Ontology-driven Interoperability
 </p>
 
+### Resulting extension of system lifecycle processes
+This section identifies activities/tasks related to interoperability by design that need to be integrated. The table below uses the ISO/IEC/IEEE 15288 processes and provides examples of tasks and activities that are related to interoperability
 
+|Typical lifecycle technical process (e.g. ISO 15288)|Interoperability task and activities|
+|----|----|
+|  |   |
+
+### Resulting extension of ontology lifecycle processes
+
+|Example|Description|
+|----|----|
+| Example of practice for scope of specification | An interoperability specification is defined to allow for cross domain interoperability between an energy management system and electric vehicle charging system. The resulting ontology covers a common subset of the energy and mobility domain. |
 
 ### Example
 To be provided. This section could provide an example on Ambient Assisted Living (AAL). It would demonstrate a use case combining 2 domains: smart homes and healthcare applications domains. AAL helps elderly people to stay independent at home.
