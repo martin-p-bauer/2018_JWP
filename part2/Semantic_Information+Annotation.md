@@ -1,5 +1,7 @@
 # Semantic Information & Semantic Annotation [Wenbin Li, Hamza Baqa]
 
+Semantical information can help to bridge the different knowledge representations. As shown in the previous sections, it can be used to discover matching between models elements, which helps information systems integration. In our smart home energy use case, we use ontology objects for enriching Resource’s information, relevant information is about devices, their state, measurements and energy profiles.
+
 To fully use semantic technologies, systems and platforms are expected to serve information with ontologies so that one can look up data content and get information from ontology definitions including the relationships between the terms in the ontology. Semantic information is regarded as any form of information containing explicit semantic descriptions and using ontologies to drive the information lifecycle. Comparing to classical syntax data, semantic information is human&machine understandable and unambiguous to support advanced data functions such as complex query, intelligent human-machine interaction, contextual data analytics and data interoperability. 
 
 In order to have semantic information on hand, we have typically two ways, i.e., Semantic Information Creation and Semantic Annotation, as detailed as follows. Both of the processes bridge the gap between syntax and semantics world with different application cases. 
