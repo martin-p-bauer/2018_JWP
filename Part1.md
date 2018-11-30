@@ -156,7 +156,13 @@ This section identifies activities/tasks related to interoperability by design t
 
 |Example|Description|
 |----|----|
-| Example of practice for scope of specification | An interoperability specification is defined to allow for cross domain interoperability between an energy management system and electric vehicle charging system. The resulting ontology covers a common subset of the energy and mobility domain. |
+| Semantic interoperability ontology requirements definition  |   |
+| Semantic interoperability ontology structure co-creation  |   |
+| Semantic interoperability ontology co-construction  |   |
+| Semantic interoperability ontology test and validation  |   |
+| Semantic interoperability ontology commissioning and deployment |   |
+| Semantic interoperability ontology maintenance  |   |
+| Semantic interoperability ontology decommissioning |   |
 
 ### Example
 To be provided. This section could provide an example on Ambient Assisted Living (AAL). It would demonstrate a use case combining 2 domains: smart homes and healthcare applications domains. AAL helps elderly people to stay independent at home.
