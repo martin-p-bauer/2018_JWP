@@ -91,6 +91,34 @@ ISO/IEC/IEEE 15288 (Systems and software engineering — System life cycle proce
 Figure 3: Example of System Life Cycle Processes
 </p>
 
+As showed in figure 4, a process is described as follows:
+-	a process has a purpose;
+-	it creates an outcome; and
+-	it consists of activities which themselves consist of tasks.
+
+![](https://github.com/martin-p-bauer/2018_JWP/blob/master/Processes%20Activities%20Tasks.png)
+
+<p align="center">
+Figure 4: Processes, Activities and Tasks
+</p>
+
+The ISO/IEC/IEEE 15288 standard describes thirty processes structured into four categories:
+
+-	agreement processes which focus on activities related to supplier agreements;
+-	organizational project-enabling processes which focus on activities related to improvement of the organization’s business or undertaking;
+-	technical management processes which focus on managing the resources and assets allocated to the engineering of a system; and
+- technical processes which focus on technical actions throughout the life cycle.
+
+
+### Interoperability-by-design
+We define interoperability-by-design as the integration of the concept of interoperability in the design and lifecycle of systems, as showed in figure 5.
+
+![](https://github.com/martin-p-bauer/2018_JWP/blob/master/Interoperability%20by%20design.png)
+
+<p align="center">
+Figure 5: Interoperability-by-design
+</p>
+
 The following phases are defined:
 
 (1) Stakeholder needs and requirements. This includes
