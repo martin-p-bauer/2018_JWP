@@ -156,10 +156,8 @@ This section identifies activities/tasks related to interoperability by design t
 
 |Example|Description|
 |----|----|
-| Semantic interoperability ontology requirements definition  | Define the type of knowledge that need to be captured in the ontology (domain, cross domain and transversal, e.g. health, transport and security)
-Define the operational requirements (e.g. compability)
-Identify a ontology version management scheme
-  |
+| Semantic interoperability ontology requirements definition  | Define the type of knowledge that need to be captured in the ontology (domain, cross domain and transversal, e.g. health, transport and security). Define the operational requirements (e.g. compability)
+Identify a ontology version management scheme. |
 | Semantic interoperability ontology structure co-creation  |   |
 | Semantic interoperability ontology co-construction  |   |
 | Semantic interoperability ontology test and validation  |   |
