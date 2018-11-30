@@ -119,26 +119,19 @@ We define interoperability-by-design as the integration of the concept of intero
 Figure 5: Interoperability-by-design
 </p>
 
-The following phases are defined:
+### Ontology-driven semantic Interoperability
+Ontology-driven semantic interoperability assumes that interoperability-by-design is based on the use of ontologies to describe the meaning of exchanged information. Figure 6 shows the relationship between ontologies and interoperability. The following remarks can be made:
 
-(1) Stakeholder needs and requirements. This includes
+-	Interoperability is part of the system lifecycle process
+-	Ontologies have their own lifecycle.
 
--	the description of the domain and the system;
-- the description of the interoperability point;
-- the description of the needed knowledge and the needed expertise; and
-- the description of industry deployment requirements.
+![](https://github.com/martin-p-bauer/2018_JWP/blob/master/Ontology%20driven%20interoperability.png)
 
-(2) Semantic interoperability requirements definition
+<p align="center">
+Figure 6: Ontology-driven Interoperability
+</p>
 
-(3) Semantic interoperability ontology structure co-creation
 
-(4) Semantic interoperability ontology co-construction
-
-(5) Semantic interoperability ontology test and validation
-
-(6) Semantic interoperability ontology commissioning and deployment
-
-(7) Semantic interoperability ontology decommissioning 
 
 ### Example
 To be provided. This section could provide an example on Ambient Assisted Living (AAL). It would demonstrate a use case combining 2 domains: smart homes and healthcare applications domains. AAL helps elderly people to stay independent at home.
