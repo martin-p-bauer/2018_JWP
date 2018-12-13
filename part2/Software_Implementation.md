@@ -43,11 +43,29 @@ layers, therefore, the mapping and implementation of the interfaces remain manua
 developers with the integration of the three layer in a common framework. A learning curve is expected from an IoT developer for
 both the ontology editing and the object mapping which consists in decorating the code with concepts from the ontology.
 
-In addition, [OLGA](https://ecostruxure.github.io/OLGA/) (an Ontology Library GenerAtor) is a multi-library code generator it takes
-two parameters as input: one or more ontologies since an ontology can depend on other ontologies and a choice of a library dependency.
+
+## OLGA: an Ontology Library Generator
+OLGA (Ontology Library GenerAtor) is a generic tool aiming to accelerate the adoption of [Standard W3C Semantic technology](https://www.w3.org/standards/semanticweb/) among developers. 
+
+OLGA provides a better development experience by focusing on:
+
+* Reducing friction barrier for developers when working with an ontology model.
+
+* Accelerating development of ontology based systems.
+
+* Eliminating complexity by providing Object Oriented libraries for developers.
+
+OLGA is based on a model driven approach taking as input an ontology file expressed in one of the supported W3C supported standards ([RDF](https://www.w3.org/2001/sw/wiki/RDF), [OWL](https://www.w3.org/OWL)) and generating a library conform to the ontology model.
+
+The generated library is then imported and used to programmatically to:
+1. Generate an ontology instance conform to the ontology model.
+2. Query the generated ontology instance by relying on Object Oriented Model instead of [SPARQL](https://www.w3.org/TR/sparql11-query/).
+
 In fact, the generated library will depend either on a serializer or a an object relational mapper. Thus, OLGA completes already existing libraries and frameworks, those depicted previously by providing IoT developers with the variety of choice for the development of ontology-based IoT applications. OLGA enables the possibility for an IoT developer to choose and reuse existing open source libraries
-(serializers or ORMs) while offering an abstraction and a simpler library to use which conforms to an ontology model previously
-specified by the experts.
+(serializers or ORMs) while offering an abstraction and a simpler library to use which conforms to an ontology model previously specified by the experts.
+
+
+# do we need to keep all the below? or it should go in the appendix?
 
 ## Available frameworks in Java:
 Jena (https://jena.apache.org/) is a free and open source Java framework for building Semantic Web and Linked Data applications. It provides several Jena sub-systems and APIs:
