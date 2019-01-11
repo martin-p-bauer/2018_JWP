@@ -74,7 +74,7 @@ Next sections show, using a specific use case, how semantic interoperability can
 ## Example Use Case [Laura Daniele, Marc Girod-Genet, Martin Bauer]
 *Describe an example use case that instantiates the problem space, is as simple as possible, but shows the advantages of semantics and can be used in the following subsections.*
 
-> **Overall: Put more emphasis on describing scenario & resulting requirements, leave discussion on 'solution based on semantice' to the following sections**
+> **Overall: Put more emphasis on describing use case & resulting requirements, leave discussion on 'solution based on semantice' to the following sections**
 
 > Can we number different aspects and reference them later?
 
@@ -153,7 +153,7 @@ For addressing all the aforementioned requirements, interoperability will have t
  * Network level for mainly handling point 2 and intra/inter systems interoperability.
 
 ## Ontology Selection / Creation [Amelie Gyrard, Iker Esnaola, Izaskun Fernandez]
-This section aims to help developers willing to develop, integrate, select, and reuse ontologies. We recommend some guidelines for ontology development by defining a set of competency questions. Then, we strongly encourage to reuse existing ontologies by providing advices how to discover and select the appropriate existing ontologies fitting deverloper's needs. Some use cases are provided to help understanding. For our use case, we need ontologies describing energy.
+*This section aims to help developers willing to develop, integrate, select, and reuse ontologies. We recommend some guidelines for ontology development by defining a set of competency questions. Then, we strongly encourage to reuse existing ontologies by providing advices how to discover and select the appropriate existing ontologies fitting deverloper's needs. Some use cases are provided to help understanding. For our use case, we need ontologies describing energy.*
 
 Ontology Selection/Creation diagram:
 
