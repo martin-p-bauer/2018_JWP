@@ -74,6 +74,8 @@ Next sections show, using a specific use case, how semantic interoperability can
 ## Example Use Case [Laura Daniele, Marc Girod-Genet, Martin Bauer]
 *Describe an example use case that instantiates the problem space, is as simple as possible, but shows the advantages of semantics and can be used in the following subsections.*
 
+> **Overall: Put more emphasis on describing scenario & resulting requirements, leave discussion on 'solution based on semantice' to the following sections**
+
 > Can we number different aspects and reference them later?
 
 In this use case a smart home with smart devices is to be connected to the smart grid. The smart home resident wants to optimize the energy consumption of the house, but still be in control of key aspects, e.g. when the washing has to be done, when the batteries of the electronic vehicle have to be recharged, and that the temperature in the house is kept within a certain range etc. The smart grid company offers the smart home resident a special tariff with significant discounts during times when a surplus of energy is available in exchange for some control on the energy consumption. Thus the smart grid company gets means to balance the overall energy consumption and the smart home resident lowers the energy bill without a significant loss of convenience.
