@@ -87,6 +87,8 @@ In order to implement the scenario, different systems have to be integrated allo
 
 To achieve interoperability between the systems, agreement on the interfaces and the modelling of information is necessary. In this paper we will show how the relevant information can be modelled on a semantic level to achieve semantic interoperability. 
 
+> Do we have a figure visualizing the smart home/smart grid use case?
+
 Examples of what needs to be modelled:
  * Device 
    * status
@@ -96,6 +98,8 @@ Examples of what needs to be modelled:
    * operation policy
  * Estimated energy cost timeline
  * Energy consumption limit
+
+> Do we need to introduce the Customer Energy Manager here? Is this part of the scenario or rather part of a possible solution for this scenario?
 
 Customers can offer flexibility to the Smart Grid to manage their smart home devices by means of a Customer Energy Manager (CEM), a logical component that controls and optimizes the energy consumption in a smart home. The CEM is a logical function for optimizing energy consumption and/or production that can reside either in the home gateway or in the cloud. The component that collects and analyzes energy consumption is a smart meter. Example use cases that require interoperability and involve devices in the smart home, the CEM, smart meters and the smart grid are the following:
 - configuration of devices that want to connect to each other in the home network, for example, to register a new dishwasher to the list of devices managed by the CEM;
@@ -111,6 +115,8 @@ These use cases are associated with the user stories described in IEC TR 62746-2
  *	User allows the CEM to reduce the energy consumption of the freezer in a defined range for a specific time, if the grid recognizes (severe) stability issues.
 *	Grid related emergency situations (e.g. blackout prevention).
 
+> Smart BAN is described as a solution here - could we first identify the requirements (i.e. focus on 'home care' rather than 'Smart BAN', which should be the focus here? We should identify some aspects that are relevant for the semantic interoperability section, i.e. why information from both energy and home care
+
 Let us now consider the additional case where the resident of the house is an elderly that needs support at home, as well as to be continuously monitored (i.e. wellbeing for aging well). In order to implement such use case:
   1.	the resident/elderly needs to be provided with a smart BAN (Body Area Network) for the monitoring and control of its vital    signs, status and activities. This smart BAN mainly comprises, in respect of its resident/elderly embedded device part (smart BAN Cluster), medical/wellbeing sensors, wearables, a BAN coordinator or hub (e.g. a smart-phone, a smart-watch) with in particular data concentrator and network gateway roles. The data concentrator is used for data collection and has also to be provided with embedded data analytics functionalities for local alarm management, local monitoring/control and resident/elderly assistance purposes. The network Gateway is mainly used for data sending to the remote monitoring/control servers and applications located within caregivers or relatives premises. Let us note that, for security/safety reasons, actuations on resident/elderly BAN devices have not been actually considered. 
   2.	this smart BAN has to interact with the Smart Home and some of its appliances mainly for the following purposes: resident/elderly positioning inside the house (e.g. through beacons on the walls), resident/elderly activity tracking, verification of interactions with key appliances (e.g. with a scale for weight measurement, or for verifying if fridge or cooker was used, or if a medication box was opened), resident/elderly comfort management (e.g. maintaining a given temperature/humidity/luminosity level in accordance with resident/elderly condition requirements, as well as with energy efficiency objectives that could be already parameterized for the Smart Home).
@@ -119,18 +125,25 @@ The additional use case (i.e. elderly at home monitoring and support) high level
 
 ![](img/SemInteropElderlyHomeUseCase.png)
 
-In a such environment and use case, it is first mandatory to address security and privacy by design since we are dealing with eHealth and personal safety highly critical data and applications (even if actuations within BANs are not yet considered for quite all the existing use cases). It is also mandatory to address interoperability, in particular since:
+In a such environment and use case, it is first mandatory to address security and privacy by design since we are dealing with eHealth and personal safety highly critical data and applications (even if actuations within BANs are not yet considered for quite all the existing use cases). 
+
+> should be linked to general interoperability discussion, e.g. in Problem Description - so interoperability is a very important aspects, we focus on semantic interoperability
+
+It is also mandatory to address interoperability, in particular since:
 1.	At least heterogeneity of medical devices and measures has to be masked at application level,
 2.	At the operational level and from the hospital management information system (MIS) point of view, a new patient’ BAN integration into existing monitoring and control systems has to be carried out as far as possible without any redesign of those systems, even partially,
 3.	At smart BAN level and from the end user perspective, any new sensor integration has to be transparent for the elderly, with a minimum number of easy operations.
 
 For addressing all the aforementioned requirements, interoperability will have thus to be handled at multiple levels for our elderly at home additional use case:
 
- *	Device level for in particular handling point 3 and to some extend point 2,
+ * Device level for in particular handling point 3 and to some extend point 2,
 
- *	Informational level, i.e. data and semantic, for in particular
+ * Informational level, i.e. data and semantics, in particular
 
  - handling point 1, point 2, point 3,
+ 
+ > what does 'handling point 1, point 2, point 3' mean here?
+ 
  - data/information sharing across systems, i.e. Smart BAN and Smart Home systems,
  - enabling semantic-based embedded data analytics. This will be used here for alarm management, monitoring/control and resident/elderly/caregivers assistance purposes,
  - for facilitating cross-domain interactions, in particular between healthcare, wearables and Smart Home.
