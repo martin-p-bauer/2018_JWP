@@ -2,6 +2,8 @@
 
 > What would be a suitable title?
 
+> Semantic IoT Solutions: The Developer Perspective 
+
 ## Introduction [Martin Bauer]
 
 > Explain: what is semantics
