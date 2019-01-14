@@ -17,7 +17,7 @@ The approach of the paper is to take a small, but relevant example, and go throu
 
 *In this section, we describe the problem space in which semantics can be applied, in particular we explain why it is needed to provide platform, system or domain interoperability.*
 
-Several studies have demonstrated the fragmentation of the IoT eco-system in terms of standardization, available technologies and M2M service platforms. 
+Several studies, as well as alliances like AIOTI, have demonstrated the fragmentation of the IoT eco-system in terms of standardization, available technologies and M2M service platforms. 
 
 > If there are studies, we should reference them
 > Why focus on M2M service platforms?
