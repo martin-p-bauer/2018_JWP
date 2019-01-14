@@ -139,6 +139,7 @@ First of all and concerning data and informational levels, heterogeneity and int
 *	Heterogeneity of measures has to be masked, at least at application level,
 *	Measurements and control data (e.g. patient's vital parameters and environment data) have to be understood in a same and unique way by any, processes, applications or end users that need to analyze or process those data,
 *	At the operational level and from the hospital Management Information System (MIS) point of view, a new patient’s BAN integration into existing monitoring and control systems has to be carried out as far as possible without any redesign of those systems, even partially.
+
 Semantic has also to be introduced since: it provides a low power and low energy way of doing embedded data analytics within the BAN or end user embeded terminal (e.g. smart phone), it facilitates the mandatory implementation (at least for our extra use case) of automated alarm management and patient/decision support mechanisms [ETSI SmartBAN, https://www.etsi.org/technologies-clusters/technologies/smart-body-area-networks ; L. Nachabé Ismail, M. Girod-Genet, B. El-Hassan, F. Aro, "Applying Ontology to WBAN for mobile application in the context of sport excersises," In Proceedings of ACM BODYNETS 2014, London, Great Britain, September 2014].
 
 Next, device interoperability has also to be handled in our extra use case since:
