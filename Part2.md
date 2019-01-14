@@ -26,7 +26,7 @@ Accordingly, measurements and data available in one system or implementation are
 
 > How can the following paragraph be made more understandable to our main target group (developers)?
 
-Interoperability has been considered at various levels: technical (connectivity, network, syntactic), informational (semantic or business context) or even organizational. Technical levels cannot be easily achieved when addressing integrated platforms. The semantic or data level is thus the next level where interoperability can be envisioned. Furthermore, the different systems must share the same vocabulary and understand in an identical manner the information they exchange, while facilitating the design of service compositions. 
+Interoperability has been considered at various levels: technical (connectivity, network, syntactic), informational (semantic or business context) or even organizational. Technical levels cannot be easily achieved when addressing integrated platforms. The semantic or data level is thus the next level where interoperability can be envisioned. Furthermore, the different systems must share the same vocabulary and understand in an identical manner the information they exchange, while facilitating the design of service compositions.
 
 There is a need for a common model that describes a system and its components and can be understood by different implementations and platforms. 
 
@@ -42,14 +42,14 @@ Semantic interoperability enables interoperability at data level between platfor
 
 In that context, there is no further need to develop one-to-one interfaces and less risk to make errors when using external data.
 
-Semantics and ontology definition can bring a valuable solution, as it defines a common and abstracted sub-layer above the services and platforms definition. 
+Semantics, metadata (data about data) and ontology (extension of metadata with data context) definition can bring a valuable solution, since it provides a generic representation of a system and its data. It also defines a common and abstracted sub-layer above the services and platforms definition.
 
 > Explain the term "ontology"
 > What layers do we have? What is an abstracted sub-layer in this context? What "services and platform" definition?
 
 Semantics interoperability thus enable the sharing of data across systems, avoiding the definition of a new common data model every time two different systems need to exchange information or the costly misinterpretation of data received from an external system.
 
-As already aforementioned, one of the first interoperability levels to take care of is at informational level, i.e. at data and semantic level. It is mandatory to address since it allows data heterogeneity management, both within a single platform and even across platforms (provided that the data model becomes a unified / standardized one). One good example of that is the Bluetooth LE GATT (Low Energy Generic Attributes) profile that has been standardized by the Bluetooth Special Interest Group (SIG) and enables interoperability of Bluetooth devices [https://www.bluetooth.com/specifications/gatt].
+As already aforementioned, one of the first interoperability levels to take care of is at informational level, i.e. at data and semantic level. It is mandatory to address since it allows data heterogeneity management, both within a single platform and even across platforms (provided that the data model becomes a unified / standardized one). One good example of that is the Bluetooth LE GATT (Low Energy Generic Attributes) profile that has been standardized by the Bluetooth Special Interest Group (SIG) since it provides common standardized metadata for describing any Bluetooth LE devices and its services, adopted by a good number of device makers and thus enabling devices interoperability [https://www.bluetooth.com/specifications/gatt].
 
 > Why is Bluetooth LE GATT a good example? Does it fit with the example that comes later? Can we better align?
 
