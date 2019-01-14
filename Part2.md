@@ -66,8 +66,8 @@ Let us now take the simple problem of a house room with a black box on a wall (s
  * and the context (in the sense of data environment view) of the data, extending the metadata and called ontology, like e.g. in our home example, the information of the sensor that provides the data, the associated positioning and geo-localization, environment, room and home ID, home owner information. With that extended semantic knowledge, more powerful semantic data analytics can now be performed, like e.g. in our home example, which are the collocated houses that have the same Temperature value. 
 
 Ontology design (i.e. specification, formalization) and implementation are thus mandatory for data heterogeneity management and semantic interoperability since:
-*        It provides common data understanding in a same and unique way to any processes, applications or end users that need to analyze or process those data,
-*        It facilitates data/information sharing across systems and enables semantic-based embedded data analytics (e.g. for automated alarm management or control operations).
+* It provides common data understanding in a same and unique way to any processes, applications or end users that need to analyze or process those data,
+* It facilitates data/information sharing across systems and enables semantic-based embedded data analytics (e.g. for automated alarm management or control operations).
 
 If the ontology incorporates common upper level semantics, like e.g. service definition, then it enables data sharing at application level and also facilitates cross-domain use cases handling.
 
