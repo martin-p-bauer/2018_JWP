@@ -42,7 +42,7 @@ Semantic interoperability enables interoperability at data level between platfor
 
 In that context, there is no further need to develop one-to-one interfaces and less risk to make errors when using external data.
 
-Semantics, metadata (data about data) and ontology (extension of metadata with data context/environment) definition can bring a valuable solution, since it provides a generic representation of a system and its data. It also defines a common and abstracted sub-layer above the services and platforms definition.
+Semantics, metadata (data about data meaning) and ontology (extension of metadata with data context/environment) definition can bring a valuable solution, since it provides a generic representation of a system and its data. It also defines a common and abstracted sub-layer above the services and platforms definition.
 
 > Explain the term "ontology"
 > What layers do we have? What is an abstracted sub-layer in this context? What "services and platform" definition?
