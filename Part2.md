@@ -136,18 +136,18 @@ The additional use case (i.e. elderly at home monitoring and support) high level
 In a such environment and use case, it mandatory to address security and privacy by design since we are dealing with eHealth and personal safety highly critical data and applications (even if actuations within BANs are not yet considered for quite all the existing use cases). It is also mandatory to address interoperability at multiple levels and in particular at data, device and semantic level.
 
 First of all and concerning data and informational levels, heterogeneity and interoperability management are mandatory since:
-•	Heterogeneity of measures has to be masked, at least at application level,
-•	Measurements and control data (e.g. patient's vital parameters and environment data) have to be understood in a same and unique way by any, processes, applications or end users that need to analyze or process those data,
-•	At the operational level and from the hospital Management Information System (MIS) point of view, a new patient’s BAN integration into existing monitoring and control systems has to be carried out as far as possible without any redesign of those systems, even partially.
+*	Heterogeneity of measures has to be masked, at least at application level,
+*	Measurements and control data (e.g. patient's vital parameters and environment data) have to be understood in a same and unique way by any, processes, applications or end users that need to analyze or process those data,
+*	At the operational level and from the hospital Management Information System (MIS) point of view, a new patient’s BAN integration into existing monitoring and control systems has to be carried out as far as possible without any redesign of those systems, even partially.
 Semantic has also to be introduced since: it provides a low power and low energy way of doing embedded data analytics within the BAN or end user embeded terminal (e.g. smart phone), it facilitates the mandatory implementation (at least for our extra use case) of automated alarm management and patient/decision support mechanisms [ETSI SmartBAN, https://www.etsi.org/technologies-clusters/technologies/smart-body-area-networks ; L. Nachabé Ismail, M. Girod-Genet, B. El-Hassan, F. Aro, "Applying Ontology to WBAN for mobile application in the context of sport excersises," In Proceedings of ACM BODYNETS 2014, London, Great Britain, September 2014].
 
 Next, device interoperability has also to be handled in our extra use case since:
-•	At least heterogeneity of medical devices has to be masked at application level, for a generic device and device data access, irrespective of whatever lower layers and radio technologies are used underneath,
-•	From the end perspective (e.g. patient and BAN level, caregiver and hospital MIS level), any new sensor integration has to be transparent, with a minimum number of very easy operations, i.e. without any redesign of the system.
+*	At least heterogeneity of medical devices has to be masked at application level, for a generic device and device data access, irrespective of whatever lower layers and radio technologies are used underneath,
+*	From the end perspective (e.g. patient and BAN level, caregiver and hospital MIS level), any new sensor integration has to be transparent, with a minimum number of very easy operations, i.e. without any redesign of the system.
 
 Finally, semantic interoperability has to be addressed for our extra use case (eHealth/wellbeing for ageing well) since we have the following strong requirements:
-•	Data/information sharing across systems (intra/inter systems interoperability), i.e. BAN and Smart Home systems,
-•	Cross-domain interactions, in particular between eHealth, wearables and Smart Home verticals.
+*	Data/information sharing across systems (intra/inter systems interoperability), i.e. BAN and Smart Home systems,
+*	Cross-domain interactions, in particular between eHealth, wearables and Smart Home verticals.
 
 
 ## Ontology Selection / Creation [Amelie Gyrard, Iker Esnaola, Izaskun Fernandez]
