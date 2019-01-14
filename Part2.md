@@ -42,7 +42,7 @@ Semantic interoperability enables interoperability at data level between platfor
 
 In that context, there is no further need to develop one-to-one interfaces and less risk to make errors when using external data.
 
-Semantics, metadata (data about data) and ontology (extension of metadata with data context) definition can bring a valuable solution, since it provides a generic representation of a system and its data. It also defines a common and abstracted sub-layer above the services and platforms definition.
+Semantics, metadata (data about data) and ontology (extension of metadata with data context/environment) definition can bring a valuable solution, since it provides a generic representation of a system and its data. It also defines a common and abstracted sub-layer above the services and platforms definition.
 
 > Explain the term "ontology"
 > What layers do we have? What is an abstracted sub-layer in this context? What "services and platform" definition?
@@ -63,9 +63,13 @@ Let us now take the simple problem of a house room with a black box on a wall (s
 
  *	the meaning of the data, called metadata, e.g. in our home example a temperature measurement, with “Temperature” as name, ‘t’ as acronym, “°C” as unit of measure, “float” as measurement domain and 22 as value. With this metadata knowledge, few simple data analytics can already be performed, like e.g. in our home example, verifying if a  Temperature ‘t’ is not higher than 26,
 
- * and the context of the data, extending the metadata and called ontology, like e.g. in our home example, the information of the sensor that provides the data, the associated positioning and geo-localization, environment, room and home ID, home owner information. With that extended semantic knowledge, more powerful semantic data analytics can now be performed, like e.g. in our home example, which are the collocated houses that have the same Temperature value. 
+ * and the context (in the sense of data environment view) of the data, extending the metadata and called ontology, like e.g. in our home example, the information of the sensor that provides the data, the associated positioning and geo-localization, environment, room and home ID, home owner information. With that extended semantic knowledge, more powerful semantic data analytics can now be performed, like e.g. in our home example, which are the collocated houses that have the same Temperature value. 
 
-Ontology design (i.e. specification, formalization) and implementation are thus mandatory for data heterogeneity management and semantic interoperability. It facilitates data/information sharing across systems and enables semantic-based embedded data analytics (e.g. for automated alarm management or control operations). If the ontology incorporates common upper level semantics, like e.g. service definition, then it enables data sharing at application level and also facilitates cross-domain use cases handling.
+Ontology design (i.e. specification, formalization) and implementation are thus mandatory for data heterogeneity management and semantic interoperability since:
+*        It provides common data understanding in a same and unique way to any processes, applications or end users that need to analyze or process those data,
+*        It facilitates data/information sharing across systems and enables semantic-based embedded data analytics (e.g. for automated alarm management or control operations).
+
+If the ontology incorporates common upper level semantics, like e.g. service definition, then it enables data sharing at application level and also facilitates cross-domain use cases handling.
 
 > motivate why this is the case
 
