@@ -42,14 +42,14 @@ Semantic interoperability enables interoperability at data level between platfor
 
 In that context, there is no further need to develop one-to-one interfaces and less risk to make errors when using external data.
 
-Semantics, metadata (data about data meaning) and ontology (extension of metadata with data context/environment) definition can bring a valuable solution, since it provides a generic representation of a system and its data. It also defines a common and abstracted sub-layer above the services and platforms definition.
+Semantics, metadata (what is the data, i.e. data about data) and ontology (extension of metadata with data context/environment) definition can bring a valuable solution, since it provides a generic representation of a system and its data. It also defines a common and abstracted sub-layer above the services and platforms definition.
 
 > Explain the term "ontology"
 > What layers do we have? What is an abstracted sub-layer in this context? What "services and platform" definition?
 
 Semantics interoperability thus enable the sharing of data across systems, avoiding the definition of a new common data model every time two different systems need to exchange information or the costly misinterpretation of data received from an external system.
 
-As already aforementioned, one of the first interoperability levels to take care of is at informational level, i.e. at data and semantic level. It is mandatory to address since it allows data heterogeneity management, both within a single platform and even across platforms (provided that the data model becomes a unified / standardized one). One good example of that is the Bluetooth LE GATT (Low Energy Generic Attributes) profile that has been standardized by the Bluetooth Special Interest Group (SIG) since it provides common standardized metadata for describing any Bluetooth LE devices and its services. Adopted by a good number of device makers, it is thus enabling devices interoperability [https://www.bluetooth.com/specifications/gatt].
+As already aforementioned, one of the first interoperability levels to take care of is at informational level, i.e. at data and semantic level. It is mandatory to address since it allows data heterogeneity management, both within a single platform and even across platforms (provided that the data model becomes a unified / standardized one). OOne good example of that is the Bluetooth LE GATT (Low Energy Generic Attributes) profile that has been standardized by the Bluetooth Special Interest Group (SIG). Indeed, GATT offers common standardized Profiles, associated with a simple and extensible semantic (descriptors for attributes, and characteristics for values) for generically describing any Bluetooth devices in term of: use case and services provided, roles, general behaviours and characteristics. A BLE Device thus offers a generic Profile that is made of one or multiple services, provided by the device and described by standardized descriptors and characteristics. Adopted by a good number of Bluetooth device makers, it is thus enabling Bluetooth devices/service/data interoperability [https://www.bluetooth.com/specifications/gatt].
 
 > Why is Bluetooth LE GATT a good example? Does it fit with the example that comes later? Can we better align?
 
@@ -61,7 +61,7 @@ Let us now take the simple problem of a house room with a black box on a wall (s
 
 > we should clarify terminology: semantics is about the meaning of data - metadata is data about data, so semantic information can be added as metadata to data - a "context" is not *called* "ontology"
 
- *	the meaning of the data, called metadata, e.g. in our home example a temperature measurement, with “Temperature” as name, ‘t’ as acronym, “°C” as unit of measure, “float” as measurement domain and 22 as value. With this metadata knowledge, few simple data analytics can already be performed, like e.g. in our home example, verifying if a  Temperature ‘t’ is not higher than 26,
+ *	What is the data, i.e. data about data called metadata, e.g. in our home example a temperature measurement, with “Temperature” as name, ‘t’ as acronym, “°C” as unit of measure, “float” as measurement domain and 22 as value. With this metadata knowledge, few simple data analytics can already be performed, like e.g. in our home example, verifying if a  Temperature ‘t’ is not higher than 26,
 
  * and the context (in the sense of data environment view) of the data, extending the metadata and called ontology, like e.g. in our home example, the information of the sensor that provides the data, the associated positioning and geo-localization, environment, room and home ID, home owner information. With that extended semantic knowledge, more powerful semantic data analytics can now be performed, like e.g. in our home example, which are the collocated houses that have the same Temperature value. 
 
@@ -137,7 +137,7 @@ Our extra use case (i.e. elderly at home monitoring and support) high level end-
 
 > should be linked to general interoperability discussion, e.g. in Problem Description - so interoperability is a very important aspects, we focus on semantic interoperability
 
-In a such environment and use case, it mandatory to address security and privacy by design since we are dealing with eHealth and personal safety highly critical data and applications. It is also mandatory to address interoperability at multiple levels and in particular at data, device and semantic level.
+In a such environment and use case, it mandatory to address security and privacy by design since we are dealing with eHealth and personal safety highly critical data and applications. It is also mandatory to address interoperability at multiple levels (data, device, network, syntactic and semantic). We are here in particular focussing on data, and semantic/informational level, i.e. on semantic interoperability.
 
 First of all and concerning data and informational levels, interoperability management is mandatory since:
 *	Heterogeneity of measures has to be masked, at least at application level,
