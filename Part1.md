@@ -129,18 +129,18 @@ Figure 6: Interoperability-by-design vs Interoperability specification lifecycle
 </p>
 
 ### Ontology-driven semantic Interoperability
-Ontology-driven semantic interoperability assumes that interoperability-by-design is based on the use of ontologies to describe the meaning of exchanged information. Figure 6 shows the relationship between ontologies and interoperability. The following remarks can be made:
+Ontology-driven semantic interoperability assumes that interoperability-by-design is based on the use of ontologies to describe the meaning of exchanged information. Figure 7 shows the relationship between the interoperability lifecycle and the ontology lifecycle. The following remarks can be made:
 
--	Interoperability is part of the system lifecycle process
--	Ontologies have their own lifecycle.
+-	The system lifecycles and the interoperability specification lifecycles are separated
+-	The interoperability specification lifecycles and the ontology lifecycles are separated
 
-![](https://github.com/martin-p-bauer/2018_JWP/blob/master/Ontology%20driven%20interoperability.png)
+![](https://github.com/martin-p-bauer/2018_JWP/blob/master/Ontology%20driven%20interoperability%20v2.png)
 
 <p align="center">
-Figure 6: Ontology-driven Interoperability
+Figure 7: Ontology-driven Interoperability
 </p>
 
-### Resulting extension of system lifecycle processes
+### Interoperability activities and task in system lifecycle
 This section identifies activities/tasks related to interoperability by design that need to be integrated. The table below uses the ISO/IEC/IEEE 15288 processes and provides examples of tasks and activities that are related to interoperability
 
 |Typical lifecycle technical process (e.g. ISO 15288)|Interoperability task and activities|
@@ -157,8 +157,23 @@ This section identifies activities/tasks related to interoperability by design t
 | Validation process |   |
 | Operation process |   |
 | Maintenance process | Interoperability maintenance  |
-| Disposal |   |
+| Disposal process |   |
 
+### Interoperability specification lifecycle
+An interoperability specification follows its own lifecycle. Such lifecycles are well known. For the sake of understanding we show here a simple example in figure 8.
+
+![](https://github.com/martin-p-bauer/2018_JWP/blob/master/Example%20of%20interoperability%20specification%20lifecycle.png)
+
+<p align="center">
+Figure 8: Example of interoperability specification lifecycle
+</p>
+
+|Interoperability specification lifecycle process|Description|
+|----|----|
+| Requirement |Define the requirements of the interoperability specification |
+| Specification | Provide the specification |
+| Consensus validation | Consensus reaching on the specification |
+| DPublication | Publish the interoperability specification |
 
 
 ### Resulting extension of ontology lifecycle processes
