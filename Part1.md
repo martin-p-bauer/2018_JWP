@@ -113,10 +113,19 @@ The ISO/IEC/IEEE 15288 standard describes thirty processes structured into four 
 ### Interoperability-by-design
 We define interoperability-by-design as the integration of the concept of interoperability in the design and lifecycle of systems, as showed in figure 5.
 
-![](https://github.com/martin-p-bauer/2018_JWP/blob/master/Interoperability%20by%20design.png)
+![](https://github.com/martin-p-bauer/2018_JWP/blob/master/Interoperability%20by%20design%20v2.png)
 
 <p align="center">
 Figure 5: Interoperability-by-design
+</p>
+
+Figure 6 shows the relationship between interoperability-by-design process (i.e. integrating interoperability concerns in the development of a system) and an interoperability specification lifecycle
+
+
+![](https://github.com/martin-p-bauer/2018_JWP/blob/master/Interoperability%20by%20design%20vs%20interoperability%20specification%20lifecycle.png)
+
+<p align="center">
+Figure 6: Interoperability-by-design vs Interoperability specification lifecycle
 </p>
 
 ### Ontology-driven semantic Interoperability
