@@ -175,18 +175,42 @@ Figure 8: Example of interoperability specification lifecycle
 | Consensus validation | Consensus reaching on the specification |
 | DPublication | Publish the interoperability specification |
 
+### Ontology lifecycle
+The building of an ontology typically follows a lifecycle. An example of lifecycle model is showed in figure 9.
 
-### Resulting extension of ontology lifecycle processes
+![](https://github.com/martin-p-bauer/2018_JWP/blob/master/Example%20of%20Ontology%20Lifecycle%20Model.png)
 
-|Example|Description|
+<p align="center">
+Figure 9: Example of Ontology Lifecycle Model
+</p>
+
+|Ontology lifecycle process|Description|
 |----|----|
-| Semantic interoperability ontology requirements definition  | Define the type of knowledge that need to be captured in the ontology (domain, cross domain and transversal, e.g. health, transport and security). Define the operational requirements (e.g. compability). Identify a ontology version management scheme. |
-| Semantic interoperability ontology structure co-creation  | Define the ontologies to be used, the part that is encapsulated, the part that is exposed and adapted. Seek consensus for standardisation   |
-| Semantic interoperability ontology co-construction  | Finalise or build the ontology that describes the interoperability point. Seek consensus for standardisation |
-| Semantic interoperability ontology test and validation  | Validate that the ontology is well formed and semantically consistent. Validate that the exposed ontology is what is expected |
-| Semantic interoperability ontology commissioning and deployment | Acceptance by the ecosystem (e.g. community that will use the ontology) that the ontology is at suitable maturity level. Integrate in the ontology version management
-| Semantic interoperability ontology maintenance  | Update and enhance the exposed ontology. Validate the updated ontology |
-| Semantic interoperability ontology decommissioning | Update the ontology version management  |
+| Ontology requirements definition |Define the requirements of the ontology to create |
+| Ontology co-creation | Co-create the ontology. This process must at least include a domain specific expert and on ontology expert |
+| Ontology consistency validation | Validated that an ontology is well-formed |
+| Ontology consensus validation | Consensus reaching on the created ontology |
+| Ontology publication | Publish the ontology |
+
+### Ontology-driven semantic interoperability lifecycles
+Semantic interoperability can be driven by ontologies as showed in figure 10.
+
+![](https://github.com/martin-p-bauer/2018_JWP/blob/master/Ontology-driven%20semantic%20interoperability%20lifecycles.png)
+
+<p align="center">
+Figure 10: Ontology-driven semantic interoperability lifecycles
+</p>
+
+
+|Ontology driven Interoperability specification lifecycle process|Task|Description|
+|----|----|----|
+| Interoperability specification requirements | Semantic interoperability ontology requirements definition  | Define the type of knowledge that need to be captured in the ontology (domain, cross domain and transversal, e.g. health, transport and security). Define the operational requirements (e.g. compability). Identify a ontology version management scheme. |
+| Ontology driven specification | Semantic interoperability ontology structure co-creation  | Define the ontologies to be used, the part that is encapsulated, the part that is exposed and adapted. Seek consensus for standardisation   |
+| Ontology driven specification | Semantic interoperability ontology co-construction  | Finalise or build the ontology that describes the interoperability point. Seek consensus for standardisation |
+| Ontology driven specification | Semantic interoperability ontology test and validation  | Validate that the ontology is well formed and semantically consistent. Validate that the exposed ontology is what is expected |
+| Interoperability consensus validation | Semantic interoperability ontology commissioning and deployment | Acceptance by the ecosystem (e.g. community that will use the ontology) that the ontology is at suitable maturity level. Integrate in the ontology version management
+| Publication | Semantic interoperability ontology maintenance  | Update and enhance the exposed ontology. Validate the updated ontology |
+| Publication | Semantic interoperability ontology decommissioning | Update the ontology version management  |
 
 ### Example
 To be provided. This section could provide an example on Ambient Assisted Living (AAL). It would demonstrate a use case combining 2 domains: smart homes and healthcare applications domains. AAL helps elderly people to stay independent at home.
